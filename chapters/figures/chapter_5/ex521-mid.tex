@@ -1,0 +1,48 @@
+% Source - https://tex.stackexchange.com/a/51761
+% Posted by Martin Scharrer
+% Retrieved 2026-07-21, License - CC BY-SA 3.0
+
+% tikzpic.tex
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+%\usetikzlibrary{...}% tikz package already loaded by 'tikz' option
+
+\include{../plot_settings.tex}
+
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+			twoDaxis,
+			xmin = 0,
+			xmax = 5.5,
+			ymin = -.8,
+			ymax = 1.9,
+		]
+		\addplot+[name path=A,color = black,thick] {ln(x)};
+		\addplot+[name path=B,draw=none,] {0};
+		\draw [dashed] (0.5,-1) -- (0.5,1.5) {};
+		\node at (0.5,1.5) [above] {$x=0.5$};
+		\draw [dashed] (4.5,-0.5) -- (4.5,2) {};
+		\node at (4.5,-.5) [below] {$x=4.5$};
+
+		\tikzmath {
+			\N = 4;
+			\Nm1 = \N - 1;
+		}
+		\pgfplotsinvokeforeach{0,...,\Nm1} {
+			\tikzmath {
+				\leftsideasdf{#1} = 0.5+#1*4/\N;
+				\rightsideasdf{#1} = 0.5+4/\N + #1*4/\N;
+				\midpointasdf{#1} = 0.5 + 4/\N*#1+2/\N;
+				\heightofrectangle{#1} = log10(\midpointasdf{#1})/log10(2.71828);
+			}
+			\addplot+[name path=C,color = black,domain = \leftsideasdf{#1}:\rightsideasdf{#1}, solid] {\heightofrectangle{#1}};
+			\addplot+[name path=D,draw=none,domain = \leftsideasdf{#1}:\rightsideasdf{#1}] {0};
+			\addplot [color = blue, opacity = .4] fill between [of=C and D];
+			\draw (\leftsideasdf{#1},0) -- (\leftsideasdf{#1},\heightofrectangle{#1});
+			\draw (\rightsideasdf{#1},0) -- (\rightsideasdf{#1},\heightofrectangle{#1});
+			\node at (\midpointasdf{#1},\heightofrectangle{#1}) [above, fill = white, fill opacity=.85, text opacity = 1] {ln(\midpointasdf{#1})=\heightofrectangle{#1}};
+		}
+	\end{axis}
+
+\end{tikzpicture}
+\end{document}

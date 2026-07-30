@@ -1,0 +1,44 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\include{../plot_settings.tex}
+
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+			threeDaxis,
+			xtick=\empty, % "generic" type problem so scale on x and y doesn't matter, remove ticks for clarity
+			ytick=\empty,
+			xmin = 0,
+			xmax = 5,
+			ymin = 0,
+			ymax =  5,
+			zmin = 0,
+			zmax = 3,
+			area plot/.style={
+					fill opacity=0.3,
+					draw=black,
+					fill=orange,
+					mark=none,
+				} % sets up the orange slice fill in stuff
+		]
+		%plot the curve in the x-y plane, keep "samples y=0" or else, and then just plot coords (x,y,z) like parametric curve sorta where x is the parameter. 
+		\addplot3 [black,domain=0:4,samples = 100, samples y=0,thick] (x,{0.7*cos(x r)+2},0);
+		\tikzmath {
+			% set the number of rectangles (it's off by 1 but I don't care)
+			\N = 17;
+		}
+
+		%set up the loop
+		\pgfplotsinvokeforeach{0,...,\N} {
+			\tikzmath{
+				% calculate the current x value for each iteration (otherwise it acts weird) (the 4 is hard coded the width of theinterval and "#1" is like "i" in a C loop, it is "this iteration number")
+				\currentx{#1} = 4/\N*#1;
+				% cacluctate the current y value for each iteration (we use it multiple times so only calculate it once here)
+				\currenty{#1} = 0.7*cos(\currentx{#1} r)+2;
+			}
+			% plot the slice for this iteration by plotting the 4 coordinates of the square's vertices and use closedcycle to connect them, using the area plot style we set up earlier to color them orange and all that
+			\addplot3 [domain=0:4,samples = 100, samples y=0, area plot] coordinates {(\currentx{#1},0,0)  (\currentx{#1},\currenty{#1},0)  (\currentx{#1},\currenty{#1},\currenty{#1})  (\currentx{#1},0,\currenty{#1})} \closedcycle;
+		}
+	\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,53 @@
+% Source - https://tex.stackexchange.com/a/51761
+% Posted by Martin Scharrer
+% Retrieved 2026-07-21, License - CC BY-SA 3.0
+
+% tikzpic.tex
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+%\usetikzlibrary{...}% tikz package already loaded by 'tikz' option
+
+
+\include{../plot_settings.tex}
+
+
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+			twoDaxis,
+			xmin = 0,
+			xmax = 4.5,
+			ymin = 0,
+			ymax = 4.5,
+		]
+		\addplot+[name path=A,color = black,] {-x^2+4*x};
+		\addplot+[name path=B,color = black,] {-x + 4};
+		% \addplot [pattern = {Lines[angle=45,distance=8pt,line width=.4pt]}] fill between [of=A and B,soft clip={domain=1:4}];
+		% \addplot [color = blue, opacity = .4] fill between [of=A and B,soft clip={domain=0.5:4.	5}, split, every odd segment/.style={pattern={Hatch[angle=45,distance={3pt},xshift=.1pt]},pattern color=red}, ];
+
+		% \addplot [pattern = {Lines[angle=45,distance=8pt,line width=.4pt]}, opacity = .8] fill between [of=A and B];
+		\tikzmath {
+			\N = 6;
+			\Nm1 = \N - 1;
+		}
+		\pgfplotsinvokeforeach{0,...,\Nm1} {
+			\tikzmath {
+				\leftsideasdf{#1} = 1 + #1*3/\N;
+				\topofrect{#1} = -1*(\leftsideasdf{#1})*(\leftsideasdf{#1})+4*\leftsideasdf{#1};
+				\rightsideasdf{#1} = 1+ 3/\N + #1*3/\N;
+				\bottofrect{#1} = -1*(\leftsideasdf{#1}) + 4;
+				% \midpointasdf{#1} = 3/\N + #1*2/\N;
+			}
+			\addplot+[name path=C,color = black,domain = \leftsideasdf{#1}:\rightsideasdf{#1}, solid] {\topofrect{#1}};
+			\addplot+[name path=D,draw=black,domain = \leftsideasdf{#1}:\rightsideasdf{#1}, solid] {\bottofrect{#1}};
+			\addplot+[name path=E,draw=none,domain = \leftsideasdf{#1}:\rightsideasdf{#1}] {0};
+			\addplot [pattern = {Lines[angle=45,distance=8pt,line width=.4pt]}] fill between [of=D and E,soft clip={domain=\leftsideasdf{#1}:\rightsideasdf{#1}}, ];
+			\addplot [color = blue, opacity = .4] fill between [of=C and D];
+			\draw (\rightsideasdf{#1},0) -- (\rightsideasdf{#1},\topofrect{#1});
+			\draw (\leftsideasdf{#1},0) -- (\leftsideasdf{#1},\topofrect{#1});
+		}
+
+		% \node at (2,7) [fill = white, fill opacity=.85, text opacity = 1] {$R$};
+	\end{axis}
+
+\end{tikzpicture}
+\end{document}

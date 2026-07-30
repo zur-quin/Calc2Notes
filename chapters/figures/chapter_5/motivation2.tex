@@ -1,0 +1,39 @@
+% Source - https://tex.stackexchange.com/a/51761
+% Posted by Martin Scharrer
+% Retrieved 2026-07-21, License - CC BY-SA 3.0
+
+% tikzpic.tex
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+%\usetikzlibrary{...}% tikz package already loaded by 'tikz' option
+
+\include{../plot_settings.tex}
+
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+			twoDaxis,
+			xmin = 0,
+			xmax = 4.5,
+			ymin = 0,
+			ymax = 18,
+		]
+		\addplot+[name path=A,color = black,] {-x^2+16};
+		\addplot+[name path=B,draw=none,] {0};
+		\addplot [pattern = {Lines[angle=45,distance=8pt,line width=.4pt]}, opacity = .8] fill between [of=A and B];
+
+		\pgfplotsinvokeforeach{1,2,3,4} {
+			\tikzmath {
+				\blah{#1} = -1*(#1-1)*(#1-1)+16;
+			}
+			\addplot+[name path=C,color = black,domain = (#1-1):#1, solid] {\blah{#1}};
+			\addplot+[name path=D,draw=none,domain = (#1-1):#1] {0};
+			\addplot [color = blue, opacity = .4] fill between [of=C and D];
+			\node at (#1-.5,2.5) [fill = white, fill opacity = .85, text opacity = 1] {$A_#1$};
+			\draw (#1,0) -- (#1,\blah{#1});
+		}
+
+		\node at (2,7) [fill = white, fill opacity=.85, text opacity = 1] {$R$};
+	\end{axis}
+
+\end{tikzpicture}
+\end{document}

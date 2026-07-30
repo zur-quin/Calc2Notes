@@ -1,0 +1,41 @@
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{patterns, patterns.meta, positioning, math}
+
+\pgfplotsset{compat=1.18}
+
+\pgfplotsset{
+	twoDaxis/.style = {
+			no marks,
+			samples = 100,
+			axis lines = center,
+			xlabel = {$x$},
+			ylabel = {$y$},
+			every axis x label/.style={
+					at={(ticklabel* cs:1.05)},
+					anchor=west,
+				},
+			every axis y label/.style={
+					at={(ticklabel* cs:1.05)},
+					anchor=south,
+				},
+		},
+	threeDaxis/.style = {
+			view={37}{45}, % first number is how much to rotate around z axis for the view, second is how far above/below you are in angle around x (negative is looking up, positive is looking down)
+			xlabel=$x$, % you know this one
+			every axis x label/.style={
+					at={(ticklabel* cs:1.05)},
+					anchor=west,
+				}, % place the xlabel in a better spot
+			ylabel=$y$, % you know this one
+			every axis y label/.style={
+					at={(ticklabel* cs:1.05)},
+					anchor=south,
+				}, % places y label in a better spot
+			axis lines=center, % remove this and you get weird box behavior, not good for calc 2 students
+			ztick=\empty, % no z ticks here 
+			axis z line = none,
+		}
+}

@@ -1,0 +1,26 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+%\usetikzlibrary{...}% tikz package already loaded by 'tikz' option
+
+
+\include{../plot_settings.tex}
+
+
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+			twoDaxis,
+			xmin = -0.2,
+			xmax = 3.5,
+			ymin = -1.8,
+			ymax = 1.8,
+			samples = 1000,
+		]
+		\addplot+[name path=A,color = black,->, domain = 0:3.5] {x^(1/4)} node[above,pos=.8] {$x=y^4$};
+		\addplot+[name path=B,color = black,->, domain = 0:3.5] {-x^(1/4)};
+		\addplot+[name path=C,color = black,<-, domain = - .1:2] {sqrt(2-x)} node[above,pos=.3] {$y^2=2-x$};
+		\addplot+[name path=D,color = black,<-, domain = - .1:2] {-sqrt(2-x)};
+		\addplot [color =blue, opacity = .4] fill between [of = A and B, soft clip ={domain=0:1} ];
+		\addplot [color =blue, opacity = .4] fill between [of = C and D, soft clip ={domain=1:2} ];
+	\end{axis}
+\end{tikzpicture}
+\end{document}
