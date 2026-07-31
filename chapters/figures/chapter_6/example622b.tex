@@ -1,0 +1,28 @@
+% Source - https://tex.stackexchange.com/a/51761
+% Posted by Martin Scharrer
+% Retrieved 2026-07-21, License - CC BY-SA 3.0
+
+% tikzpic.tex
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+%\usetikzlibrary{...}% tikz package already loaded by 'tikz' option
+
+\include{../plot_settings.tex}
+
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+			twoDaxis,
+			xmin = 0,
+			xmax = 5.5,
+			ymin = 0,
+			ymax = 18,
+		]
+		\addplot+[domain=0:4,name path=A,color = black] {x^2} node [midway,pin={[pin distance=.5cm, pin edge={<-,black, out=180, in=-70}]above left:$x=\sqrt{y}$}] {};
+		\addplot+[domain=0:4,name path=B,draw=none,] {0};
+		\addplot [purple, opacity = 0.4] fill between [of=A and B];
+		\addplot  coordinates {(4,0) (4,16)} node [midway,pin={[pin distance=.5cm, pin edge={<-,black, out=0, in=150}]right:$x=4$}] {};
+		\addplot [|-|] coordinates {(2.3,2.3*2.3) (4,2.3*2.3)} node [midway, below] {$s=4-\sqrt{y}$};
+	\end{axis}
+
+\end{tikzpicture}
+\end{document}

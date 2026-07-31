@@ -151,7 +151,7 @@ Instead of taking vertical rectangles to approximate the area between curves, we
   )
 ]
 
-#note-block[
+#tip-block[
   To find the area between 2 curves do the following
   1. Identify the domain, so you have a good idea of what the region is.
   2. Find where the curves intersect: set the equations of the curves equal to each other, and make sure to consider any domain restrictions.
@@ -216,9 +216,119 @@ Suppose that we partition #math.equation($[a,b]$, alt: " the closed interval fro
 )
 where each subinterval has width #math.equation($Delta x$, alt: "delta x"). What is the volume of one slice of our solid? How would we use this to calculate the voluem of the entire solid?
 
+To approximate the volume, we can think of a cross-section with width #math.equation($Delta x$, alt: "delta x"), then its volume is #math.equation($V=("Area of section")Delta x$, alt: "v equals the area of the section times delta x"). Here the area of the cross-section is the area of a square with side length equal to the function value, #math.equation($y=f(x)$, alt: "y equals f of x").
 
+#align(center, image(
+  "figures/chapter_6/genericcrosssection.svg",
+  alt: "3 d plot of a generic solid s ticks on the x axis at a equals x 0, x 1, x 2, x 3, and so on until x n which is b a thick cross section between x 2 and x 3 shows the volume of the rectangular prism shaped slice used to approximate the volume of the solid",
+  width: 70%,
+))
 
+As the width of the sub-intervals goes to zero and we add more rectangular prisms together, we get a better approximation of the volume. Once again, the limit of this sum ends up being a definite integral.
 
+#definition[
+  If the cross-section of a solid #acc("S") at each point #acc("x") in #math.equation($[a,b]$, alt: "the closed interval from a to b") is a region #math.equation($S(x)$, alt: "s of x") of area #math.equation($A(x)$, alt: "a of x"), where #math.equation($A(x)$, alt: "a of x") is a continuous function of #acc("x"), then
+  #math.equation(
+    $
+      V = integral_a^b A(x) dif x.
+    $,
+    alt: "volume V equals the integral from a to b of a of x, d x.",
+    block: true,
+  )
+]
+
+#tip-block[
+  To calculate the volume of a solid
+  1. Sketch a picture of the region and a typical cross-section.
+    - Don't overcomplicate the cross-section, it should just be a prism with straight sides and top/bottom (or left/right sides) the same shape with area #math.equation($A(x)$, alt: "a of x") (the area changes for each cross-section but is the same on the 2 faces of the single cross-section). It is never a part of a cone or pyramid or sphere,,,
+  2. Find a formula for #math.equation($A(x)$, alt: "a of x").
+  3. Find the limits of integration.
+  - Think about stretching the face with area #math.equation($A(x)$, alt: "a of x") from one end of the shape to the other, where do you start/stop this process?
+  4. Integrate to find the volume, mind your units if applicable.
+]
+
+#note-block[
+  Typical cross-sectional area formulae:
+  - Square: for a square with side length #acc("s"), the area is #math.equation($A=s^2$, alt: "a equals s squared").
+  - Triangle: for a triangle with base #acc("b") and height #acc("h"), the area is #math.equation($A=1/2 b h$, alt: "a equals one half b times h").
+  - Circle: for a circle with radius #acc("r"), the area is #math.equation($A=pi r^2$, alt: "a equals pi r squared").
+  - Semicircle: for a circle with radius #acc("r"), the area is #math.equation($A=1/2 pi r^2$, alt: "a equals one half pi r squared").
+]
+
+#example[
+  A cone with height 5 cm has a circular base with radius 5 cm. Set up a definite integral and evaluate it to find the volume of the cone.
+]
+#my-solution-block[
+  A sketch of the volume, showing cross-sections, might look like:
+  #align(center, image(
+    "figures/chapter_6/coneslices.svg",
+    alt: "f",
+    width: 50%,
+  ))
+
+  We can think of slices of the cone being circles, with radius equal to the #acc("y") value in #math.equation($y=-x+5$, alt: "y equals negative x plus 5"). This comes from the edge of the cone making the line #math.equation($y=-x+5$, alt: "y equals negative x plus 5") in the #acc("x")-#acc("y") plane.
+
+  Then the area of one slice is #math.equation($A(x)=pi (-x+5)^2$, alt: "a of x is pi times the square of negative x plus 5"). The slices range from #math.equation($x=0$, alt: "x equals 0") to #math.equation($x=5$, alt: "x equals 5").
+
+  The definite integral we need to evaluate is
+  #math.equation(
+    $
+      V & = integral_0^5 pi (-x+5)^2 dif x \
+        & = pi integral_0^5 x^2-10x+25 dif x \
+        & = pi[1/3 x^3 - 5 x^2 + 25 x]_0^5 \
+        & = pi[1/3 (5)^3 - 5 (5)^2 + 25(5)] \
+        & = 125/3 pi
+    $,
+    alt: "v equals the integral from 0 to 5 of pi times negative x plus 5 all squared, d x. this is the same as the integral from 0 to 5 of x quared minus 10 x plus twenty-five, d x. this becomes pi times the quantity one third x cubed minus 5 x squared plus twenty five x all evaluated from 0 to 5. this then becomes pi times the quantity one third times 5 cubed minus 5 times 5 squared plus twenty five times x. which is one hundred twenty-five thirds times pi",
+    block: true,
+  )
+
+  We are told the distances are measured in centimeters, so the final answer is the volume is #math.equation($(125 pi)/3$, alt: "one hundred twenty-five pi thirds") centimeters cubed.
+
+  There are 2 checks we can do at the end of the problem. First, our solution is positive, which we expect because volume is positive. Second, this is a cone and we do know the volume formula for a cone:
+  #math.equation($V = 1/3 pi r^2 h = 1/3 pi (5)^2 (5) = 125/3 pi.$, alt: "v equals one third pi times r squared times h, this becomes one hundred twenty-five thirds times pi.", block: true)This is the same thing we got from integrating, so our answer is correct!
+]
+
+#exercise[
+  Derive the formula for the volume of a cone using similar techniques as above. _Hint: the line connecting the points_ #math.equation($(0,r)$, alt: "zero comma r") _and_ #math.equation($(h,0)$, alt: "h comma 0") _will be useful._
+]
+
+#example[
+  Set up an integral to find the volume of the given solid. The base of the solid is the region bounded by #math.equation($x=0, x=4, "and" y=x^2$, alt: "x equals 0, x equals 4, and y equals x squared"). The cross-sections are perpendicular to the #acc("x")-axis and are squares.
+
+  Set up an integral to find the volume of the given solid with the same base and square cross-sections, but the cross-sections are perpendicular to the #acc("y")-axis.
+
+]
+
+#my-solution-block[
+  Sketch the region first, then
+  #align(center, image("figures/chapter_6/example2slices.svg", alt: "slices"))
+  Where we see the side length of the square cross-sections is #math.equation($x^2$, alt: "x squared"), and the slices fill the space from #math.equation($x=0" to "x=4$, alt: "x equals 0 to x equals 4") so the definite integral we need to evaluate for the volume is
+  #math.equation(
+    $
+      V = integral_0^4 (x^2)^2 dif x = integral_0^4 x^4 dif x.
+    $,
+    alt: "integral from 0 to 4 of the square of x squared, d x which is the integral from 0 to 4 of x to the fourth, d x.",
+    block: true,
+  )
+
+  For the second part of the problem, we are now looking at the region below:
+  #align(center, image("figures/chapter_6/example2bslices.svg", alt: "slices"))
+  Notice that the slices now go from bottom to top, when the cross-sections are perpendicular to #acc("y")-axis, we want to use an integral in #acc("y"). This region has square cross-sections where we can think about "right curve minus left curve" to find the side length of those squares:
+
+  #align(center, image("figures/chapter_6/example622b.svg", alt: "asd", width: 50%))
+
+  Here the square side stretches between #math.equation($x=sqrt(y)$, alt: "x equals square root of y") and the vertical line #math.equation($x=4$, alt: "x equals 4"). So, the side length is #math.equation($s=4-sqrt(y).$, alt: "s equals 4 minus the square root of y.") This solid is formed up of slices from #math.equation($y=0 "to" y = 16$, alt: "y equals 0 to y equals 16"). Then the integral we solve for the volume is
+  #math.equation(
+    $V= integral_0^(16) (4-sqrt(y))^2 dif x.$,
+    alt: "v equals the integral from 0 to 16 of 4 minus square root of y squared, d x.",
+    block: true,
+  )
+]
+
+#exercise[
+  Predict if you think the volumes of the two solids above will be the same or different. Then, evaluate each integral and compare. Were you correct or incorrect in your prediction? If you were incorrect, that is okay, but try to identify why/what went wrong.
+]
 
 #emph-block[
   6.2 Section Summary:

@@ -1,4 +1,3 @@
-
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepgfplotslibrary{fillbetween}
@@ -23,7 +22,8 @@
 				},
 		},
 	threeDaxis/.style = {
-			view={37}{45}, % first number is how much to rotate around z axis for the view, second is how far above/below you are in angle around x (negative is looking up, positive is looking down)
+			axis z line = none,
+			axis lines=center, % remove this and you get weird box behavior, not good for calc 2 students
 			xlabel=$x$, % you know this one
 			every axis x label/.style={
 					at={(ticklabel* cs:1.05)},
@@ -32,10 +32,7 @@
 			ylabel=$y$, % you know this one
 			every axis y label/.style={
 					at={(ticklabel* cs:1.05)},
-					anchor=south,
+					anchor=north,
 				}, % places y label in a better spot
-			axis lines=center, % remove this and you get weird box behavior, not good for calc 2 students
-			ztick=\empty, % no z ticks here 
-			axis z line = none,
 		}
 }

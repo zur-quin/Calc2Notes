@@ -1,0 +1,1 @@
+Compiling with `typst watch main_notes.typ --pdf-standard ua-1` for accessibility standards
