@@ -19,22 +19,8 @@
 	]
 	\begin{axis}[
 			view={-27}{20}, % first number is how much to rotate around z axis for the view, second is how far above/below you are in angle around x (negative is looking up, positive is looking down)
-			axis y line = none,
-			axis lines=center, % remove this and you get weird box behavior, not good for calc 2 students
-			xlabel=$x$, % you know this one
-			every axis x label/.style={
-					at={(ticklabel* cs:1.05)},
-					anchor=west,
-				}, % place the xlabel in a better spot
-			zlabel=$y$, % you know this one
-			every axis z label/.style={
-					at={(ticklabel* cs:1.05)},
-					anchor=south, % which side of the label gets pinned to the point 5% past the axis end point?
-				}, % places y label in a better spot
+			threeDaxiswithyzswap,
 			xtick=4, % "generic" type problem so scale on x and y doesn't matter, remove ticks for clarity
-			% ytick=\empty,
-			xticklabel style = {font=\tiny, yshift=1ex},
-			zticklabel style = {font=\tiny, xshift=1ex},
 			xmin = 0,
 			xmax = 6,
 			ymin = -16, % there is no y axis, it has been swapped to z and removed
@@ -56,9 +42,9 @@
 				\currentx{#1} = sqrt(\currenty{#1});
 			}
 			\fill[area plot] (\currentx{#1},0,\currenty{#1}) -- (4,0,\currenty{#1}) -- (4,\currenty{#1}-16,\currenty{#1}) -- (\currentx{#1},\currenty{#1}-16,\currenty{#1}) -- cycle;
-			\addplot3 [black,domain=0:4,samples = 100, samples y=0] (x,0,{x*x}) node [midway, pin={[pin distance=.5cm, pin edge={<-,black, out=180, in=60}]below left:$y=x^2$}] {};
-			\addplot3 [black,domain=0:4,samples = 100, samples y=0] (x,{x*x-16},{x*x});
-			\addplot3 [black,domain=0:4,samples = 100, samples y=0] (4,{x*x-16},{x*x});
+			\addplot3 [black,domain=0:4,samples = 500, samples y=0] (x,0,{x*x}) node [midway, pin={[pin distance=.5cm, pin edge={<-,black, out=180, in=60}]below left:$y=x^2$}] {};
+			\addplot3 [black,domain=0:4,samples = 500, samples y=0] (x,{x*x-16},{x*x});
+			\addplot3 [black,domain=0:4,samples = 500, samples y=0] (4,{x*x-16},{x*x});
 		}
 	\end{axis}
 \end{tikzpicture}

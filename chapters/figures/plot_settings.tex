@@ -5,6 +5,9 @@
 
 \pgfplotsset{compat=1.18}
 
+\usepackage{tikz-3dplot}
+\usetikzlibrary{3d}
+
 \pgfplotsset{
 	twoDaxis/.style = {
 			no marks,
@@ -34,5 +37,21 @@
 					at={(ticklabel* cs:1.05)},
 					anchor=north,
 				}, % places y label in a better spot
+		},
+	threeDaxiswithyzswap/.style = {
+			axis y line = none,
+			axis lines=center, % remove this and you get weird box behavior, not good for calc 2 students
+			xlabel=$x$, % you know this one
+			every axis x label/.style={
+					at={(ticklabel* cs:1.05)},
+					anchor=west,
+				}, % place the xlabel in a better spot
+			zlabel=$y$, % you know this one
+			every axis z label/.style={
+					at={(ticklabel* cs:1.05)},
+					anchor=south, % which side of the label gets pinned to the point 5% past the axis end point?
+				}, % places y label in a better spot
+			xticklabel style = {font=\tiny, yshift=1ex},
+			zticklabel style = {font=\tiny, xshift=1ex},
 		}
 }

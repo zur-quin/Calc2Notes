@@ -181,7 +181,7 @@ Recall how we find the volume of a cylinder. #math.equation($V=pi r^2 h$, alt: "
 
 #align(center, image(
   "figures/chapter_6/cylinder.svg",
-  alt: "todo",
+  alt: "a cylinder is outlined with a circular cross-section in the middle labeled with radius, r, and area pi times r squared. To the right the height of the cylinder is labeled h.",
   width: 40%,
 ))
 
@@ -262,7 +262,7 @@ As the width of the sub-intervals goes to zero and we add more rectangular prism
   A sketch of the volume, showing cross-sections, might look like:
   #align(center, image(
     "figures/chapter_6/coneslices.svg",
-    alt: "f",
+    alt: "concentric circular slices of the region described in the problem above. The top of the circles lines up with y equals negative x plus 5, the bottom of the circles line up with y equals x minus 5. The slices extend from large circles at x equals 0 towards the viewer at x equals 5.",
     width: 50%,
   ))
 
@@ -302,7 +302,10 @@ As the width of the sub-intervals goes to zero and we add more rectangular prism
 
 #my-solution-block[
   Sketch the region first, then
-  #align(center, image("figures/chapter_6/example2slices.svg", alt: "slices"))
+  #align(center, image(
+    "figures/chapter_6/example2slices.svg",
+    alt: "slices of a solid where the base is bounded by x equals 0, x equals 4, and y equals x squared. The slices are perpendicular to the x axis and are square shaped, the side length of a square slice at an x is x squared. The slices stack horizontally up to x equals 4.",
+  ))
   Where we see the side length of the square cross-sections is #math.equation($x^2$, alt: "x squared"), and the slices fill the space from #math.equation($x=0" to "x=4$, alt: "x equals 0 to x equals 4") so the definite integral we need to evaluate for the volume is
   #math.equation(
     $
@@ -313,10 +316,17 @@ As the width of the sub-intervals goes to zero and we add more rectangular prism
   )
 
   For the second part of the problem, we are now looking at the region below:
-  #align(center, image("figures/chapter_6/example2bslices.svg", alt: "slices"))
+  #align(center, image(
+    "figures/chapter_6/example2bslices.svg",
+    alt: "slices of a solid where the base is bounded by x equals 0, x equals 4, and y equals x squared. The slices are perpendicular to the y axis now and are square shaped. The slices stack vertically up to y equals 16.",
+  ))
   Notice that the slices now go from bottom to top, when the cross-sections are perpendicular to #acc("y")-axis, we want to use an integral in #acc("y"). This region has square cross-sections where we can think about "right curve minus left curve" to find the side length of those squares:
 
-  #align(center, image("figures/chapter_6/example622b.svg", alt: "asd", width: 50%))
+  #align(center, image(
+    "figures/chapter_6/example622b.svg",
+    alt: "a plot of the base of the shape described above. The curve y equals x squared is labeled with x equals the square root of y, and the vertical line x equals 4 is labeled too. Between these is shaded in. A horizontal line midway up the shape highlights that the side lengths of the cross-sections for this problem have length s equals 4 minus the square root of y",
+    width: 50%,
+  ))
 
   Here the square side stretches between #math.equation($x=sqrt(y)$, alt: "x equals square root of y") and the vertical line #math.equation($x=4$, alt: "x equals 4"). So, the side length is #math.equation($s=4-sqrt(y).$, alt: "s equals 4 minus the square root of y.") This solid is formed up of slices from #math.equation($y=0 "to" y = 16$, alt: "y equals 0 to y equals 16"). Then the integral we solve for the volume is
   #math.equation(
@@ -328,6 +338,86 @@ As the width of the sub-intervals goes to zero and we add more rectangular prism
 
 #exercise[
   Predict if you think the volumes of the two solids above will be the same or different. Then, evaluate each integral and compare. Were you correct or incorrect in your prediction? If you were incorrect, that is okay, but try to identify why/what went wrong.
+]
+
+#remark-block[
+  In these problems, the variable of integration is determined based on whether the cross-sections are perpendicular to the #acc("x")-axis or #acc("y")-axis.
+  - Slices perpendicular to the #acc("x")-axis (where slices stack from one #acc("x") value to another) mean the variable of integration is #acc("x").
+  - Slices perpendicular to the #acc("y")-axis (where slices stack from one #acc("y") value to another) mean the variable of integration is #acc("y").
+]
+
+#property[Cavalieri's Principle][
+  Solids with equal _height_ and identical _cross-sectional area_ at each height have the same volume.
+]
+
+#remark-block[
+  These 2 cylinder-like solids have the same volume by Cavalieri's Principle
+  #align(center, image(
+    "figures/chapter_6/cavalierisprincip.svg",
+    alt: "a cylinder is outlined with a circular cross-section in the middle labeled with radius, r, and area pi times r squared. To the right the height of the cylinder is labeled h. To the right of this entire drawing is another similar drawing, however from bottom to top the almost-cylinder goes up and to the left and then when it reaches the shaded cross-section it goes back up and to the right. It looks like a pipe with a 120 degree bend in it. The straight distance from the top to bottom face of this bent cylinder is also h and the cross-sectional area is also pi r squared.",
+  ))
+]
+
+#exercise[
+  Set up an integral to find the volume of the given solid. The base of the solid is the region bounded by the graphs of #math.equation($y=sqrt(x)" and "y=x/2$, alt: "y equals the square root of x and y equals x over 2"). The cross-sections perpendicular to the #acc("x")-axis are equilateral triangles.
+]
+
+=== Solids of Revolution: The Disk method
+
+#definition[
+  A _solid of revolution_ is the solid generated by rotating (or revolving) a plane region about an axis in its plane.
+]
+
+Consider the function #math.equation($y=sqrt(x)$, alt: "y equals square root of x") on #math.equation($[0,4]$, alt: "the closed interval from 0 to 4"). Imagine rotating it all the way around the #acc("x")-axis to form a solid:
+
+#align(center, grid(
+  columns: 2,
+  // 2 means 2 auto-sized columns
+  gutter: 2mm,
+  image(
+    "figures/chapter_6/introtorevs.svg",
+    alt: "graph of y equals square root of x from 0 to 4, the region between the function and the x-axis is shaded",
+    width: 95%,
+  ),
+  image(
+    "figures/chapter_6/introtorevs2.svg",
+    alt: "graph of y equals square root of x from 0 to 4, the region between the function and the x-axis is shaded",
+    width: 95%,
+  ),
+))
+
+#note-block[If we wish to find the volume of this solid, we have only added one step to our process from before. After that we have the same type of problem as the ones with the cross-sections. We have to build the 2-D region we want to form the solid from.
+  1. Sketch the function and its reflection about the axis you are told to revolve around. This with the domain give you the 2-D region we go from.
+  2. Imagine circular cross-sections that are perpendicular to the same axis you just used.
+  3. Continuing as before the cross-sections will _always_ be circular and have radius equal to the function value.
+]
+
+We can make this more specific below.
+#theorem[Volume by Disks for Rotation about the #acc("x")-axis][
+  To find the volume of a solid formed by rotating a function #math.equation($y=f(x)$, alt: "y equals f of x") on #math.equation($[a,b]$, alt: "the closed interval from a to b") about the #acc("x")-axis first note that the area of each cross-section is #math.equation($A(x) = pi (f(x))^2$, alt: "capital a of x is pi times f of x squared"), then the volume is
+  #math.equation(
+    $V=integral_a^b A(x) dif x = integral_a^b pi (f(x))^2 dif x.$,
+    alt: "v equals the integral from a to b of capital a of x, d x which is just the integral from a to b of pi times the square of f of x, d x.",
+    block: true,
+  )
+]
+
+#exercise[
+  Write a similar statement to the one above for rotating a function #math.equation($y=f(x)$, alt: "y equals f of x") for #acc("y") values in #math.equation($[a,b]$, alt: "the closed interval from a to b") about the #acc("y")-axis. _Hint: careful with the variables you use in the expression. The variable of integration should be the variable used in the integrand._
+]
+
+#example[
+  Set up an integral to find the volume of the solid generated by revolving the region in the first quadrant bounded above by #math.equation($y=-2x^2+2$, alt: "y equals negative 2 x squared plus 2") around the #acc("x")-axis.
+
+  Set up an integral to find the volume when revolving this same region around the #acc("y")-axis.
+]
+
+#my-solution-block[
+  The solid looks like
+  #align(center, image("figures/chapter_6/firstdiskex.svg", alt: "todo", width: 50%))
+
+  However, this might be difficult to draw by hand. An alternative is to just draw the region in 2-D, its reflection, and a single cross-section to help visualize the radius of the disks. This looks like
+
 ]
 
 #emph-block[
