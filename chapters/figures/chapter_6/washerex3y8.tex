@@ -1,0 +1,17 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\include{../plot_settings.tex}
+
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+			twoDaxis,
+			xmin = 0,
+			xmax = 9,
+			ymax = 4.5,
+		]
+		\addplot [black,->, domain= 0:9,thick, samples = 500] {x^(2/3)} node [midway, pin={[pin distance=.5cm, pin edge={<-,black, out=120, in=235}]above:$y=x^{2/3}$}] {};
+		\addplot [black,thick] coordinates {(8,0) (8,4)} {};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

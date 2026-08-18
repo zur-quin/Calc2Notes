@@ -1,0 +1,34 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\include{../plot_settings.tex}
+
+\usetikzlibrary{decorations.text, decorations.pathmorphing, topaths} 
+
+\usepackage{tikz-3dplot}
+\usetikzlibrary{3d}
+
+\begin{document}
+% \begin{tikzpicture}
+% 	\node (A) [cylinder, shape border rotate=90, draw,minimum height=3cm,minimum width=2cm,pin={[pin edge={<-,black}]right:Area = $\pi r^2$}] {};
+% 	\draw [->] (A.center) -- (A.east) node [midway, above,fill=white] {$r$};
+% \end{tikzpicture}
+% \tdplotsetmaincoords{70}{5} % Opposite order of pgfplots' view
+\begin{tikzpicture}
+	\draw (0,0) circle (2);
+	\fill[fill=blue!20] (0,0) circle (2);
+	\draw (0,0) circle (1);
+	\fill[fill=white] (0,0) circle (1);
+	\draw [->] (0,0) -- (0,2) node [midway, above] {$R$};
+	\draw [->] (0,0) -- (1,0) node [midway, above] {$r$};
+
+	% \node[pin={[pin distance=1.5cm, pin edge={<-,black, out=90, in=0}]above left:$A=\pi r^2$}] at (-1, 0, 4) {};
+
+	% \begin{scope}[canvas is xy plane at z = 8]
+	% 	\draw (0,0) circle (2cm);
+	% \end{scope}
+
+	% \draw (-2,0,0) -- (-2,0,8);
+	% \draw (2,0,0) -- (2,0,8);
+	% \draw [decorate,decoration={brace,amplitude=3.5pt}] (2.5,0,8.1) -- (2.5,0,0) node [midway, right] {$\ h$};
+\end{tikzpicture}
+\end{document}

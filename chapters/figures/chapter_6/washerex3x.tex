@@ -1,0 +1,36 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\include{../plot_settings.tex}
+
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+			twoDaxis,
+			xmin = 0,
+			xmax = 11,
+			xtick = {2,4,6,8},
+			ymax = 5,
+			ymin = -4.5,
+			axis equal image = true,
+		]
+		\addplot [black,->, domain= 0:9,thick, samples = 500] {x^(2/3)} node [midway, pin={[pin distance=.5cm, pin edge={<-,black, out=120, in=235}]above:$y=x^{2/3}$}] {};
+		\addplot [black,thick] coordinates {(8,-5) (8,5)} node [near end, pin={[pin distance=.5cm, pin edge={<-,black, out=15, in=165}]right:$x=8$}] {};
+
+		% \addplot [black, thick, <->] coordinates {(3,2.08008382) (3,0)} node [midway, right ] {$R(x)=x^{2/3}$};
+		% \centerarc[black](3,0)(90:330:0.4:2.08008382);
+		% \centerarc[black,dotted,thick](3,0)(330:390:0.4:2.08008382);
+		% \centerarc[black](3,0)(390:440:0.4:2.08008382);
+		\diskslicevert[black,thick](3,0)(0.4:2.08008382);
+
+		\addplot [black,->, dashed, domain= 0:9,thick, samples = 500] {-x^(2/3)} node [midway, pin={[pin distance=.5cm, pin edge={<-,black, out=240, in=110,solid}]below:$y=-x^{2/3}$}] {};
+
+		%caution, no spaces allowed, only works in axis environment (remove cs bits for non axis env)
+
+		% little woop
+		\centerarc[black](9.5,0)(120:330:0.25:1);
+		\centerarc[black,dotted,thick](9.5,0)(330:390:0.25:1);
+		\centerarc[black,->](9.5,0)(390:420:0.25:1);
+		% \draw (9,0) arc [start angle = 30, end angle = 60, x radius = 3, y radius = 1];
+	\end{axis}
+\end{tikzpicture}
+\end{document}

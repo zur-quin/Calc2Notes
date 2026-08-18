@@ -1,0 +1,52 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\include{../plot_settings.tex}
+
+\begin{document}
+\begin{tikzpicture}[
+		area plot/.style={
+				fill opacity=0.4,
+				draw=black,
+				fill=orange,
+				mark=none,
+				draw opacity = 0.15,
+			} % sets up the orange slice fill in stuff
+	]
+	\begin{axis}[
+			view = {0}{45},
+			threeDaxiswithyzswap,
+			xtick= 1, % "generic" type problem so scale on x and y doesn't matter, remove ticks for clarity
+			ztick={-1,1},
+			xmin = 0,
+			xmax = 1.5,
+			ymin = -3, % there is no y axis, the "zmax" is -ymin here, so a max third coord value of 3 put -3 here
+			ymax = 3, % there is no y axis, this is -zmin
+			zmin = -1.2, % actual y min on plot
+			zmax = 1.2, % actual y max on plot
+			%consider using x dir = reverse or a variant to reverse directions :0
+			axis equal image = true,
+			height = 30cm,
+		]
+		% \tikzmath {
+		% 	% set the number of rectangles (it's off by 1 but I don't care)
+		% 	\N = 10;
+		% }
+		\addplot3 [black, domain= 0:1,thick,samples y=0, samples = 500] (x,0,{x^2}) node [midway, pin={[pin distance=.5cm, pin edge={<-,black, out=-30, in=235}]right:$y=x^2$}] {};
+		\addplot3 [black, domain= 0:1,thick,samples y=0, samples = 500] (x,0,{x^(1/2)}) node [midway, pin={[pin distance=.5cm, pin edge={<-,black, out=120, in=245}]above:$y=\sqrt{x}$}] {};
+		\addplot3 [black, domain= 0:1,dashed,samples y=0,thick, samples = 500] (x,0,{-x^2}) node [midway, pin={[pin distance=.5cm, pin edge={<-,solid,black, out=30, in=120}]right:$y=-x^2$}] {};
+		\addplot3 [black, domain= 0:1,dashed,samples y=0,thick, samples = 500] (x,0,{-x^(1/2)}) node [midway, pin={[pin distance=.5cm, pin edge={<-,solid,black, out=200, in=120}]below:$y=-\sqrt{x}$}] {};
+
+
+		% simulate the later bit of the x axis coming out of the middle of the last circle:
+		\addplot3 [black,<->] coordinates {(0.5,0,0) (0.5,0,0.25)} node [midway,left] {$r$};
+		\addplot3 [black,<->] coordinates {(0.5,0,0) (0.5,0,-0.70710678118)} node [midway,left] {$R$};
+
+		%add a lil "whoop" ya know
+		\begin{scope}[canvas is xz plane at y = 0]
+			\draw (0.5,0) ellipse [x radius=0.06cm,y radius=0.25cm];
+			\draw (0.5,0) ellipse [x radius=0.12cm,y radius=0.70710678118cm];
+		\end{scope}
+
+	\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -25,6 +25,15 @@
 #let acc(letter) = {
   math.equation(eval("$" + letter + "$"), alt: letter, block: false)
 }
+#let coord(xcoord, ycoord) = {
+  math.equation(eval("$(" + xcoord + "," + ycoord + ")$"), alt: xcoord + "comma" + ycoord, block: false)
+}
+#let closedint(a, b) = {
+  math.equation(eval("$[" + a + "," + b + "]$"), alt: "the closed interval from " + a + " to " + b, block: false)
+}
+#let openint(a, b) = {
+  math.equation(eval("$(" + a + "," + b + ")$"), alt: "the open interval from " + a + " to " + b, block: false)
+}
 
 
 // put under imports
