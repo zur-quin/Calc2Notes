@@ -567,6 +567,8 @@ In other words,
     alt: "v equals the integral from 0 to 4 of pi times the quantity capital r of y squared minus little r of y squared, d y. Which is the integral from 0 to 4 of pi times the quantity 8 squared minus y to the power of three halves squared, d y. which is pi times the integral from 0 to 4 of 64 minus y cubed, dy.",
     block: true,
   )
+  + Sketching the region and the horizontal line #math.equation($y=6$, alt: "y equals 6") we have
+
 ]
 
 #emph-block[

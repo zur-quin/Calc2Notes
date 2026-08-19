@@ -66,6 +66,8 @@ Students will complete a variety of coursework throughout the semester, includin
 
 Written homework assignments will be posted on Canvas at least once a week. Students are encouraged to work together on homework assignments; however, each student's final write-up must be completed independently. Written assignments will generally be due by 11:59 p.m. ET on the stated due date.
 
+The instructor may assign a grade of 0 to illegible or hard to read solutions; please neatly space, format, and write your solutions to receive prompt feedback. Note there are about 40 students and 1 instructor grading things. Also, if having sufficient paper to write neat solutions is a financial burden to you, please contact your instructor. See revise and resubmit policy.
+
 = WebAssign
 WebAssign assignments will be assigned regularly, and they will typically be due at 11:59pm ET on the class day following the scheduled lecture. Each question will typically have three attempts, however, multiple choice questions may be adjusted according to the number of available responses. The lowest six Webassign scores will be dropped.  For any questions concerning WebAssign access or support, call (toll-free) 800-955-8275.
 
