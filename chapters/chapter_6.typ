@@ -544,31 +544,46 @@ In other words,
 #my-solution-block[
   #set enum(numbering: "a)")
   + Sketching the region and an idea of the volume we make by rotating around the #acc("x")-axis we see the cross-sections are disks.
-  #align(center, image("figures/chapter_6/washerex3x.svg", alt: "todo"))
-  Thus, the volume can be found with the disk method: by thinking of the cross-sectional area as a bunch of circles perpendicular to the #acc("x")-axis, from #math.equation($x=0" to "x=8$, alt: " x equals 0 to x equals 8").
-  #math.equation(
-    $
-      V & = pi integral_0^8 (R(x))^2 dif x \
-        & = pi integral_0^8 (x^(2/3))^2 dif x \
-        & = pi integral_0^8 x^(4/3) dif x
-    $,
-    alt: "todo",
-    block: true,
-  )
+    #align(center, image("figures/chapter_6/washerex3x.svg", alt: "todo"))
+    Thus, the volume can be found with the disk method: by thinking of the cross-sectional area as a bunch of circles perpendicular to the #acc("x")-axis, from #math.equation($x=0" to "x=8$, alt: " x equals 0 to x equals 8").
+    #math.equation(
+      $
+        V & = pi integral_0^8 (R(x))^2 dif x \
+          & = pi integral_0^8 (x^(2/3))^2 dif x \
+          & = pi integral_0^8 x^(4/3) dif x
+      $,
+      alt: "todo",
+      block: true,
+    )
   + Sketching the region and an idea of the volume we make by rotating around the #acc("y")-axis we see the cross-sections are washers now.
     #align(center, image("figures/chapter_6/washerex3y.svg", alt: "todo"))
-  Notice that we need to express the radii in terms of #acc("y") now, the large radius is always #math.equation($R(y)=8$, alt: "capital r of y equals 8") and the small radius is #math.equation($r(y)= y^(3/2)$, alt: "little r of y equals y to the three halves") which we got from solving the original equation for #acc("x"). Lastly, we note the solid fills space for #acc("y") in #closedint("0", "4"). Then the volume integral will be
-  #math.equation(
-    $
-      V & = integral_0^4 pi[(R(y))^2 - (r(y))^2] dif y \
-        & = integral_0^4 pi[(8)^2 - (y^(3/2))^2] dif y \
-        & = pi integral_0^4 [64 - y^3] dif y \
-    $,
-    alt: "v equals the integral from 0 to 4 of pi times the quantity capital r of y squared minus little r of y squared, d y. Which is the integral from 0 to 4 of pi times the quantity 8 squared minus y to the power of three halves squared, d y. which is pi times the integral from 0 to 4 of 64 minus y cubed, dy.",
-    block: true,
-  )
+    Notice that we need to express the radii in terms of #acc("y") now, the large radius is always #math.equation($R(y)=8$, alt: "capital r of y equals 8") and the small radius is #math.equation($r(y)= y^(3/2)$, alt: "little r of y equals y to the three halves") which we got from solving the original equation for #acc("x"). Lastly, we note the solid fills space for #acc("y") in #closedint("0", "4"). Then the volume integral will be
+    #math.equation(
+      $
+        V & = integral_0^4 pi[(R(y))^2 - (r(y))^2] dif y \
+          & = integral_0^4 pi[(8)^2 - (y^(3/2))^2] dif y \
+          & = pi integral_0^4 [64 - y^3] dif y \
+      $,
+      alt: "v equals the integral from 0 to 4 of pi times the quantity capital r of y squared minus little r of y squared, d y. Which is the integral from 0 to 4 of pi times the quantity 8 squared minus y to the power of three halves squared, d y. which is pi times the integral from 0 to 4 of 64 minus y cubed, dy.",
+      block: true,
+    )
   + Sketching the region and the horizontal line #math.equation($y=6$, alt: "y equals 6") we have
-
+    #align(center, image("figures/chapter_6/washerex3y6.svg", alt: "todo"))
+    // todo: shade the region we are rotating in these figures
+    We first find the radii, or the distance from #math.equation($y=6$, alt: "y equals 6") to the edges of the region. Note #math.equation($R$, alt: "big R") is always 6, and #math.equation($r=6-x^(2/3)$, alt: "little r is 6 minus x to the two thirds"). Then the area of each washer as a function of #acc("x") is
+    #math.equation(
+      $
+        A(x) & = pi R^2 - pi r^2 \
+             & = pi [6^2 - (6-x^(2/3))^2]
+      $,
+      alt: "A of x is pi times the quantity big r squared minus little r squared. Then plugging in the rs this equals pi times the quantity 6 squared minus 6 minus x to the two thirds all squared",
+      block: true,
+    )
+    The washers fill the space from #math.equation($x = 0" to "x=8$, alt: "x equals 0 to x equals 8"), so the integral we use is #math.equation(
+      $ V= pi integral_0^8 [6^2 - (6-x^(2/3))^2] dif x $,
+      alt: "v equals pi times the integral from 0 to 8 of 6 squared minus 6 minus x to the two thirds all squared, d x.",
+      block: true,
+    )
 ]
 
 #emph-block[
