@@ -11,6 +11,25 @@
 // content
 = Review of 1225
 
+#showybox(
+  frame: (
+    border-color: red.darken(50%),
+    title-color: red.lighten(60%),
+    body-color: red.lighten(80%),
+  ),
+  title-style: (
+    color: black,
+    weight: "regular",
+    align: center,
+  ),
+  shadow: (
+    offset: 3pt,
+  ),
+  title: "Red-ish showybox with separated sections!",
+  lorem(20),
+  lorem(12),
+)
+
 // skip 5.1 with below line
 #context counter(heading).step(level: 2)
 
