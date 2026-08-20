@@ -16,10 +16,10 @@
 		]
 		\addplot [black,->, domain= 0:9,thick, samples = 500] {x^(2/3)} node [pos=0.2, pin={[pin distance=.35cm, pin edge={<-,black, out=120, in=235}]above:$y=x^{2/3}$}] {};
 		\addplot [black,thick] coordinates {(8,0) (8,4)} {};
-		\addplot [black,thick] coordinates {(8,8) (8,12)} {};
-		\addplot [black,thick] coordinates {(0,12) (8,12)} {};
-		\addplot [black,thick,dashed] coordinates {(0,6) (8,6)} node [pos=1, right] {$y=6$};
-		\addplot [black,->, domain= 0:9,thick, samples = 500] {-x^(2/3)+12} node [pos=0.3, pin={[pin distance=.35cm, pin edge={<-,black, out=210, in=120}]below:$y=x^{2/3}$ reflected}] {};
+		\addplot [black,thick,dashed] coordinates {(8,8) (8,12)} {};
+		\addplot [black,thick,dashed] coordinates {(0,12) (8,12)} {};
+		\addplot [black,->] coordinates {(0,6) (8,6)} node [pos=1, right] {$y=6$};
+		\addplot [black,->, domain= 0:9,thick, samples = 500,dashed] {-x^(2/3)+12} node [pos=0.3, pin={[pin distance=.35cm, pin edge={<-,black, out=210, in=120,solid}]below:$y=x^{2/3}$ reflected}] {};
 		\diskslicevert[black,thick,r=$r$](6,6)(0.35:{funR(6)});
 		\diskslicevertflip[black,thick,r=$R$](6,6)(0.6:6);
 	\end{axis}
