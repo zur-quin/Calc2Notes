@@ -3,6 +3,8 @@
 
 // theorem and example and definition blocks
 #import "@preview/theorion:0.6.0": *
+
+// don't import here, this is your menu lol
 // #import cosmos.simple: *
 // #import cosmos.fancy: *
 // #import cosmos.rainbow: *
