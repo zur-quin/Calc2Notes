@@ -32,9 +32,6 @@ Note that the course has a prereq of Math 1225 (or similar course). This is to e
 
 The *Basic Skills Review* is a tool you can use to determine if you have been properly placed into this class. Please note that I want everyone to succeed in this class, and if you feel you are missing some of these fundamentals I highly encourage you to fill in those gaps with me during student hours.
 
-= Commitment to Wellness
-Virginia Tech is committed to protecting the health and safety of all members of its community. By participating in this class, all students agree to abide by the Virginia Tech Wellness principles. Updated university policies can be found at #link("https://www.vt.edu/public-health.html").
-
 = Communication
 *Course announcements, notices, and updates will be posted on #link("https://canvas.vt.edu"). Students are responsible for checking Canvas notifications regularly.* Canvas is the primary location for all content in this class. It is linked to WebAssign, and will show due dates for all other assignments as they come up.
 
@@ -133,6 +130,10 @@ Students who do not feel comfortable bringing a concern directly to the instruct
 - *Cook COunseling Center* (#link("https://ucc.vt.edu/")), which provides counseling, psychiatric services, psychotherapy, and other mental health services for students.
 - *Schiffert Health Center* (#link("https://healthcenter.vt.edu/")), which provides a variety of medical services for students.
 - *Office of the Dean of Students* (#link("https://dos.vt.edu/")), which can provide advocacy, guidance, and assistance in identifying appropriate university resources. The Office of the Dean of Students can also provide class absence verification when a student needs to miss class for an extended period.
+
+
+= Commitment to Wellness
+Virginia Tech is committed to protecting the health and safety of all members of its community. By participating in this class, all students agree to abide by the Virginia Tech Wellness principles. Updated university policies can be found at #link("http://hdl.handle.net/10919/99415").
 
 = Accommodations
 Virginia Tech welcomes students with disabilities into the University's educational programs. The University promotes efforts to provide equal access and a culture of inclusion without altering the essential elements of coursework. If you anticipate or experience academic barriers that may be due to disability, including but not limited to, chronic medical conditions, Deaf or hard of hearing, learning disability, mental health, or vision impairment, please contact the Services for Students with Disabilities (SSD) (540-231-3788, ssd\@vt.edu, or visit #link("https://ssd.vt.edu/").)
