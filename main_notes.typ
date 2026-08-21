@@ -17,7 +17,9 @@
 // chapters will not see it
 
 // Now the chapters themselves as some Typst content
-#include "chapters/chapter_5.typ"
+#include "chapters/chapter_5/section5_2.typ"
+#pagebreak(weak: true)
+#include "chapters/chapter_5/section5_5.typ"
 #pagebreak(weak: true)
 #include "chapters/chapter_6.typ"
 #pagebreak(weak: true)
