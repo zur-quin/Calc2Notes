@@ -66,7 +66,7 @@ The area can be estimated by summing the areas of the rectangles #math.equation(
     - For example, the area of #math.equation($A_1$, alt: "A sub 1") is #math.equation($A_1 = (1)(f(0)) = (1)(16) = 16$, alt: "A sub 1 equals 1 times f of 0 which is just 1 times 16 which is just 16.").
     - Another shape you may encounter (outside this class) is the trapezoid, using the left AND right end points of the domain to get the 2 required heights for a trapezoid.
   - We used 4 rectangles, but any number of rectangles can be used.
-    - Using more (smaller) rectangles improves the accuracy of our estimated area. TODO label figure and reference it here
+    - Using more (smaller) rectangles improves the accuracy of our estimated area. See figure below.
 
   #align(center, image(
     "figures/motivation3.svg",
