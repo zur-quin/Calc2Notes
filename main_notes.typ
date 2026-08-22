@@ -21,5 +21,12 @@
 #pagebreak(weak: true)
 #include "chapters/chapter_5/section5_5.typ"
 #pagebreak(weak: true)
-#include "chapters/chapter_6.typ"
+#include "chapters/chapter_6/section6_1.typ"
+#pagebreak(weak: true)
+#include "chapters/chapter_6/section6_2a.typ"
+#include "chapters/chapter_6/section6_2b.typ"
+#pagebreak(weak: true)
+#include "chapters/chapter_6/section6_3.typ"
+#pagebreak(weak: true)
+#include "chapters/chapter_6/section6_4.typ"
 #pagebreak(weak: true)
