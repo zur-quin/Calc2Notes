@@ -16,8 +16,7 @@ pdfs: chapters/chapter_6/section6_2a.pdf chapters/chapter_6/section6_2b.pdf chap
 %.pdf: 
 	typst compile $*.typ --pdf-standard ua-1 --root ../.. --input individualchs=true
 
-# clean:
-# 	Get-ChildItem * -Include *.html -Recurse | Remove-Item
-# del /s /q *.html
+clean:
+	del /s /q *.html
 
 include test.dep
