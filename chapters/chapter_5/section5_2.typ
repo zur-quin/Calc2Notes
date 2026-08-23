@@ -4,12 +4,15 @@
 #show: template
 // set up heading numbering
 #set heading(numbering: "1.")
-#counter(heading).update(4)
-#set document(title: "Section 5.2")
-// any functions and templating you want for just this chapter can go here
+#counter(heading).update(5)
 
-// content
-= Review of 1225
+#context {
+  if target() == "paged" and sys.inputs.at("individualchs", default: "false") == "true" {
+    [#counter(heading).update(4)
+      = Review of 1225
+      #set document(title: "Section 5.2")]
+  }
+}
 
 // #showybox(
 //   frame: (
@@ -35,6 +38,7 @@
 
 == The Definite Integral
 In this section, we will primarily review Riemann sums. This is because Riemann sums are used to derive many of the techniques used in the upcoming sections.
+
 #emph-block[
   5.2 Learning Objectives:
   - I can approximate the (signed/unsigned) area under a curve using different types of Reimann sums.

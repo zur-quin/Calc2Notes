@@ -5,6 +5,7 @@
 
 #show: template
 
+
 #set document(title: "Math 1226 Notes")
 
 // some additional formatting

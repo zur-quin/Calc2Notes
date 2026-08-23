@@ -6,13 +6,18 @@
 // set up heading numbering
 #set heading(numbering: "1.")
 #counter(heading).update(5)
-#set document(title: "Section 6.1")
+#context {
+  //if individual pdfs
+  if target() == "paged" and sys.inputs.at("individualchs", default: "false") == "true" {
+    [ #set document(title: "Section 6.1")]
+  }
+}
 
 
 // any functions and templating you want for just this chapter can go here
 
 // content
-= A Few Integral Applications
+= Applications of Integrals
 
 == Area Between Curves
 

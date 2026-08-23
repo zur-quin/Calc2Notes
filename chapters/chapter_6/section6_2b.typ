@@ -6,8 +6,14 @@
 // set up heading numbering
 #set heading(numbering: "1.")
 #counter(heading).update(6)
-#set document(title: "Section 6.2b")
-#context counter(heading).step(level: 2)
+#context {
+  if target() == "paged" {
+    [#counter(heading).update(5)
+      = Applications of Integrals
+      == Volumes by Cross-Sections, Disks, and Washers
+      #set document(title: "Section 6.2 Day 2")]
+  }
+}
 #context counter(heading).step(level: 2)
 #context counter(heading).step(level: 3)
 

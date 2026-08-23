@@ -6,7 +6,13 @@
 // set up heading numbering
 #set heading(numbering: "1.")
 #counter(heading).update(6)
-#set document(title: "Section 6.4")
+#context {
+  if target() == "paged" and sys.inputs.at("individualchs", default: "false") == "true" {
+    [#counter(heading).update(5)
+      = Applications of Integrals
+      #set document(title: "Section 6.4")]
+  }
+}
 #context counter(heading).step(level: 2)
 #context counter(heading).step(level: 2)
 #context counter(heading).step(level: 2)

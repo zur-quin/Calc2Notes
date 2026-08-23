@@ -1,13 +1,18 @@
 // chapter_5.typ
 
 #import "../../template_notes.typ": *
-
+#show: template
 // set up heading numbering
 #set heading(numbering: "1.")
 #counter(heading).update(5)
 
-// any functions and templating you want for just this chapter can go here
-
+#context {
+  if target() == "paged" and sys.inputs.at("individualchs", default: "false") == "true" {
+    [#counter(heading).update(4)
+      = Review of 1225
+      #set document(title: "Section 5.5")]
+  }
+}
 
 // skip 5.1-5.4
 #context counter(heading).step(level: 2)

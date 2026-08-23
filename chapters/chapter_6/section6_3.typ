@@ -6,7 +6,13 @@
 // set up heading numbering
 #set heading(numbering: "1.")
 #counter(heading).update(6)
-#set document(title: "Section 6.3")
+#context {
+  if target() == "paged" and sys.inputs.at("individualchs", default: "false") == "true" {
+    [#counter(heading).update(5)
+      = Applications of Integrals
+      #set document(title: "Section 6.3")]
+  }
+}
 #context counter(heading).step(level: 2)
 #context counter(heading).step(level: 2)
 
@@ -27,7 +33,7 @@
 ]
 #my-solution-block[
   Note the plot of this region below
-  #figure(image("figures/shellmotivation.svg", alt: "todo"))
+  #figure(image("figures/shellmotivation.svg", alt: "todo blah"))
   helps illustrate the difficulty. Simply put: We have no easy way of determining the radii, #math.equation($r" and "R$, alt: "little r and big r").
 ]
 
