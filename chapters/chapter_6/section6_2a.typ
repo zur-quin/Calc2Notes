@@ -19,7 +19,7 @@
 
 Recall how we find the volume of a cylinder. #math.equation($V=pi r^2 h$, alt: "v equals pi r squared times h"). We essentially get the volume by taking the area of the base, #math.equation($pi r^2$, alt: "pi r squared") and sweeping it along the entire height #acc("h").
 
-#align(center, image(
+#figure(image(
   "figures/cylinder.svg",
   alt: "a cylinder is outlined with a circular cross-section in the middle labeled with radius, r, and area pi times r squared. To the right the height of the cylinder is labeled h.",
   width: 40%,
@@ -32,21 +32,23 @@ Recall how we find the volume of a cylinder. #math.equation($V=pi r^2 h$, alt: "
 ]
 
 We can build a (3 dimensional) solid #acc("S") by taking the same type of cross-section (e.g. squares) for each value of #acc("x"), based on some region in the Cartesian plane.
-#align(center, grid(
-  columns: 2,
-  // 2 means 2 auto-sized columns
-  gutter: 2mm,
-  image(
-    "figures/genericslices.svg",
-    alt: "a curve in the x y plane that we form a solid from by forming square shaped slices (sliced perpendicular to the x axis) with side length equal to the function value at each x",
-    width: 100%,
-  ),
-  image(
-    "figures/genericsolid.svg",
-    alt: "a curve in the x y plane that we form a solid from by forming square shaped slices (sliced perpendicular to the x axis) with side length equal to the function value at each x",
-    width: 100%,
-  ),
-))
+
+#figure()[
+  #box(
+    image(
+      "figures/genericslices.svg",
+      alt: "a curve in the x y plane that we form a solid from by forming square shaped slices (sliced perpendicular to the x axis) with side length equal to the function value at each x",
+      width: 35%,
+    ),
+  )#h_html(10mm)
+  #box(
+    image(
+      "figures/genericsolid.svg",
+      alt: "a curve in the x y plane that we form a solid from by forming square shaped slices (sliced perpendicular to the x axis) with side length equal to the function value at each x",
+      width: 35%,
+    ),
+  )
+]
 
 Suppose that we partition #math.equation($[a,b]$, alt: " the closed interval from a to b") into subintervals
 #math.equation(
@@ -58,7 +60,7 @@ where each subinterval has width #math.equation($Delta x$, alt: "delta x"). What
 
 To approximate the volume, we can think of a cross-section with width #math.equation($Delta x$, alt: "delta x"), then its volume is #math.equation($V=("Area of section")Delta x$, alt: "v equals the area of the section times delta x"). Here the area of the cross-section is the area of a square with side length equal to the function value, #math.equation($y=f(x)$, alt: "y equals f of x").
 
-#align(center, image(
+#figure(image(
   "figures/genericcrosssection.svg",
   alt: "3 d plot of a generic solid s ticks on the x axis at a equals x 0, x 1, x 2, x 3, and so on until x n which is b a thick cross section between x 2 and x 3 shows the volume of the rectangular prism shaped slice used to approximate the volume of the solid",
   width: 70%,
@@ -100,7 +102,7 @@ As the width of the sub-intervals goes to zero and we add more rectangular prism
 ]
 #my-solution-block[
   A sketch of the volume, showing cross-sections, might look like:
-  #align(center, image(
+  #figure(image(
     "figures/coneslices.svg",
     alt: "concentric circular slices of the region described in the problem above. The top of the circles lines up with y equals negative x plus 5, the bottom of the circles line up with y equals x minus 5. The slices extend from large circles at x equals 0 towards the viewer at x equals 5.",
     width: 50%,
@@ -142,7 +144,7 @@ As the width of the sub-intervals goes to zero and we add more rectangular prism
 
 #my-solution-block[
   Sketch the region first, then
-  #align(center, image(
+  #figure(image(
     "figures/example2slices.svg",
     alt: "slices of a solid where the base is bounded by x equals 0, x equals 4, and y equals x squared. The slices are perpendicular to the x axis and are square shaped, the side length of a square slice at an x is x squared. The slices stack horizontally up to x equals 4.",
   ))
@@ -156,13 +158,13 @@ As the width of the sub-intervals goes to zero and we add more rectangular prism
   )
 
   For the second part of the problem, we are now looking at the region below:
-  #align(center, image(
+  #figure(image(
     "figures/example2bslices.svg",
     alt: "slices of a solid where the base is bounded by x equals 0, x equals 4, and y equals x squared. The slices are perpendicular to the y axis now and are square shaped. The slices stack vertically up to y equals 16.",
   ))
   Notice that the slices now go from bottom to top, when the cross-sections are perpendicular to #acc("y")-axis, we want to use an integral in #acc("y"). This region has square cross-sections where we can think about "right curve minus left curve" to find the side length of those squares:
 
-  #align(center, image(
+  #figure(image(
     "figures/example622b.svg",
     alt: "a plot of the base of the shape described above. The curve y equals x squared is labeled with x equals the square root of y, and the vertical line x equals 4 is labeled too. Between these is shaded in. A horizontal line midway up the shape highlights that the side lengths of the cross-sections for this problem have length s equals 4 minus the square root of y",
     width: 50%,
@@ -192,7 +194,7 @@ As the width of the sub-intervals goes to zero and we add more rectangular prism
 
 #remark-block[
   These 2 cylinder-like solids have the same volume by Cavalieri's Principle
-  #align(center, image(
+  #figure(image(
     "figures/cavalierisprincip.svg",
     alt: "a cylinder is outlined with a circular cross-section in the middle labeled with radius, r, and area pi times r squared. To the right the height of the cylinder is labeled h. To the right of this entire drawing is another similar drawing, however from bottom to top the almost-cylinder goes up and to the left and then when it reaches the shaded cross-section it goes back up and to the right. It looks like a pipe with a 120 degree bend in it. The straight distance from the top to bottom face of this bent cylinder is also h and the cross-sectional area is also pi r squared.",
   ))

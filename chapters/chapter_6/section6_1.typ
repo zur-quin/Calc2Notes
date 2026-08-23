@@ -25,19 +25,17 @@ Suppose we wish to find the area between the curves #math.equation($y=-x^2+4x$, 
 
 How can we approximate this area?
 
-#align(center)[ #image(
-    "figures/motivation.svg",
-    alt: "plot showing the shaded region between y equals negative x squared plus 4 x and y equals negative x plus 4 between x equals 1 and 4",
-  )
-]
+#figure(image(
+  "figures/motivation.svg",
+  alt: "plot showing the shaded region between y equals negative x squared plus 4 x and y equals negative x plus 4 between x equals 1 and 4",
+))
 
 To approximate this area, we can draw rectangles between the curves, with bottom edge lined up with the lower curve, and top edge lined up with the upper curve. This is effectively the same as estimating the area under each curve, and taking the difference between them (with the same number of rectangles). Note in the following plot, the first blue rectangle is the same height as the dashed one (because the functions intersect at the left side of this sub-interval), so it is not diplayed.
 
-#align(center)[ #image(
-    "figures/motivation2.svg",
-    alt: "plot showing the shaded region between y equals negative x squared plus 4 x and y equals negative x plus 4 between x equals 1 and 4 approximated by 6 sub-intervals. if you are actually using the alt text, this is your reminder to email me for more clarity.",
-  )
-]
+#figure(image(
+  "figures/motivation2.svg",
+  alt: "plot showing the shaded region between y equals negative x squared plus 4 x and y equals negative x plus 4 between x equals 1 and 4 approximated by 6 sub-intervals. if you are actually using the alt text, this is your reminder to email me for more clarity.",
+))
 
 We can approximate the area under both curves individually. Then, since the area under the "lower" curve is under both curves, we can subtract it away to get the area that is left.
 
@@ -73,12 +71,11 @@ We can approximate the area under both curves individually. Then, since the area
   - It is good to sketch the region in these cases, and find any intersection points. Remember that we only get the area between curves if the upper function is, well, the upper function (we require #math.equation($f(x)gt.eq g(x)$, alt: "f of x is greater than g of x ") on #math.equation($[a,b]$, alt: " the closed interval from a to b") in the area between curves definition). If the functions changed which one was greater than the other over our interval, we would just break up the interval and compute a few integrals.
 
   The region #acc("R") was graphed before but is reproduced here for completion:
-  #align(center)[ #image(
-      "figures/motivation.svg",
-      alt: "plot showing the shaded region between y equals negative x squared plus 4 x and y equals negative x plus 4 between x equals 1 and 4",
-      width: 40%,
-    )
-  ]
+  #figure(image(
+    "figures/motivation.svg",
+    alt: "plot showing the shaded region between y equals negative x squared plus 4 x and y equals negative x plus 4 between x equals 1 and 4",
+    width: 40%,
+  ))
   Note, on #math.equation($[1,4]$, alt: "the closed interval from 1 to 4") we always have #math.equation($-x^2+4x gt.eq -x+4$, alt: "negative x squared plus 4 x is greater or equal to negative x plus 4"). Then, the area, #acc("A"), between curves is
   #math.equation(
     $
@@ -111,11 +108,10 @@ Instead of taking vertical rectangles to approximate the area between curves, we
 
 #my-solution-block[
   First, we sketch the region to get an idea of what it looks like.
-  #align(center)[ #image(
-      "figures/ex2.svg",
-      alt: "plot to show the shaded region between x equals y to the fourth power and y squared equals 2 minus x. The image shows a parabola opening to the right with vertex at the origin, it is labeled x equals y to the fourth. then another parabola opening to the left with vertex at two, zero is labeled y squared equals 2 minus x. The curves form an asymmetric round ish region between the parabolas from x equals 0 to 2 and it is shaded blue. The parabolas intersect at 1 1 and 1 negative 1. ",
-    )
-  ]
+  #figure(image(
+    "figures/ex2.svg",
+    alt: "plot to show the shaded region between x equals y to the fourth power and y squared equals 2 minus x. The image shows a parabola opening to the right with vertex at the origin, it is labeled x equals y to the fourth. then another parabola opening to the left with vertex at two, zero is labeled y squared equals 2 minus x. The curves form an asymmetric round ish region between the parabolas from x equals 0 to 2 and it is shaded blue. The parabolas intersect at 1 1 and 1 negative 1. ",
+  ))
   We see we have more of a right curve (#math.equation($y^2=2-x$, alt: "y squared equals 2 minus x")) and left curve (#math.equation($x=y^4$, alt: "x equals y to the fourth")). In terms of #acc("x") values, we have #math.equation($x=y^4$, alt: "x equals y to the fourth") and #math.equation($x=2-y^2$, alt: "x equals 2 minus y squared").
 
   We start by finding where the functions intersect

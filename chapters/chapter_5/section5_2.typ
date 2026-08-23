@@ -46,13 +46,13 @@ In this section, we will primarily review Riemann sums. This is because Riemann 
 === Motivation
 Suppose we wanted to calculate the area of a shaded region #acc("R") that lies above the #acc("x")-axis, below the graph of #math.equation($f(x) = -x^2 + 16$, alt: "f of x equals negative x squared plus 16", block: false), and between the vertical lines #math.equation($x = 0$, alt: "x equals 0", block: false) and #math.equation($x = 4$, alt: "x equals 4", block: false).
 
-#align(center, image(
+#figure(image(
   "figures/motivation.svg",
   alt: "a picture of the region R below the curve f of x equals negative x squared plus 16 from x equals 0 to x equals 4",
 ))
 
 How might we estimate this area with rectangles?
-#align(center, image(
+#figure(image(
   "figures/motivation2.svg",
   alt: "a picture of the region R below the curve f of x equals negative x squared plus 16 from x equals 0 to x equals 4. On top of the region R there are 4 blue rectangles each with height matching the left corner of the rectangle to the curve. The top right corner of each rectangle lies outside the region R. The rectangles are labeled A sub 1, A sub 2, A sub 3, A and A sub 4",
 ))
@@ -68,7 +68,7 @@ The area can be estimated by summing the areas of the rectangles #math.equation(
   - We used 4 rectangles, but any number of rectangles can be used.
     - Using more (smaller) rectangles improves the accuracy of our estimated area. See figure below.
 
-  #align(center, image(
+  #figure(image(
     "figures/motivation3.svg",
     alt: "a picture of the region R below the curve f of x equals negative x squared plus 16 from x equals 0 to x equals 4. On top of the region R there are many thin blue rectangles each with height matching the left corner of the rectangle to the curve. The top right corner of each rectangle lies outside the region R.",
   ))
@@ -84,11 +84,10 @@ The area can be estimated by summing the areas of the rectangles #math.equation(
 
 #example[
   Suppose you want to find the _signed_ area of the region #acc("R") that lies between the #acc("x")-axis, the graph of #math.equation($f(x)=ln(x)$, alt: "f of x equals natural log of x"), and between the vertical lines #math.equation($x=0.5$, alt: "x equals 0 point 5") and #math.equation($x=4.5$, alt: "x equals 4 point 5"). The exact signed area would look something like this.
-  #align(center)[ #image(
-      "figures/ex521.svg",
-      alt: "a picture of the region R below the curve f of x equals natural log of x from x equals 0 point 5 to x equals 4 point 5. The shaded part on the left of x equals 1 is under the x-axis and is labeled negative area. The shaded part on the right of x = 1 is labeled positive area.",
-    )
-  ]
+  #figure(image(
+    "figures/ex521.svg",
+    alt: "a picture of the region R below the curve f of x equals natural log of x from x equals 0 point 5 to x equals 4 point 5. The shaded part on the left of x equals 1 is under the x-axis and is labeled negative area. The shaded part on the right of x = 1 is labeled positive area.",
+  ))
 
 
   Approximate the signed area (as described above) to two decimal places with 4 rectangles using:
@@ -99,11 +98,10 @@ The area can be estimated by summing the areas of the rectangles #math.equation(
 ]
 #my-solution-block[
   1. The left hand Reimann sum looks like the below image. Note, the area of the first rectangle is negative, because it is below the #acc("x")-axis.
-  #align(center)[ #image(
-      "figures/ex521-left.svg",
-      alt: "a picture of the region R below the curve f of x equals natural log of x from x equals 0 point 5 to x equals 4 point 5. On top of the region R there are 4 blue rectangles each with height matching the left corner of the rectangle to the curve. The rectangles are labeled with the function values on the left side of the rectangles, -0.69325 0.40544, 0.91634, 1.2575 respectively.",
-    )
-  ]
+  #figure(image(
+    "figures/ex521-left.svg",
+    alt: "a picture of the region R below the curve f of x equals natural log of x from x equals 0 point 5 to x equals 4 point 5. On top of the region R there are 4 blue rectangles each with height matching the left corner of the rectangle to the curve. The rectangles are labeled with the function values on the left side of the rectangles, -0.69325 0.40544, 0.91634, 1.2575 respectively.",
+  ))
   Thus,
 
   #math.equation(
@@ -117,11 +115,10 @@ The area can be estimated by summing the areas of the rectangles #math.equation(
   )
 
   2. The right hand Reimann sum looks like the below image. Note, the area of the first rectangle is *no longer negative*, because it is now above the #acc("x")-axis.
-  #align(center)[ #image(
-      "figures/ex521-right.svg",
-      alt: "a picture of the region R below the curve f of x equals natural log of x from x equals 0 point 5 to x equals 4 point 5. On top of the region R there are 4 blue rectangles each with height matching the right corner of the rectangle to the curve. The rectangles are labeled with the function values on the right side of the rectangles, 0.40544, 0.91634, 1.2575, 1.50415 respectively.",
-    )
-  ]
+  #figure(image(
+    "figures/ex521-right.svg",
+    alt: "a picture of the region R below the curve f of x equals natural log of x from x equals 0 point 5 to x equals 4 point 5. On top of the region R there are 4 blue rectangles each with height matching the right corner of the rectangle to the curve. The rectangles are labeled with the function values on the right side of the rectangles, 0.40544, 0.91634, 1.2575, 1.50415 respectively.",
+  ))
   Thus,
 
   #math.equation(
@@ -134,11 +131,10 @@ The area can be estimated by summing the areas of the rectangles #math.equation(
   )
 
   3. The mid-point Reimann sum looks like the below image. Note, the first rectangle has height 0 since #math.equation($ln(1)=0$, alt: "natural log of 1 is 0", block: false).
-  #align(center)[ #image(
-      "figures/ex521-mid.svg",
-      alt: "a picture of the region R below the curve f of x equals natural log of x from x equals 0 point 5 to x equals 4 point 5. On top of the region R there are 4 blue rectangles each with height matching the mid-point left and right of the rectangle to the curve. The rectangles are labeled with the function values on the right side of the rectangles, 0, 0.69308, 1.09863, 1.38637 respectively. Note the first rectangle has height 0 and almost makes it look like we are only using 3 rectangles.",
-    )
-  ]
+  #figure(image(
+    "figures/ex521-mid.svg",
+    alt: "a picture of the region R below the curve f of x equals natural log of x from x equals 0 point 5 to x equals 4 point 5. On top of the region R there are 4 blue rectangles each with height matching the mid-point left and right of the rectangle to the curve. The rectangles are labeled with the function values on the right side of the rectangles, 0, 0.69308, 1.09863, 1.38637 respectively. Note the first rectangle has height 0 and almost makes it look like we are only using 3 rectangles.",
+  ))
   Thus,
 
   #math.equation(

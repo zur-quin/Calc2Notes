@@ -8,7 +8,10 @@
 #set document(title: "Math 1226 Notes")
 
 // some additional formatting
-#set page(numbering: "1")
+#show: it => context {
+  set page(numbering: "1") if target() == "paged"
+  it
+}
 
 // #show: show-theorion
 
@@ -18,15 +21,9 @@
 
 // Now the chapters themselves as some Typst content
 #include "chapters/chapter_5/section5_2.typ"
-#pagebreak(weak: true)
 #include "chapters/chapter_5/section5_5.typ"
-#pagebreak(weak: true)
 #include "chapters/chapter_6/section6_1.typ"
-#pagebreak(weak: true)
 #include "chapters/chapter_6/section6_2a.typ"
 #include "chapters/chapter_6/section6_2b.typ"
-#pagebreak(weak: true)
 #include "chapters/chapter_6/section6_3.typ"
-#pagebreak(weak: true)
 #include "chapters/chapter_6/section6_4.typ"
-#pagebreak(weak: true)

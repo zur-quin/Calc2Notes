@@ -27,14 +27,14 @@
 ]
 #my-solution-block[
   Note the plot of this region below
-  #align(center, image("figures/shellmotivation.svg", alt: "todo"))
+  #figure(image("figures/shellmotivation.svg", alt: "todo"))
   helps illustrate the difficulty. Simply put: We have no easy way of determining the radii, #math.equation($r" and "R$, alt: "little r and big r").
 ]
 
 In the disk and washer method, the cross-sections taken were circular and perpendicular to the axis of rotation. We will introduce a new method, using a new shape for cross-sections, which are taken parallel to the axis of rotation.
 
 Consider the following cookie cutters.
-#align(center, image(
+#figure(image(
   "figures/cookiecutter.jpg",
   alt: "a set of metal circular cookie cutters of varying sizes, all stacked within one another.",
   width: 45%,

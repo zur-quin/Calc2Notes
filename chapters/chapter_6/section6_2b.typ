@@ -27,22 +27,22 @@
 ]
 
 Consider the function #math.equation($y=sqrt(x)$, alt: "y equals square root of x") on #math.equation($[0,4]$, alt: "the closed interval from 0 to 4"). Imagine rotating it all the way around the #acc("x")-axis to form a solid:
-
-#align(center, grid(
-  columns: 2,
-  // 2 means 2 auto-sized columns
-  gutter: 2mm,
-  image(
-    "figures/introtorevs.svg",
-    alt: "graph of y equals square root of x from 0 to 4, the region between the function and the x-axis is shaded",
-    width: 95%,
-  ),
-  image(
-    "figures/introtorevs2.svg",
-    alt: "graph of y equals square root of x from 0 to 4, the region between the function and the x-axis is shaded",
-    width: 95%,
-  ),
-))
+#figure()[
+  #box(
+    image(
+      "figures/introtorevs.svg",
+      alt: "graph of y equals square root of x from 0 to 4, the region between the function and the x-axis is shaded",
+      width: 40%,
+    ),
+  )#h_html(3mm)
+  #box(
+    image(
+      "figures/introtorevs2.svg",
+      alt: "graph of y equals square root of x from 0 to 4, the region between the function and the x-axis is shaded",
+      width: 50%,
+    ),
+  )
+]
 
 #note-block[If we wish to find the volume of this solid, we have only added one step to our process from before. After that we have the same type of problem as the ones with the cross-sections. We have to build the 2-D region we want to form the solid from.
   1. Sketch the function and its reflection about the axis you are told to revolve around. This with the domain give you the 2-D region we go from.
@@ -72,7 +72,7 @@ We can make this more specific below.
 
 #my-solution-block[
   The solid looks like
-  #align(center, image(
+  #figure(image(
     "figures/firstdiskex.svg",
     alt: "view of y equals negative 2 x squared plus 2 and its reflection across the x axis from the side. At this angle we can see disks perpendicular to the x axis with radius lining up with the curves from x equals 0 to x equals 1.",
     width: 50%,
@@ -80,7 +80,7 @@ We can make this more specific below.
 
   However, this might be difficult to draw by hand. An alternative is to just draw the curve in 2-D, its reflection, and a single cross-section to help visualize the radius of the disks. This looks like
   // TODO: adjust ellipses to be dashed in the back in this figure
-  #align(center, image(
+  #figure(image(
     "figures/firstdiskexsketch.svg",
     alt: "view of y equals negative 2 x squared plus 2 and its reflection across the x axis. there is a single disk sketched around x equals 0 point 2 5 that has radius lining up with the curves.",
     width: 50%,
@@ -133,21 +133,21 @@ Note that we can only use the disk method if the cross-sections of the solid of 
 ]
 #my-solution-block[
   // TODO: adjust ellipses to be dashed in the back in this figure
-  #align(center + horizon, grid(
-    columns: 2,
-    // 2 means 2 auto-sized columns
-    gutter: 2mm,
-    image(
+
+  #figure()[
+    #box(baseline: (at: horizon, shift: 0% + 0pt), image(
       "figures/firstwasherexsketch.svg",
       alt: "a sketch of the curves y equals x squared and y equals square root x from x equals 0 to 1. The reflections across the vertical axis are also shown, and a single cross-section around x equals one half is drawn. The cross-section is 2 concentric rings with radii little r and big R lining up with y equals x squared and y equals square root x respectively.",
-      width: 90%,
-    ),
-    image(
+      width: 45%,
+    ))#h_html(2mm)
+    #box(baseline: (at: horizon, shift: 0% + 13pt), image(
       "figures/washercrosssection.svg",
       alt: "a sketch of 2 concentric circles. The smaller circle has radius little r and the larger circle has radius big R. The space between them is shaded blue, making a washer or flat donut shape.",
-      width: 60%,
-    ),
-  ))
+      width: 30%,
+    ))
+  ]
+
+
   We note the curves intersect at #coord("1", "1"). There are a few ways to think about this problem, but for now let's go back to thinking about the area of the cross-section and integrating that from 0 to 1 in #acc("x"). For the cross-sections, the area is a circle with radius #math.equation($R=sqrt(x)$, alt: "big r equals square root of x") minus the area of a smaller circle with area #math.equation($r=x^2$, alt: "little r equals x squared"). This region is sketched above in blue, and is known as a washer (as in the metal bit used with a nut and bolt that has the same shape). The area of the full region is the difference in areas between the 2 circles. That is, #math.equation($A(x)=pi R(x)^2 - pi r(x)^2$, alt: "a of x is pi times big R of x squared minus pi times little r of x squared.").
   Then, integrating along the axis perpendicular to the cross-sectional area, we see the volume is
   #math.equation(
@@ -202,7 +202,7 @@ In other words,
 #my-solution-block[
   #set enum(numbering: "a)")
   + Sketching the region and an idea of the volume we make by rotating around the #acc("x")-axis we see the cross-sections are disks.
-    #align(center, image("figures/washerex3x.svg", alt: "todo"))
+    #figure(image("figures/washerex3x.svg", alt: "todo"))
     Thus, the volume can be found with the disk method: by thinking of the cross-sectional area as a bunch of circles perpendicular to the #acc("x")-axis, from #math.equation($x=0" to "x=8$, alt: " x equals 0 to x equals 8").
     #math.equation(
       $
@@ -214,7 +214,7 @@ In other words,
       block: true,
     )
   + Sketching the region and an idea of the volume we make by rotating around the #acc("y")-axis we see the cross-sections are washers now.
-    #align(center, image("figures/washerex3y.svg", alt: "todo"))
+    #figure(image("figures/washerex3y.svg", alt: "todo"))
     Notice that we need to express the radii in terms of #acc("y") now, the large radius is always #math.equation($R(y)=8$, alt: "capital r of y equals 8") and the small radius is #math.equation($r(y)= y^(3/2)$, alt: "little r of y equals y to the three halves") which we got from solving the original equation for #acc("x"). Lastly, we note the solid fills space for #acc("y") in #closedint("0", "4"). Then the volume integral will be
     #math.equation(
       $
@@ -226,7 +226,7 @@ In other words,
       block: true,
     )
   + Sketching the region and the horizontal line #math.equation($y=6$, alt: "y equals 6") we have
-    #align(center, image("figures/washerex3y6.svg", alt: "todo"))
+    #figure(image("figures/washerex3y6.svg", alt: "todo"))
     // todo: shade the region we are rotating in these figures
     We first find the radii, or the distance from #math.equation($y=6$, alt: "y equals 6") to the edges of the region. Note #math.equation($R$, alt: "big R") is always 6, and #math.equation($r=6-x^(2/3)$, alt: "little r is 6 minus x to the two thirds"). Then the area of each washer as a function of #acc("x") is
     #math.equation(
