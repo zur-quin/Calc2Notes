@@ -105,7 +105,8 @@ Please note the WebAssign assignments are worth 5% of the final grade. The purpo
 The final course grade is based on the following components:
 
 - 20% In-class quizzes and homework
-- 5% WebAssign
+- 3% WebAssign
+- 2% Before Class Reading assignments
 - 54% Tests (3 tests each 18%)
 - 21% Final Exam (10.5% multiple choice, 10.5% free response)
 
@@ -127,7 +128,7 @@ The instructor is committed to addressing students by their preferred names and 
 The instructor strives to provide a learning environment in which students feel supported and comfortable raising concerns about the course. Students are encouraged to bring concerns directly to the instructor whenever possible, as this is generally the most direct way to address or resolve an issue.
 
 Students who do not feel comfortable bringing a concern directly to the instructor may seek assistance from Virginia Tech resources, including:
-- *Cook COunseling Center* (#link("https://ucc.vt.edu/")), which provides counseling, psychiatric services, psychotherapy, and other mental health services for students.
+- *Cook Counseling Center* (#link("https://ucc.vt.edu/")), which provides counseling, psychiatric services, psychotherapy, and other mental health services for students.
 - *Schiffert Health Center* (#link("https://healthcenter.vt.edu/")), which provides a variety of medical services for students.
 - *Office of the Dean of Students* (#link("https://dos.vt.edu/")), which can provide advocacy, guidance, and assistance in identifying appropriate university resources. The Office of the Dean of Students can also provide class absence verification when a student needs to miss class for an extended period.
 
