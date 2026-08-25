@@ -145,6 +145,12 @@
 #let acc(letter) = {
   math.equation(eval("$" + letter + "$"), alt: letter, block: false)
 }
+#let xaxis = {
+  [#acc("x")-axis]
+}
+#let yaxis = {
+  [#acc("y")-axis]
+}
 #let coord(xcoord, ycoord) = {
   math.equation(eval("$(" + xcoord + "," + ycoord + ")$"), alt: xcoord + "comma" + ycoord, block: false)
 }
