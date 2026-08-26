@@ -12,7 +12,7 @@
   - CRN: 87499
   - Office: McBryde 466-G (may change)
   - Meetings: Monday/Wednesday/Friday 2:30-3:20pm in GBJ 102 and Tuesdays 5:00-5:50pm in PAM 3004
-  - Walk In Student Hours: TBD based on poll during week 1, or by appointment.
+  - Walk In Student Hours: Thursday 4-5:30pm and more TBD based on poll during week 1, or by appointment.
   - Textbook: Calculus: Early Transcendentals, 9th edition, by James Stewart with WebAssign Access
   - Prerequisite: Math 1225 (minimum grade of C-) or an equivalent course
   - Credits: 4 credits
@@ -99,7 +99,7 @@ The instructor may at times assign traditional take-home homework in addition to
 = WebAssign
 WebAssign assignments will be assigned regularly, and they will typically be due at 11:59pm ET on the class day following the scheduled lecture. Each question will typically have three attempts, however, multiple choice questions may be adjusted according to the number of available responses. The lowest six Webassign scores will be dropped.  For any questions concerning WebAssign access or support, call (toll-free) 800-955-8275.
 
-Please note the WebAssign assignments are worth 5% of the final grade. The purpose of this assignment is not to get everything perfect on the first try, but to get sufficient practice and see a variety of problems. Multiple attempts are encouraged so students can make mistakes and sort out what went wrong. This is an important part of the learning process for math and should not be skipped.
+Please note the WebAssign assignments are worth 3% of the final grade. The purpose of this assignment is not to get everything perfect on the first try, but to get sufficient practice and see a variety of problems. Multiple attempts are encouraged so students can make mistakes and sort out what went wrong. This is an important part of the learning process for math and should not be skipped.
 
 = Grading
 The final course grade is based on the following components:

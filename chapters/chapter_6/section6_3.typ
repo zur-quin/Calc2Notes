@@ -68,6 +68,41 @@ For the next method, we will think of finding the area of concentric shells maki
 
 To justify the previous formula, think about the area of one of the cookie cutters, or shells.
 
+#example[
+  Set up and evaluate the integral for the volume of the solid obtained by rotating the region #acc("R") about #math.equation($x=3$, alt: "x equals 3") where #acc("R") is the region enclosed by #math.equation($f(x)=4-2x, x=-1," and "y=2$, alt: "f of x equals 4 - 2x, x equals negative 1, and y equals 2."). Use shell method.
+]
+
+#my-solution-block[
+  - The axis of rotation is perpendicular to #xaxis so we are integrating with respect to #acc("x") for shell method.
+  - Sketching the region we have
+    #figure(image("figures/triangleyshell.svg", alt: "todoo"))
+  - #acc("h") is top curve minus bottom curve in this one, so #math.equation($h(x) = 4-2x-2 = 2-2x$, alt: "h of x is 4 minus 2 x minus 2 which is 2 minus x.")
+  - #math.equation($r=|L-x|=|3-x|$, alt: "r equals the absolute value of l minus x which is the absolute value of 3 minus x"), and since the bounds go from #math.equation($-1" to "1$, alt: "minus 1 to 1") this is the same as #math.equation($r=3-x$, alt: "3 minus x").
+  - The bounds (listed above) can be found from finding the left-most and right-most #acc("x") values of the region #acc("R").
+
+  Altogether, the volume is
+  #math.equation(
+    $
+      V & = integral_a^b 2 pi r(x) h(x) dif x \
+        & = integral_(-1)^1 2 pi (3-x) (2-2x) dif x
+    $,
+    alt: "V equals the integral from a to b of 2 pi times r of x times h of x, d x. this is the integral from negative 1 to 1 of 2 pi times 3 minus x times 2 minus 2 x, dx",
+    block: true,
+  )
+  To evaluate we multiply everything out so we can use power rule
+  #math.equation(
+    $
+      V & = integral_(-1)^1 2 pi (3-x) (2-2x) dif x \
+        & = 2 pi integral_(-1)^1 6-6x-2x+2x^2 dif x \
+        & = 2 pi integral_(-1)^1 6-8x+2x^2 dif x \
+        & = 2 pi [6x-4x^2+2/3 x^3]_(-1)^1 \
+        & = 2 pi [(6-4+2/3)-(-6-4-2/3)] \
+        & = 80/3 pi
+    $,
+    alt: "V is the integral from negative 1 to 1 of 2 pi times 3 minus x times 2 minus 2 x, dx. This is then ",
+    block: true,
+  )
+]
 
 #example[
   Set up the integral of the volume of the solid obtained by revolving the region #acc("R") enclosed by #math.equation($f(x) = sqrt(x), g(x) = 2-x$, alt: "f of x equals square root of x, g of x equals 2 minus x"), and the #xaxis about #math.equation($y=-1$, alt: "y equals negative 1"). (There may be more than one way to solve this problem, try shell now and see if washer works later. Compare and contrast both)
@@ -81,29 +116,6 @@ To justify the previous formula, think about the area of one of the cookie cutte
         & = integral_0^1 2 pi (y+1)(2-y-y^2) dif y
     $,
     alt: " v equals integral from 0 to 1 of 2 times pi times r of y times h of y, d y. The next line is the integral from o to 1 of 2 pi times y plus 1 times 2 minus y, minus y squared, d y ",
-    block: true,
-  )
-]
-
-#example[
-  Set up the integral for the volume of the solid obtained by rotating the region #acc("R") about #math.equation($x=3$, alt: "x equals 3") where #acc("R") is the region enclosed by #math.equation($f(x)=4-2x, x=-1," and "y=2$, alt: "f of x equals 4 - 2x, x equals negative 1, and y equals 2."). Use shell method.
-]
-
-#my-solution-block[
-  - axis of rotation is perpendicular to #xaxis so we are integrating with respect to #acc("x") for shell method.
-  - sketching the region we have
-  #figure(image("figures/triangleyshell.svg", alt: "todoo"))
-  - #acc("h") is top curve minus bottom curve in this one, so #math.equation($h(x) = 4-2x-2 = 2-2x$, alt: "h of x is 4 minus 2 x minus 2 which is 2 minus x.")
-  - #math.equation($r=|L-x|=|3-x|$, alt: "r equals the absolute value of l minus x which is the absolute value of 3 minus x"), and since the bounds go from #math.equation($-1" to "1$, alt: "minus 1 to 1") this is the same as #math.equation($r=3-x$, alt: "3 minus x").
-  - the bounds (listed above) can be found from finding the left-most and right-most #acc("x") values of the region #acc("R").
-
-  Altogether, the volume is
-  #math.equation(
-    $
-      V & = integral_a^b 2 pi r(x) h(x) dif x \
-        & = integral_(-1)^1 2 pi (3-x) (2-2x) dif x
-    $,
-    alt: "V equals the integral from a to b of 2 pi times r of x times h of x, d x. this is the integral from negative 1 to 1 of 2 pi times 3 minus x times 2 minus 2 x, dx",
     block: true,
   )
 ]
