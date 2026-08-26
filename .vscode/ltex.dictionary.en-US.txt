@@ -2,3 +2,5 @@ dif
 Zuriah
 Webassign
 WebAssign
+antidifferentiating
+antideriving

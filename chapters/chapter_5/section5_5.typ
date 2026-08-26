@@ -1,15 +1,18 @@
 // chapter_5.typ
 
 #import "../../template_notes.typ": *
-
+#show: template
 // set up heading numbering
 #set heading(numbering: "1.")
-#counter(heading).update(4)
+#counter(heading).update(5)
 
-// any functions and templating you want for just this chapter can go here
-
-// content
-= Review of 1225
+#context {
+  if target() == "paged" and sys.inputs.at("individualchs", default: "false") == "true" {
+    [#counter(heading).update(4)
+      = Review of 1225
+      #set document(title: "Section 5.5")]
+  }
+}
 
 // skip 5.1-5.4
 #context counter(heading).step(level: 2)
@@ -47,7 +50,7 @@ Recall that we linked the definite integral and area under a curve to the concep
   )
 ]
 
-This allows us to start evaluating definite integrals without sorrying about limits of sums. Instead, to find the area under a curve, we just need an antiderivative of it.
+This allows us to start evaluating definite integrals without worrying about limits of sums. Instead, to find the area under a curve, we just need an antiderivative of it.
 
 #exercise[
   Find an antiderivative for the following functions. Check your work by taking the derivative of your answer.
@@ -69,7 +72,7 @@ This is fine for simple functions that we can recognize that we are looking at t
 
 #remark-block[
   There are two main things we look for when deciding to use a substitution, although there may be other less common applications.
-  - First, we use a substitution when we see funciton composition, or a function plugged into another function.
+  - First, we use a substitution when we see function composition, or a function plugged into another function.
   - Another use case is if the derivative (up to scaling by a constant) of part of the integrand also appears in the integrand.
 ]
 

@@ -1,0 +1,48 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\include{../../plot_settings.tex}
+
+\begin{document}
+\begin{tikzpicture}[
+		declare function = {
+				fun(\x) = 4-2*\x;
+				finv(\y) = 2-\y/2;}
+	]
+	\begin{axis}[
+			twoDaxis,
+			xmin = -2.1,
+			xmax = 7.3,
+			ymin = 0,
+			ymax = 7,
+			ytick = {2,6},
+			xtick = {-2,-1,1,2,3,4,5,6,7},
+			area plot/.style={
+					fill opacity=0.3,
+					% draw=black,
+					fill=orange,
+					mark=none,
+				}
+		]
+		% left shape
+		\addplot [black, domain= -1:1,thick, samples = 2, name path = f] {fun(x)} node [pos = 0.2, pin={[pin distance=.3cm, pin edge={<-,black, out=60, in=200}]above right:$f(x)$}] {};
+		\addplot [black, thick, domain =-1:1, samples = 2, name path = floor] {2} node {};
+		\addplot[area plot] fill between[of = f and floor];
+		\draw [black, thick] (-1,2) -- (-1,6) node [pos=0.3, pin={[pin distance=.3cm, pin edge={<-,black, out=60, in=90}]left:$R$}] {};
+		% now axis 
+		\draw [black, dashed] (3,0) -- (3,6) node [pos = 1, above] {$x=3$};
+		% now right shape
+		\addplot [black, domain= 5:7,thick,dashed, samples = 2, name path = f] {fun(-x+6)} node {};
+		\addplot [black, domain =5:7, samples = 2, name path = floor, thick, dashed] {2} node {};
+		\draw [black, thick, dashed] (7,2) -- (7,6) node {};
+		\addplot[area plot] fill between[of = f and floor];
+		% now make a shell at x=-.5  as an edge: centered at x=3
+		\diskslicehorflip[black,r=$r(x)$](3,2)(3.5:0.15);
+		\draw [black] (-0.5,2) -- (-0.5,{fun(-0.5)}) node [midway, below] {};
+		\diskslicehorflip[black,r=$r(x)$](3,{fun(-0.5)})(3.5:0.15);
+		\draw [black] (6.5,2) -- (6.5,{fun(-0.5)}) node [midway, left] {$h(x)$};
+		% \diskslicevert[black,r=$r(y)$]({finv(0.5)},-1)(0.15:1.5);
+		% \diskslicevert[black,r={}]({ginv(0.5)},-1)(0.15:1.5);
+		% \draw [black] ({finv(0.5)},0.5) -- ({ginv(0.5)},0.5) node [midway, below] {$h(y)$};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

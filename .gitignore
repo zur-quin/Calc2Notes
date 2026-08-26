@@ -8,6 +8,7 @@
 *.synctex(busy)
 *.xdv
 _minted-*/
+test.dep
 
 # Added by cargo
 
