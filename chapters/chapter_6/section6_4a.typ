@@ -151,7 +151,82 @@ In imperial system,
   Assume the previous example's set up. Find the work done to lift the beam only #ft(10) up.
 ]
 
+#theorem[Hooke's Law][
+  The force required to compress or stretch a spring by #acc("x") units short of or beyond its natural length is proportional to #acc("x")
+  #math.equation(
+    $
+      F= k x
+    $,
+    alt: "f equals k times x",
+    block: true,
+  )
+  Note that #acc("k") is called the spring constant.
+]
 
+#exercise[Using what you know about the units for force and distance, derive the units for the spring constant in both metric and imperial units.]
+
+#example[
+  A spring has a natural length of #zi.cm(50). A force of #zi.N(50) stretches the spring to a length of #zi.cm(60).
+  + What force is needed to stretch the spring #acc("x") meters?
+  + How long is the spring when stretched by a force of #zi.N(200)?
+  + Set up an integral to find the work done in stretching the spring #zi.cm(20).
+  + Set up an integral to find the work done in stretching the spring from a length of #zi.cm(100) to #zi.cm(110).
+  + #zi.J(20) of work is done in stretching the spring a certain distance. How far was the spring stretched?
+]
+#my-solution-block[
+  + In general, #math.equation($F= k x$, alt: "f equals k times x"), so if we know #acc("k") we can get a formula for the force needed to stretch the spring #acc("x") meters. Going from #zi.cm(50) to #zi.cm(60) is a change of #zi.m(0.1), since this takes #zi.N(50) we know
+    #math.equation(
+      $
+        50" N" & = k (0.1 " m") \
+             k & = (50 "N")/(0.1 " m") \
+             k & = 500 "N" "m"^(-1)
+      $,
+      alt: "50 newtons equals k times point 1 meters. then k is 50 newtons divided by point 1 meters which is 500 newtons per meter.",
+      block: true,
+    )
+    Then a formula for force needed to stretch this spring #acc("x") meters is #math.equation($F=500x$, alt: "f equals 5 hundred x").
+
+  + Using our formula and #math.equation($F=200$, alt: "f equals 2 hundred"),
+    #math.equation(
+      $
+          F & = 500 x \
+        200 & = 500 x \
+          x & = 0.4 " m"
+      $,
+      alt: "f equals 500 x then 2 hundred equals 5 hundred times x so x is point 4 meters",
+      block: true,
+    )
+    Remember that this is how far from the spring rest length it is, so we have to add the #zi.m(0.5) to this to get that the spring is #zi.m(0.9).
+  + #zi.cm(20) is #zi.m(0.2). Then the work is #math.equation(
+      $ W & = integral_a^b F(x) dif x \
+        & =integral_0^0.2 500x dif x $,
+      alt: "w equals the integral from a to b of f of x d x. this is the integral from 0 to 0 point 2 of 5 hundred x d x.",
+      block: true,
+    )
+  + The trick here is finding the bounds of the integral. #zi.cm(100) is #zi.m(1) and #zi.cm(110) is #zi.m(1.1). We also need to know how far from rest length these distances are: #math.equation($1-0.5=$, alt: "1 minus 0.5 equals") #zi.m(0.5) and #math.equation($1.1-0.5=$, alt: "1 point 1 minus 0.5 equals") #zi.m(0.6). Then, the work done is #math.equation($W = integral_0.5^0.6 500x dif x$, alt: " w equals the integral from point 5 to point 6 of 5 hundred x d x.", block: true)
+
+  + Let #acc("l") be how far the spring was stretched (from rest). Then the work to get it there is
+    #math.equation(
+      $
+        W & = integral_0^l 500 x dif x = 20 " J"
+      $,
+      alt: " w equals the integral from 0 to l of 5 hundred x d x equals 20 joules",
+      block: true,
+    )
+    Then solving for #acc("l")
+    #math.equation(
+      $
+         20 & = integral_0^l 500 x dif x \
+         20 & = 250 x^2 |_0^l \
+         20 & = 250 l^2 \
+        l^2 & = 2/25 \
+          l & = plus.minus sqrt(2)/5
+      $,
+      alt: "20 equals the integral from 0 to 1 of 500 x d x. then 20 equals 250 x squared evaluated from 0 to l. then 20 equals 250 l squared. then l squared equals 2 over 25 then l equals plus or minus square root of 2 over 5.",
+      block: true,
+    )
+    The spring was stretched an additional #math.equation($sqrt(2)/5$)#zi.m().
+]
 
 #emph-block[
   6.4 Section Summary:
