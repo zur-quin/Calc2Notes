@@ -7,7 +7,7 @@
 #set heading(numbering: "1.")
 #counter(heading).update(6)
 #context {
-  if target() == "paged" {
+  if target() == "paged" and sys.inputs.at("individualchs", default: "false") == "true" {
     [#counter(heading).update(5)
       = Applications of Integrals
       == Volumes by Cross-Sections, Disks, and Washers

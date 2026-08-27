@@ -20,6 +20,8 @@
 // but don't define functions or variables there!
 // chapters will not see it
 
+#outline()
+
 // Now the chapters themselves as some Typst content
 #include "chapters/chapter_5/section5_2.typ"
 #include "chapters/chapter_5/section5_5.typ"
@@ -27,4 +29,5 @@
 #include "chapters/chapter_6/section6_2a.typ"
 #include "chapters/chapter_6/section6_2b.typ"
 #include "chapters/chapter_6/section6_3.typ"
-#include "chapters/chapter_6/section6_4.typ"
+#include "chapters/chapter_6/section6_4a.typ"
+#include "chapters/chapter_6/section6_4b.typ"

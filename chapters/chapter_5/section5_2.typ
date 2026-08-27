@@ -4,15 +4,10 @@
 #show: template
 // set up heading numbering
 #set heading(numbering: "1.")
-#counter(heading).update(5)
+#counter(heading).update(4)
 
-#context {
-  if target() == "paged" and sys.inputs.at("individualchs", default: "false") == "true" {
-    [#counter(heading).update(4)
-      = Review of 1225
-      #set document(title: "Section 5.2")]
-  }
-}
+= Review of 1225
+
 
 // #showybox(
 //   frame: (
