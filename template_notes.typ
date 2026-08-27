@@ -176,3 +176,9 @@
 }
 
 #import "@preview/showybox:2.0.4": showybox
+#import "@preview/zero:0.7.0": format-table, num, zi
+#let kgm-s2 = zi.declare("kg m/s^2")
+#let fts = zi.declare("ft", alt: "feet")
+#let ft = zi.declare("ft", alt: "foot")
+#let lb = zi.declare("lb", alt: "pound")
+#let ftlb = zi.declare("ft-lb", alt: "foot pounds")
