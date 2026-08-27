@@ -12,7 +12,7 @@
   - CRN: 87499
   - Office: McBryde 466-G (may change)
   - Meetings: Monday/Wednesday/Friday 2:30-3:20pm in GBJ 102 and Tuesdays 5:00-5:50pm in PAM 3004
-  - Walk In Student Hours: Thursday 4-5:30pm and more TBD based on poll during week 1, or by appointment.
+  - Walk In Student Hours: Tuesdays 10-11am, Thursday 4-5:30pm, Fridays 11:30am-12:30pm, or by appointment.
   - Textbook: Calculus: Early Transcendentals, 9th edition, by James Stewart with WebAssign Access
   - Prerequisite: Math 1225 (minimum grade of C-) or an equivalent course
   - Credits: 4 credits
