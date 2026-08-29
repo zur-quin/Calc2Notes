@@ -6,7 +6,7 @@
 \begin{tikzpicture}[
 		area plot/.style={
 				fill opacity=0.4,
-				draw=black,
+				% draw=black,
 				fill=orange,
 				mark=none,
 				draw opacity = 0.15,
@@ -27,20 +27,15 @@
 			axis equal image = true,
 			height = 30cm,
 		]
-		% \tikzmath {
-		% 	% set the number of rectangles (it's off by 1 but I don't care)
-		% 	\N = 10;
-		% }
-		\addplot3 [black, domain= 0:1,thick,samples y=0, samples = 500] (x,0,{x^2}) node [midway, pin={[pin distance=.5cm, pin edge={<-,black, out=-30, in=235}]right:$y=x^2$}] {};
-		\addplot3 [black, domain= 0:1,thick,samples y=0, samples = 500] (x,0,{x^(1/2)}) node [midway, pin={[pin distance=.5cm, pin edge={<-,black, out=120, in=245}]above:$y=\sqrt{x}$}] {};
-		\addplot3 [black, domain= 0:1,dashed,samples y=0,thick, samples = 500] (x,0,{-x^2}) node [midway, pin={[pin distance=.5cm, pin edge={<-,solid,black, out=30, in=120}]right:$y=-x^2$}] {};
-		\addplot3 [black, domain= 0:1,dashed,samples y=0,thick, samples = 500] (x,0,{-x^(1/2)}) node [midway, pin={[pin distance=.5cm, pin edge={<-,solid,black, out=200, in=120}]below:$y=-\sqrt{x}$}] {};
-
-
+		\addplot3 [name path = a, black, domain= 0:1,thick,samples y=0, samples = 500] (x,0,{x^2}) node [midway, pin={[pin distance=.5cm, pin edge={<-,black, out=-30, in=235}]right:$y=x^2$}] {};
+		\addplot3 [name path = b, black, domain= 0:1,thick,samples y=0, samples = 500] (x,0,{x^(1/2)}) node [midway, pin={[pin distance=.5cm, pin edge={<-,black, out=120, in=245}]above:$y=\sqrt{x}$}] {};
+		\addplot[area plot] fill between[of = a and b, soft clip = {domain = 0:1}];
+		\addplot3 [name path = a, black, domain= 0:1,dashed,samples y=0,thick, samples = 500] (x,0,{-x^2}) node [midway, pin={[pin distance=.5cm, pin edge={<-,solid,black, out=30, in=120}]right:$y=-x^2$}] {};
+		\addplot3 [name path = b, black, domain= 0:1,dashed,samples y=0,thick, samples = 500] (x,0,{-x^(1/2)}) node [midway, pin={[pin distance=.5cm, pin edge={<-,solid,black, out=200, in=120}]below:$y=-\sqrt{x}$}] {};
+		\addplot[area plot] fill between[of = a and b, soft clip = {domain = 0:1}];
 		% simulate the later bit of the x axis coming out of the middle of the last circle:
 		\addplot3 [black,<->] coordinates {(0.5,0,0) (0.5,0,0.25)} node [midway,left] {$r$};
 		\addplot3 [black,<->] coordinates {(0.5,0,0) (0.5,0,-0.70710678118)} node [midway,left] {$R$};
-
 		%add a lil "whoop" ya know
 		\begin{scope}[canvas is xz plane at y = 0]
 			\draw (0.5,0) ellipse [x radius=0.06cm,y radius=0.25cm];

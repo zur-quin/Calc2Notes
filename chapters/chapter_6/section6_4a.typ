@@ -21,10 +21,10 @@
 
 == Work
 #emph-block[
-  6.4 Learning Objectives:
+  6.4 a Learning Objectives:
   - I can understand the definitions of work and force.
   - I understand how to use integration to describe work.
-  - I can describe the work done in pulley systems, springs, and when pumping fluids.
+  - I can describe the work done in pulley systems and springs.
 ]
 
 #definition[
@@ -81,7 +81,12 @@ In imperial system,
 === Non-Constant Force
 #example[
   The graph of a force function (in Newtons) is shown below. How much work is done by the force in moving an object a distance of #zi.m(5)?
-
+  #figure(image(
+    "figures/work1.svg",
+    alt: "graph of force over distance connecting the points zero forty then 2 0 then 4 forty then 5 forty with straight lines.",
+  ))
+]
+#my-solution-block[
   #math.equation(
     $
       W & = F d \
@@ -93,7 +98,7 @@ In imperial system,
   )
   Then #math.equation($A_1=2(40)(1/2)=$, alt: " a sub 1 equals 2 times 40 times one half which is ") #zi.J(40), #math.equation($A_2=2(40)(1/2)=$, alt: " a sub 2 equals 2 times 40 times one half which is ") #zi.J(40), and #math.equation($A_3=1(40)=$, alt: " a sub 3 equals 1 times 40 which is ") #zi.J(40).
 
-  // #figure(image(work1.svg))
+
 
   Altogether, the work is
   #math.equation(
@@ -103,6 +108,7 @@ In imperial system,
         & = integral_0^5 F(x) dif x
     $,
     alt: "w equals a sub 1 plus a sub 2 plus a sub 3 which is 120 joules. this is the same as the integral from 0 to 5 of the force f of x d x.",
+    block: true,
   )
 ]
 
@@ -225,9 +231,10 @@ In imperial system,
       alt: "20 equals the integral from 0 to 1 of 500 x d x. then 20 equals 250 x squared evaluated from 0 to l. then 20 equals 250 l squared. then l squared equals 2 over 25 then l equals plus or minus square root of 2 over 5.",
       block: true,
     )
-    The spring was stretched an additional #math.equation($sqrt(2)/5$)#zi.m().
+    The spring was stretched an additional #math.equation($sqrt(2)/5$, alt: "square root of 2 over 5")#zi.m().
 ]
 
 #emph-block[
-  6.4 Section Summary:
+  6.4 a Section Summary:
+  - We used integrals and Riemann sums to describe work done to lift heavy objects and stretch springs.
 ]
