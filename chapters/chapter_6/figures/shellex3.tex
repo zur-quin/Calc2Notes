@@ -1,0 +1,56 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\include{../../plot_settings.tex}
+
+\begin{document}
+\begin{tikzpicture}[
+		declare function = {
+				fun(\x) = \x^(0.5);
+				gun(\x) = 2-\x;
+				finv(\y) = \y^2;
+				gp1(\x) = gun(\x)+1;},
+		area plot/.style={
+				fill opacity=0.4,
+				% draw=black,
+				fill=orange,
+				mark=none,
+				draw opacity = 0.15,
+			} % sets up the orange slice fill in stuff
+	]
+	\begin{axis}[
+			twoDaxis,
+			xmin = -0.15,
+			xmax = 3.1,
+			ymin = -3.5,
+			ymax = 2.1,
+			ytick = {-3,-2,-1,1},
+			xtick = {1},
+		]
+		\addplot [name path = f, black, domain= 0:1,thick, samples = 500] {fun(x)} node [pos = 0.6, pin={[pin distance=.5cm, pin edge={<-,black, out=120, in=235}]above:$f(x) = \sqrt{x}$}] {};
+		\addplot [black,thick,dashed] coordinates {(0,-1) (2,-1)} node [pos=1,right] {$y=-1$};
+		\addplot [name path = g, black,domain= 1:2,thick, samples = 500] {gun(x)} node [pos = 0.35, pin={[pin distance=.4cm, pin edge={<-,black, out=30, in=330}]above:$g(x) = 2-x$}] {};
+		\addplot [name path = floor, domain=0:2] {0};
+		\addplot[area plot] fill between[of = f and floor, soft clip = {domain = 0:1}];
+		\addplot[area plot] fill between[of = g and floor, soft clip = {domain = 1:2}];
+
+		\addplot [black, dashed, domain = 0:1, name path = f] {-fun(x)-2};
+		\addplot [black, dashed, domain = 1:2, name path = g] {-gun(x)-2};
+		\addplot [name path = floor, domain=0:2, dashed] {-2};
+		\addplot[area plot] fill between[of = f and floor, soft clip = {domain = 0:1}];
+		\addplot[area plot] fill between[of = g and floor, soft clip = {domain = 1:2}];
+		%shell:
+		\diskslicevert[blue,r={$r(y) = |-1-y|$}](1.5,-1)(0.1:{gp1(1.5)});% Syntax: [draw options] (center) (xradius:yradius)
+		\diskslicevert[blue,r={}]({finv(gun(1.5))},-1)(0.1:{gun(0.5)});
+		\draw [blue] (1.5,{gun(1.5)}) -- ({finv(gun(1.5))},{gun(1.5)});
+		\draw [blue] (1.5,{gun(1.5)-3}) -- ({finv(gun(1.5))},{gun(1.5)-3}) node [pos=0.4, below] {$h(y)$};
+		% \draw [black] (2,-1) ellipse (0.1 and 1);
+		% \draw [black] (0,-1) ellipse (0.1 and 1);
+		% \diskslicehor[black,r=$r$](-1,2)(fun(2):0.15);
+		% \diskslicehor[black,r={}](-1,0)(fun(2):0.15);
+		% \draw [black] ({fun(2)-1},0) -- ({fun(2)-1},2) node [midway, right] {$h(x)$};
+		% \draw [black] ({fun(2)-5},0) -- ({fun(2)-5},2) node [midway, right] {};
+		% \diskslicehor[black,r=$R$](-1,1)(3.6180:0.4);
+		% \diskslicehor[black,r=$r$](0,1.5)(funinv(1.5):0.1);
+	\end{axis}
+\end{tikzpicture}
+\end{document}
