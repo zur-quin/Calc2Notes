@@ -180,8 +180,8 @@ As the width of the sub-intervals goes to zero and we add more rectangular prism
 
   Here the square side stretches between #math.equation($x=sqrt(y)$, alt: "x equals square root of y") and the vertical line #math.equation($x=4$, alt: "x equals 4"). So, the side length is #math.equation($s=4-sqrt(y).$, alt: "s equals 4 minus the square root of y.") This solid is formed up of slices from #math.equation($y=0 "to" y = 16$, alt: "y equals 0 to y equals 16"). Then the integral we solve for the volume is
   #math.equation(
-    $V= integral_0^(16) (4-sqrt(y))^2 dif x.$,
-    alt: "v equals the integral from 0 to 16 of 4 minus square root of y squared, d x.",
+    $V= integral_0^(16) (4-sqrt(y))^2 dif y.$,
+    alt: "v equals the integral from 0 to 16 of 4 minus square root of y squared, d y.",
     block: true,
   )
 ]
@@ -209,7 +209,7 @@ As the width of the sub-intervals goes to zero and we add more rectangular prism
 ]
 
 #exercise[
-  Set up an integral to find the volume of the given solid. The base of the solid is the region bounded by the graphs of #math.equation($y=sqrt(x)" and "y=x/2$, alt: "y equals the square root of x and y equals x over 2"). The cross-sections perpendicular to the #acc("x")-axis are equilateral triangles.
+  Set up an integral to find the volume of the given solid. The base of the solid is the region bounded by the graphs of #math.equation($y=sqrt(x) " and " y=x/2$, alt: "y equals the square root of x and y equals x over 2"). The cross-sections perpendicular to the #acc("x")-axis are equilateral triangles.
 ]
 
 

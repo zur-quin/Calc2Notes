@@ -21,7 +21,10 @@
 
 == Work
 #emph-block[
-  6.4 Learning Objectives:
+  6.4 b Learning Objectives:
+  - I can understand the definitions of work and force.
+  - I understand how to use integration to describe work.
+  - I can describe the work done when pumping fluids out of containers of varying shapes.
 ]
 
 
@@ -48,5 +51,5 @@
   )
 ]
 #emph-block[
-  6.4 Section Summary:
+  6.4 b Section Summary:
 ]
