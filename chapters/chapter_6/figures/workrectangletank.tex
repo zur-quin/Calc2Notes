@@ -1,0 +1,43 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\include{../../plot_settings.tex}
+
+\usetikzlibrary{decorations.text, decorations.pathmorphing, topaths} 
+
+\usepackage{tikz-3dplot}
+\usetikzlibrary{3d}
+
+\begin{document}
+% \begin{tikzpicture}
+% 	\node (A) [cylinder, shape border rotate=90, draw,minimum height=3cm,minimum width=2cm,pin={[pin edge={<-,black}]right:Area = $\pi r^2$}] {};
+% 	\draw [->] (A.center) -- (A.east) node [midway, above,fill=white] {$r$};
+% \end{tikzpicture}
+\tdplotsetmaincoords{70}{5} % Opposite order of pgfplots' view
+\begin{tikzpicture}[tdplot_main_coords]
+	\begin{scope}[canvas is xy plane at z = 0]
+		\draw (-2,0) -- (2.288,2.5728) -- (3.831,0) -- (-0.457,-2.5728) node [pos =0.5, below right] {5} -- cycle node [pos = 0.6, below left] {3};
+	\end{scope}
+
+	\begin{scope}[canvas is xy plane at z = 4]
+		\draw (-2,0) -- (2.288,2.5728) -- (3.831,0) -- (-0.457,-2.5728) -- cycle;
+		\draw[fill=blue!20] (-2,0) -- (2.288,2.5728) -- (3.831,0) -- (-0.457,-2.5728) -- cycle;
+	\end{scope}
+
+	\begin{scope}[canvas is xy plane at z = 4.2]
+		\draw (-2,0) -- (2.288,2.5728) -- (3.831,0) -- (-0.457,-2.5728) -- cycle;
+	\end{scope}
+
+	\draw [decorate,decoration={brace,amplitude=3pt}] (-2.1,0,3.95) -- (-2.1,0,4.25) node [midway, left] {$\Delta x$};
+	\draw [<->] (4,0,4.1) -- (4,0,8.1) node [pos = 0.5, right] {$x_i$};
+
+	\begin{scope}[canvas is xy plane at z = 8]
+		\draw (-2,0) -- (2.288,2.5728) -- (3.831,0) -- (-0.457,-2.5728) -- cycle;
+	\end{scope}
+
+	\draw (-2,0,0) -- (-2,0,8);
+	\draw (3.831,0,0) -- (3.831,0,8);
+	\draw (-0.669,0,-.93) -- (-0.669,0,7.07);
+	\draw (2.5,0,0.93) -- (2.5,0,8.93);
+	\draw [decorate,|-|] (4.5,0,8.1) -- (4.5,0,0) node [pos = 0, right] {$0$} node [pos = 1, right] {12};
+\end{tikzpicture}
+\end{document}

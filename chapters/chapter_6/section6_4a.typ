@@ -86,6 +86,7 @@ In imperial system,
     alt: "graph of force over distance connecting the points zero forty then 2 0 then 4 forty then 5 forty with straight lines.",
   ))
 ]
+
 #my-solution-block[
   #math.equation(
     $
@@ -112,6 +113,7 @@ In imperial system,
   )
 ]
 
+=== Lifting Objects
 #example[
   A uniform cable #ft(30) long and weighing #lb(60) hangs vertically from a pulley system at the top of a building. A steel beam weighs #lb(500) and is attached to the end of the cable. Set up and evaluate an integral to find the work required to pull the beam to the top. Explicitly write out the integral as a limit of Riemann sums.
 ]
@@ -157,6 +159,7 @@ In imperial system,
   Assume the previous example's set up. Find the work done to lift the beam only #ft(10) up.
 ]
 
+=== Stretching and Compressing Springs
 #theorem[Hooke's Law][
   The force required to compress or stretch a spring by #acc("x") units short of or beyond its natural length is proportional to #acc("x")
   #math.equation(
