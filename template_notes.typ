@@ -182,3 +182,5 @@
 #let ft = zi.declare("ft", alt: "foot")
 #let lb = zi.declare("lb", alt: "pound")
 #let ftlb = zi.declare("ft-lb", alt: "foot pounds")
+#let lb-ft3 = zi.declare("lbs/ft^3", alt: "pounds per cubic foot")
+#let imperialwater = lb-ft3(62.4)
