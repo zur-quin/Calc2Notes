@@ -64,16 +64,97 @@ Another physical system we can calculate the work done in is when pumping liquid
   )
 ]
 
-// figure for triangular prism pumping problem
-#figure(image("figures/triangularprismtank.svg", alt: "a picture of a tank that is a triangular prism"))
 
-#figure(image(
-  "figures/triangularprismprob.svg",
-  alt: "the tank above with a labeled generic layer to pump out of the top",
-))
+#example[A tank pictured below is full of water. The density of water is #zi.kg-m3[1000]. Set up the integral to find the work needed to pump the water to a heigh of #zi.m[5] above the top of the tank.
+  // figure for triangular prism pumping problem
+  #figure(image(
+    "figures/triangularprismtank.svg",
+    alt: "a picture of a tank that is a triangular prism. The triangular face is towards the viewer and is a right triangle with base length 4 meters and height 3 meters that is also the height of the tank. The length of the prism is 10 meters. A tube 5 meters long sticks out of the front left top corner of the tank.",
+  ))
+]
 
-// todo similar triangle diagram for this one
+#my-solution-block[
+  Recall that to find the work done, we consider the work to pump a generic layer of water out, then add all the layers up and take the limit as the number of layers goes to inifinity to get an integral.
+
+  First, we sketch the layer
+  #figure(image(
+    "figures/triangularprismprob.svg",
+    alt: "the tank above with a labeled generic layer. The slice is between 0 and 3 meters with height x sub i. It has to go d sub i meters to get to the top of the 5 meter tube on top of the tank. the width of the layer is delta x.",
+    width: 50%,
+  ))
+  Then, the force on this layer is just gravity, so
+  #math.equation(
+    $
+      F_i & = m_i a \
+          & = ("density of water")(V_i)(g) \
+          & = (#zi.kg-m3[1000])(V_i)(#zi.m-s2[9.8])
+    $,
+    alt: "F sub i equals m sub i times a. this is the density of water times v sub i times g. this is one thousand kilograms per meter cubed times v sub i times 9 point 8 meters per second squared.",
+    block: true,
+  )
+  The volume of the slice is a little trickier, we need to use similar triangles to find the side length, #acc("l"), of the box that touches the triangular face in terms of #math.equation($x_i$, alt: "x sub i").
+
+  // todo similar triangle diagram for this one
+  We get the following relation for #acc("l").
+  #math.equation(
+    $
+      4/3 & = l/(3-x_i) \
+        l & = 4/3 (3-x_i)
+    $,
+    alt: "4 over 3 equals l over 3 minus x sub i. this means l is four thirds times the quantity 3 minus x sub i.",
+    block: true,
+  )
+
+  Altogether the volume is
+  #math.equation(
+    $
+      V_i & = l w h \
+          & = 4/3 (3-x_i) (10) Delta x
+    $,
+    alt: "v sub i equals l times w times h which is four thirds times the quantity 3 minus x sub i times ten times delta x.",
+    block: true,
+  )
+  So the force to lift this layer becomes
+  #math.equation(
+    $
+      F_i & = (#zi.kg-m3[1000])4/3 (3-x_i) (10) Delta x(#zi.m-s2[9.8])
+    $,
+    alt: "f sub i equals one thousand kilograms per meter cubed times four thirds times the quantity 3 minus x sub i times ten times delta x times 9 point 8 meters per second squared",
+    block: true,
+  )
+  The the distance this layer has to travel to get out of the spout at the top is #math.equation($d_i = 8-x_i$, alt: "d sub i equals 8 minus x sub i"), where #math.equation($x_i$, alt: "x sub i") falls between #closedint("0", "3") (since that is where the water is).
+
+  Thus, the work to pump a single layer is
+  #math.equation(
+    $
+      W_i & = (#zi.kg-m3[1000])4/3 (3-x_i) (10) Delta x(#zi.m-s2[9.8]) (8-x_i).
+    $,
+    alt: "W sub i equals one thousand kilograms per meter cubed times four thirds times the quantity 3 minus x sub i times ten times delta x times 9 point 8 meters per second squared times 8 minus x sub i",
+    block: true,
+  )
+  The sum of the work for each layer gives us an approximation to the total work
+  #math.equation(
+    $
+      W & approx sum_(i=1)^n (#zi.kg-m3[1000])4/3 (3-x_i) (10) Delta x(#zi.m-s2[9.8]) (8-x_i).
+    $,
+    alt: "W is approximatel the sum from i equals 1 to n of one thousand kilograms per meter cubed times four thirds times the quantity 3 minus x sub i times ten times delta x times 9 point 8 meters per second squared times 8 minus x sub i",
+    block: true,
+  )
+  Then taking the limit of this sum gives us the integral for work
+  #math.equation(
+    $
+      W & = lim_(n arrow infinity) sum_(i=1)^n (1000)4/3 (3-x_i) (10) Delta x(9.8) (8-x_i) \
+        & = integral_0^3 (1000)4/3 (3-x) (10) (9.8) (8-x) dif x #zi.J().
+    $,
+    alt: "W is the limit as n goes to infinity of the sum from i equals 1 to n of one thousand times four thirds times the quantity 3 minus x sub i times ten times delta x times 9 point 8 times 8 minus x sub i. This is equal to the integral from 0 to 3 of one thousand times four thirds times the quantity 3 minus x times ten times 9 point 8 times 8 minus x, d x joules",
+    block: true,
+  )
+  If you want to evaluate this integral, bring constant multiples out of the integral and multiply the binomials in #acc("x") then use power rule.
+]
+
 
 #emph-block[
   6.4 b Section Summary:
+  - We used limits of Riemann sums to describe the work done to pump liquids out of tanks.
+  - We had to review some formulas for some geometry to finish these problems, like similar triangles and Pythagorean Theorem.
 ]
