@@ -72,6 +72,8 @@ Another physical system we can calculate the work done in is when pumping liquid
   alt: "the tank above with a labeled generic layer to pump out of the top",
 ))
 
+// todo similar triangle diagram for this one
+
 #emph-block[
   6.4 b Section Summary:
 ]

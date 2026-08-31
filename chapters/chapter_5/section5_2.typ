@@ -8,6 +8,12 @@
 
 = Review of 1225
 
+#context {
+  if target() == "paged" and sys.inputs.at("individualchs", default: "false") == "true" {
+    [#set document(title: "Section 5.5")]
+  }
+}
+
 
 // #showybox(
 //   frame: (
