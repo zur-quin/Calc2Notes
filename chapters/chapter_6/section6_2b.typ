@@ -10,11 +10,14 @@
   if target() == "paged" and sys.inputs.at("individualchs", default: "false") == "true" {
     [#counter(heading).update(5)
       = Applications of Integrals
+      #context counter(heading).step(level: 2)
       == Volumes by Cross-Sections, Disks, and Washers
       #set document(title: "Section 6.2 Day 2")]
+  } else {
+    [#context counter(heading).step(level: 2)
+      #context counter(heading).step(level: 2)]
   }
 }
-#context counter(heading).step(level: 2)
 #context counter(heading).step(level: 3)
 
 // any functions and templating you want for just this chapter can go here
