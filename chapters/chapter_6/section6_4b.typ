@@ -63,6 +63,15 @@ Another physical system we can calculate the work done in is when pumping liquid
     block: true,
   )
 ]
+
+// figure for triangular prism pumping problem
+#figure(image("figures/triangularprismtank.svg", alt: "a picture of a tank that is a triangular prism"))
+
+#figure(image(
+  "figures/triangularprismprob.svg",
+  alt: "the tank above with a labeled generic layer to pump out of the top",
+))
+
 #emph-block[
   6.4 b Section Summary:
 ]

@@ -55,13 +55,11 @@
 			zticklabel style = {font=\tiny, xshift=1ex},
 		}
 }
-
+% axis direction cs makes it only work in pgfplots
 \def\centerarc[#1](#2)(#3:#4:#5)% Syntax: [draw options] (center) (initial angle:final angle:radius)
 { \draw[#1] ($(#2)+(axis direction cs:{#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5); }
-
 \def\centerarc[#1](#2)(#3:#4:#5:#6)% Syntax: [draw options] (center) (initial angle:final angle:xradius:yradius)
 { \draw[#1] ($(#2)+(axis direction cs:{#5*cos(#3)},{#6*sin(#3)})$) arc  [start angle = #3, end angle = #4, x radius = #5, y radius = #6]; }
-
 \def\diskslicevert[#1](#2)(#3:#4)% Syntax: [draw options] (center) (xradius:yradius) use {} if functions on things!!!!!!
 { 		\draw [<->, #1] (#2) -- ($(#2)+(axis direction cs:{0},{#4})$) node [midway, right] {$R$};
 	\centerarc[#1](#2)(20:340:{#3}:{#4});
@@ -94,4 +92,18 @@
 	\centerarc[#1](#3)(0:70:#4:#5);
 	\centerarc[dotted, #1](#3)(70:110:#4:#5);
 	\centerarc[#1](#3)(110:360:#4:#5);
+}
+\def\boxfill[#1](#2,#3,#4)(#5,#6,#7){ % suggested #1 [fill opacity=0.4,	draw=black,	fill=blue,]
+	% top
+	\fill[#1] (#2,#3,#7) -- (#2,#6,#7) -- (#5,#6,#7) -- (#5,#3,#7) -- cycle;
+	% bottom
+	\fill[#1] (#2,#3,#4) -- (#2,#6,#4) -- (#5,#6,#4) -- (#5,#3,#4) -- cycle;
+	% front
+	\fill[#1] (#2,#3,#7) -- (#2,#3,#4) -- (#5,#3,#4) -- (#5,#3,#7) -- cycle;
+	% back
+	\fill[#1] (#2,#6,#7) -- (#2,#6,#4) -- (#5,#6,#4) -- (#5,#6,#7) -- cycle;
+	% right
+	\fill[#1] (#5,#3,#7) -- (#5,#6,#7) -- (#5,#6,#4) -- (#5,#3,#4) -- cycle;
+	% left
+	\fill[#1] (#2,#3,#7) -- (#2,#6,#7) -- (#2,#6,#4) -- (#2,#3,#4) -- cycle;
 }
