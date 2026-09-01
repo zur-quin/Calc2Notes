@@ -1,0 +1,20 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\include{../../plot_settings.tex}
+
+\usetikzlibrary{decorations.text, decorations.pathmorphing, topaths} 
+
+\usepackage{tikz-3dplot}
+\usetikzlibrary{3d}
+
+\begin{document}
+% \begin{tikzpicture}
+% 	\node (A) [cylinder, shape border rotate=90, draw,minimum height=3cm,minimum width=2cm,pin={[pin edge={<-,black}]right:Area = $\pi r^2$}] {};
+% 	\draw [->] (A.center) -- (A.east) node [midway, above,fill=white] {$r$};
+% \end{tikzpicture}
+% \tdplotsetmaincoords{70}{5} % Opposite order of pgfplots' view
+\begin{tikzpicture}
+	\draw (0,6) -- (0,0) node [midway, left] {3 m} -- (8,0) node [midway, below] {4 m} --  cycle ;
+	\draw (0,6) -- (0,3) node [midway, left] {$3-x_i$} -- (4,3) node [midway, below] {$l_i$} --  cycle ;
+\end{tikzpicture}
+\end{document}
