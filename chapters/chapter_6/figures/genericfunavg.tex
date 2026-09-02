@@ -1,0 +1,49 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\include{../../plot_settings.tex}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{tikzpicture}[
+		area plot/.style={
+				fill opacity=0.2,
+				draw=black,
+				fill=orange,
+				mark=none,
+				draw opacity = 1,
+			}, % sets up the orange slice fill in stuff
+	]
+	\begin{axis}[
+			twoDaxis,
+			% view={37}{45}, % first number is how much to rotate around z axis for the view, second is how far above/below you are in angle around x (negative is looking up, positive is looking down)
+			xticklabel style = {font=\footnotesize, yshift=0.7ex},
+			xtick={0.01,0.523598775598,1.0471975512,1.57079632679,2.09439510239,2.61799387799,3.47640166667,4},
+			% need the s here to give a list of labels to use
+			xticklabels={$a=x_0$, $x_1$, $\ldots$, $x_i$, $x_{i+1}$, $\ldots$, $x_{n-1}$, $x_n$=b},
+			ytick=\empty,
+			xmin = 0,
+			xmax = 5,
+			ymin = 0,
+			ymax =  3.5,
+			% zmin = 0,
+		]
+		%plot the curve in the x-y plane, keep "samples y=0" or else, and then just plot coords (x,y,z) like parametric curve sorta where x is the parameter. 
+		\addplot [black,domain=0:4.3,samples = 100, samples y=0,thick,->] {0.7*cos(x r)+2} node [pos=1, above right] {$f(x)$};
+
+		\draw [-|] (3.14159/6,0) -- (3.14159/6,2.6) node [pos=1,above,opacity=1] {$f(x_1)$} ;
+		\draw [-|] (2*3.14159/6,0) -- (2*3.14159/6,2.35)node [pos=1,above,opacity=1] {$\ldots$};
+		\draw [-|] (3*3.14159/6,    0) -- (3*3.14159/6,2) node [pos=1,above,opacity=1] {$f(x_i)$} ;
+		\draw [-|] (4*3.14159/6,    0) -- (4*3.14159/6,1.65) node [pos=1,above,opacity=1] {$f(x_{i+1})$};
+		\draw [-|] (3.47640166667,0) -- (3.47640166667,1.34) node [pos=1,above,opacity=1] {$f(x_{n-1})$};
+		\draw [-|] (4,0) -- (4,1.54) node [pos=1,above,opacity=1] {$f(x_{n})$};
+
+
+
+
+
+	\end{axis}
+\end{tikzpicture}
+\end{document}

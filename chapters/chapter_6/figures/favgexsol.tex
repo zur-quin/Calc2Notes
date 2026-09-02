@@ -1,0 +1,46 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\include{../../plot_settings.tex}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{tikzpicture}[
+		area plot/.style={
+				fill opacity=0.2,
+				draw=black,
+				fill=orange,
+				mark=none,
+				draw opacity = 1,
+			}, % sets up the orange slice fill in stuff
+	]
+	\begin{axis}[
+			twoDaxis,
+			xmin = 0,
+			xmax = 11.5,
+			minor tick num = 1,
+			xtick = {0,2,4,6,8,10,12},
+			minor tick length = 1,
+			ymin = 0,
+			ymax =  7.5,
+			grid = both,
+			width = 11.5cm,
+			height = 7.5cm,
+			ylabel = {$f(x)$},
+		]
+		\addplot [black,domain=0:8,samples = 200, samples y=0,thick, name path = circle] {sqrt(16-(x-4)^2)+3};
+		\addplot [black, dashed, thick, domain = 0:8, name path = three, samples = 2, thick] {3};
+		\addplot [black,domain=8:11,samples = 200, samples y=0,thick, name path = triangle] {-x+11};
+		\addplot [draw = none, domain = 0:11, name path = floor, samples = 2] {0};
+		\addplot[pattern = {Lines[angle=45,distance=8pt,line width=.4pt]}] fill between [of=circle and three, soft clip={domain=0:8}];
+		\node at (4,5) [fill = white, fill opacity = .9, text opacity = 1] {$A_1$};
+		\addplot[blue, opacity = 0.3] fill between [of=three and floor, soft clip={domain=0:8}];
+		\addplot[dashed,thick] coordinates {(8,0) (8,3)};
+		\node at (4,1.5) [fill = white, fill opacity = .9, text opacity = 1] {$A_2$};
+		\addplot[pattern = {Lines[angle=45,distance=8pt,line width=.4pt]}] fill between [of=triangle and floor, soft clip={domain=8:11}];
+		\node at (9,1) [fill = white, fill opacity = .9, text opacity = 1] {$A_3$};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

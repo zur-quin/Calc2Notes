@@ -1,0 +1,37 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\include{../../plot_settings.tex}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{tikzpicture}[
+		area plot/.style={
+				fill opacity=0.2,
+				draw=black,
+				fill=orange,
+				mark=none,
+				draw opacity = 1,
+			}, % sets up the orange slice fill in stuff
+	]
+	\begin{axis}[
+			twoDaxis,
+			xmin = 0,
+			xmax = 11.5,
+			minor tick num = 1,
+			xtick = {0,2,4,6,8,10,12},
+			minor tick length = 1,
+			ymin = 0,
+			ymax =  7.5,
+			grid = both,
+			width = 11.5cm,
+			height = 7.5cm,
+			ylabel = {$f(x)$},
+		]
+		\addplot [black,domain=0:8,samples = 200, samples y=0,thick] {sqrt(16-(x-4)^2)+3};
+		\addplot [black,domain=8:11,samples = 200, samples y=0,thick] {-x+11};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

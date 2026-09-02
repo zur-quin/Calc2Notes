@@ -31,3 +31,4 @@
 #include "chapters/chapter_6/section6_3.typ"
 #include "chapters/chapter_6/section6_4a.typ"
 #include "chapters/chapter_6/section6_4b.typ"
+#include "chapters/chapter_6/section6_5.typ"
