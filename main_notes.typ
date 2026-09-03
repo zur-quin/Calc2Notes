@@ -32,4 +32,4 @@
 #include "chapters/chapter_6/section6_4a.typ"
 #include "chapters/chapter_6/section6_4b.typ"
 #include "chapters/chapter_6/section6_5.typ"
-#include "chapters/chapter_7/section7_1.typ"
+#include "chapters/chapter_7/section7_1a.typ"

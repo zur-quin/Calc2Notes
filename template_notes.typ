@@ -173,7 +173,7 @@
   math.equation(m, alt: a, block: true)
 }
 
-// u du dv v todo: make v optional and add vsteps in
+// u du dv v
 #let IBP = (u, du, dv, v: auto, vstep: none) => {
   if v == auto {
     v = math.equation($integral dv$, alt: "integral of" + dv.at("alt"))
