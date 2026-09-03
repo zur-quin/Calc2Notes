@@ -10,7 +10,7 @@
 #context {
   //if individual pdfs
   if target() == "paged" and sys.inputs.at("individualchs", default: "false") == "true" {
-    [ #set document(title: "Section 7.1")]
+    [ #set document(title: "Section 7.1a")]
   }
 }
 
@@ -25,7 +25,7 @@
   7.1a Learning Objectives
   - I understand how integration by parts compares to the product rule.
   - I understand when and how to use integration by parts.
-  - I can choose an appropriate #acc("u") and #acc("v")
+  - I can choose an appropriate #acc("u") and #acc("v").
   - I can use integration by parts to reduce integrals.
 ]
 
@@ -52,6 +52,8 @@ Relabeling the last line with a few substitutions #math.equation($u=f(x) arrow.d
     block: true,
   )
 ]
+
+
 
 #example[
   Find the antiderivative: #block_eq($integral x sin(x) dif x$, "integral of x sine of x d x").
@@ -148,7 +150,7 @@ Relabeling the last line with a few substitutions #math.equation($u=f(x) arrow.d
 ]
 
 #emph-block[
-  7.1 Section Summary:
+  7.1a Section Summary:
   - We learned how to "undo" the product rule, via integration by parts.
   - We learned to use substitution and integration by parts in the same problem.
   - We learned that sometimes you have to do integration by parts multiple times to get a final answer.
