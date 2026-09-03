@@ -166,6 +166,37 @@
   context { if target() == "paged" { h(..args) } }
 }
 
+#let inline_eq(m, a) = {
+  math.equation(m, alt: a, block: false)
+}
+#let block_eq(m, a) = {
+  math.equation(m, alt: a, block: true)
+}
+
+// u du dv v todo: make v optional and add vsteps in
+#let IBP = (u, du, dv, v: auto, vstep: none) => {
+  if v == auto {
+    v = math.equation($integral dv$, alt: "integral of" + dv.at("alt"))
+  }
+  math.equation(
+    $
+          u & = #u, & dif v & = dv, \
+      dif u & = du, &     v & = #v vstep
+    $,
+    alt: "u = "
+      + u.at("alt")
+      + ", d u = "
+      + du.at("alt")
+      + ", d v = "
+      + dv.at("alt")
+      + ", v = "
+      + v.at("alt")
+      + if vstep != none { vstep.at("alt") } else { "" },
+    block: true,
+  )
+}
+
+
 
 // put under imports
 #let template = doc => {
