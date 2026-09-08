@@ -240,10 +240,10 @@ Building off what we know from #inline_eq($sin(x)$, "sine of x") and #inline_eq(
     $integral sec(u) dif u = ln|sec(u) + tan(u)| +C$,
     "integral of secant u d u equals natural log of absolute value of secant u plus tangent u plus c ",
   )
-  #exercise[
-    Derive the above antiderivatives. The second needs a clever multiplication by 1 trick. Come to office hours if you want to go through this together.
-  ]
 
+]
+#exercise[
+  Derive the above antiderivatives. The second needs a clever multiplication by 1 trick. Come to office hours if you want to go through this together.
 ]
 
 #emph-block[
