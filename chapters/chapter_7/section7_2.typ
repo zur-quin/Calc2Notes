@@ -199,7 +199,52 @@ Building off what we know from #inline_eq($sin(x)$, "sine of x") and #inline_eq(
   Simplifying this expression is left as an exercise to the reader.
 ]
 
+#example[
+  Find #block_eq($integral cot^2(x)csc^4(x) dif x$, "the integral of cotangent squared x times cosecant to the fourth x, d x.")
+]
+#my-solution-block[
+  Let #inline_eq($u=cot(x)$, "u equal cotangent of x"), then #inline_eq($dif u = -csc^2(x) dif x$, "d u equals negative cosecant squared of x d x"). Then,
+  #block_eq(
+    $integral cot^2(x)csc^4(x) dif x & = integral (-1) underbrace(cot^2(x), u^2) underbrace(csc^2(x), "rewrite") underbrace((-1) csc^2(x) dif x, dif u)$,
+    "the integral of cotangent squared x times cosecant to the fourth x, d x equals the integral of negative 1 times cotangent squared x times cosecant squared x times negative cosecant squared x d x.",
+  )
+  Then using the Pythagorean Identity #inline_eq($csc^2(x) = 1 + cot^2(x)$, "cosecant squared x equals 1 plus cotangent squared x") we have
+  #block_eq(
+    $integral cot^2(x)csc^4(x) dif x & = -integral cot^2(x)(1+cot^2(x))^2 (-csc^2(x)) dif x \
+    & = -integral u^2(1+u^2)^2 dif u \
+    & = - integral u^2 + 2u^4+u^6 dif u \
+    & = - [(u^3)/3 + 2/5 u^5 + (u^7)/7] + C \
+    & = - [(cot^3(x))/3 + 2/5 cot^5(x) + (cot^7(x))/7] + C$,
+    "the integral of cotangent squared x times cosecant to the fourth x, d x equals negative integral of cotangent squared x times the square of 1 plus cotangent squared times negative cosecant squared x, d x. This becomes negative integral of u squared times 1 plus u squared squared d u. This becomes negative integral of u squared plus 2 u to the fourth plus u to the sixth d u. Which is negative cotangent cubed x over 3 plus 2 fifths cotangent to the fifth of x plus cotangent to the seventh of x over 7 plus c.",
+  )
 
+]
+
+#tip-block[
+  Strategy for evaluating #inline_eq($integral tan^m (x) sec^n (x) dif x$, "integral of tangent to the m of x times secant to the n of x d x.")
+  - *Case 1: #acc("n") even:* (i.e. the power of secant is even)
+    - Save one factor of #inline_eq($sec^2(x)$, "secant squared x") for d#acc("u") later.
+    - Rewrite the rest of the powers of #inline_eq($sec^2(x)$, "secant squared x") using #inline_eq($sec^2(x)= 1+tan^2(x)$, "secant squared x equals 1 plus tangent squared x") (even power) with the Pythagorean Identity.
+    - Do #acc("u")-sub, expand everything, and evaluate.
+  - *Case 2: #acc("m") is odd:* (i.e. the power of tangent is odd)
+    - Save one factor of #inline_eq($sec(x)tan(x)$, "secant x times tangent x") for d#acc("u") later.
+    - Convert the remaining even powers of tangent to #inline_eq($tan^2(x) = sec^2(x)-1$, " tangent squared x equals secant squared x minus 1")
+    - Do #acc("u")-sub, expand everything, and evaluate.
+
+  - You may also use the following 2 antiderivatives
+  #block_eq(
+    $integral tan(u) dif u = ln|sec(u)|+C$,
+    "integral tangent of u d u equals natural log of absolute value of secant u plus c",
+  )
+  #block_eq(
+    $integral sec(u) dif u = ln|sec(u) + tan(u)| +C$,
+    "integral of secant u d u equals natural log of absolute value of secant u plus tangent u plus c ",
+  )
+  #exercise[
+    Derive the above antiderivatives. The second needs a clever multiplication by 1 trick. Come to office hours if you want to go through this together.
+  ]
+
+]
 
 #emph-block[
   7.2 Section Summary:
