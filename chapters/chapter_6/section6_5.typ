@@ -160,8 +160,8 @@ To make our approximation more accurate, we will sample the function at even mor
   #math.equation(
     $
                  10 & = (c+1)^3 \
-        root(10, 3) & = c+1 \
-      root(10, 3)-1 & = c
+        root(3, 10) & = c+1 \
+      root(3, 10)-1 & = c
     $,
     alt: "ten equals c plus 1 cubed. Then cuberoot of ten equals c plus 1 then c is cube root of 10 minus 1.",
     block: true,
