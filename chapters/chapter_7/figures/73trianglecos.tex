@@ -1,0 +1,19 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\include{../../plot_settings.tex}
+
+\usetikzlibrary{decorations.text, decorations.pathmorphing, topaths} 
+
+
+\begin{document}
+\begin{tikzpicture}
+
+	\draw (0,0) -- (1,0) node [pos=0.5,below] {$x$} -- (1,1) node [pos=0.5,above] {} -- cycle;
+
+	% % cute labels
+	% \draw [decorate,decoration={brace,amplitude=3.5pt}] (-0.1,4,0) -- (-0.1,4,3) node [midway, label = {left: 3 m}] {};
+	% \draw [decorate,decoration={brace,amplitude=3.5pt}] (-0.1,-0.1,0) -- (-0.1,3.9,0) node [midway, label={below left:4 m}] {};
+	% \draw [decorate,decoration={brace,amplitude=3.5pt}] (0.1,3,3) -- (0.1,3,8) node [midway, label = {left:5 m}] {};
+	% \draw [decorate,decoration={brace,amplitude=3.5pt}] (10,-0.1,0) -- (0,-0.1,0) node [midway, label={below:10 m}] {};
+\end{tikzpicture}
+\end{document}
