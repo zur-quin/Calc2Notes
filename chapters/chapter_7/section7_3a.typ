@@ -41,7 +41,7 @@ Suppose we want to derive the formula for area of a circle or radius #acc("r"). 
 // todo circle picture with triangle
 Up until now, we don't have a method to evaluate this integral. Looking at a point on the circle we can use trig functions to rewrite the expressions in #acc("x") and #acc("y") into #acc("r") and #acc("theta"). We have a few options, so let's do both and compare.
 
-#table(
+#figure(table(
   columns: (auto, auto, auto),
   inset: 10pt,
   align: center + horizon,
@@ -103,34 +103,159 @@ Up until now, we don't have a method to evaluate this integral. Looking at a poi
     ],
     align: left + horizon,
   ),
-)
+))
 
 For #inline_eq($x=r sin(theta)$, "x equals r sine theta") we get #inline_eq($dif x = r cos(theta) dif theta$, "d x equals r cosine theta d theta"). We have to solve little equations for #acc("theta") to get our new bounds.
 // todo bounds
 Then the integral becomes
 #block_eq(
   $A & = 2 integral_(-r)^r sqrt(r^2-x^2) dif x \
-  & = 2 integral_0^(pi/2) sqrt(r^2-(r sin(theta))^2) (r cos(theta)) dif theta\
-  & = 2 integral_0^(pi/2) sqrt(r^2-r^2 sin^2(theta)) (r cos(theta)) dif theta\
-  & = 2 integral_0^(pi/2) sqrt(r^2(1-sin^2(theta))) (r cos(theta)) dif theta \
-  & = 2 integral_0^(pi/2) sqrt(r^2 cos^2(theta)) (r cos(theta)) dif theta \
-  & = 2 integral_0^(pi/2) r |cos(theta)| (r cos(theta)) dif theta \
-  & = 2 integral_0^(pi/2) r^2 cos^2(theta) dif theta \
-  & = 2 integral_0^(pi/2) r^2 [1/2 (1+cos(2 theta))] dif theta\
-  & = r^2 integral_0^(pi/2) (1+cos(2 theta)) dif theta$,
+  & = 2 integral_0^(pi) sqrt(r^2-(r sin(theta))^2) (r cos(theta)) dif theta\
+  & = 2 integral_0^(pi) sqrt(r^2-r^2 sin^2(theta)) (r cos(theta)) dif theta\
+  & = 2 integral_0^(pi) sqrt(r^2(1-sin^2(theta))) (r cos(theta)) dif theta \
+  & = 2 integral_0^(pi) sqrt(r^2 cos^2(theta)) (r cos(theta)) dif theta \
+  & = 2 integral_0^(pi) r |cos(theta)| (r cos(theta)) dif theta \
+  & = 2 integral_0^(pi) r^2 cos^2(theta) dif theta \
+  & = 2 integral_0^(pi) r^2 [1/2 (1+cos(2 theta))] dif theta\
+  & = r^2 integral_0^(pi) (1+cos(2 theta)) dif theta$,
   "A equals ",
 )
+Then we can finish this with a quick #acc("u")-substitution, where #inline_eq($u = 2 theta$, " u equals 2 theta") and #inline_eq($dif u = 2 dif theta$, "d u equals 2 d theta") and bounds become #inline_eq($u(0) = 0$, "u of 0 equals 0") and #inline_eq($u(pi)=2pi$, "u of pi equals 2 pi"). Then
+#block_eq(
+  $A & = 1/2 r^2 integral_0^(2pi) 1+cos(u) dif u\
+  & = 1/2 r^2 (u+sin(u))_0^(2pi) \
+  & = 1/2 r^2 (2pi+0-0+0) \
+  & = pi r^2$,
+  "A equals one half r squared integral from 0 to 2 pi of 1 plus cosine of u d u. This becomes one half r squared times the quantity u plus sine of u evaluated from 0 to 2 pi. This becomes one half r squared times 2 pi. This is pi r squared.",
+)
+And so we can get the area of the circle! You can try doing the other substitution if you want, using the trigonometric identity #inline_eq($1/2 (1-cos(2theta)) = sin^2(theta)$, "one half of 1 minus cosine of 2 theta equals sine squared theta").
 
 Ultimately, either substitution *could* work *if you are careful enough*. However, we will just show the substitutions and patterns for the trig subs that don't give extra minus signs. If you are still confused on why we do things in the order we do them, please come chat in office hours about it! (It honestly took me a while to figure this out myself!)
 
+Here is a "more elegant" way to solve this problem, by which we mean a way that takes a lot fewer steps and uses the triangle a bit more:
 
-could write #inline_eq($cos(theta)=x/r$, "cosine of theta equals x over r") or #inline_eq($x=r cos(theta)$, "x equals r cosine of theta"). This gives us
+We set up the integral the same way, but using trigonometric relations and the triangle reproduced here
+#figure(image(
+  "figures/73trianglesin.svg",
+  alt: "a triangle with angle theta and hypotenuse r. The opposite side is x and the adjacent side is square root of r squared minus x squared.",
+))
+We can write
+#block_eq(
+  $cos(theta) = sqrt(r^2-x^2)/r arrow.double sqrt(r^2-x^2) = r cos(theta)$,
+  "cosine of theta equals square root or r squared minus x squared over r. In other words, the square root of r squared minus x squared is r times cosine theta.",
+)
+Combining this with the differential, #inline_eq($dif x = r cos(theta) dif theta$, "d x equals r cosine theta d theta"), from before, we can jump straight to
+#block_eq(
+  $A & = 2 integral_(-r)^r sqrt(r^2-x^2) dif x\
+  & = 2 integral_0^(pi) r cos(theta) r cos(theta) dif theta\
+  & = 2 r^2 integral_0^(pi) cos^2(theta) dif theta$,
+  "A equals 2 times the integral from negative r to r of square root of r squared minus x squared d dx. This becomes 2 times the integral from 0 to pi of r cosine theta times r cosine theta d theta. This becomes 2 r squared times the integral from 0 to pi of cosine squared theta d theta.",
+)
+And from this point we finish the problem similarly to before.
+
+#note-block[
+  This was a lot of writing, but I hope you found a method in here that makes sense, and you understand that there are multiple ways to do the following problems. We will try to just show you the streamlined version of this in future examples, but feel free to try other substitutions if you want the practice!
+]
+
+The substitutions we will use (to avoid extra negatives) for this section will be
+#figure(table(
+  columns: (auto, auto, auto, auto, auto),
+  inset: 7pt,
+  align: center + horizon,
+  table.header([*Form*], [*Trig Identity*], [*Substitution*], [*Assumptions*], [*Triangle*]),
+  block_eq($sqrt(b^2x^2-a^2)$, "square root of b squared x squared minus a squared"),
+  block_eq($sec^2(theta)-1=tan^2(theta)$, "secant squared theta minus 1 equals tangent squared theta"),
+  block_eq($x=a/b sec(theta)$, "x equals a over b times secant theta"),
+  block_eq(
+    $0lt.eq theta lt pi/2,\ pi/2 lt theta lt.eq pi$,
+    "0 is less than or equal to theta is less than pi over 2 or pi over two is less then theta is less than or equal to pi.",
+  ),
+  [],
+  // row break
+  block_eq($sqrt(a^2-b^2x^2)$, "square root of a squared minus b squared x squared"),
+  block_eq($1-sin^2(theta)=cos^2(theta)$, "1 minus sine squared theta equals cosine squared theta"),
+  block_eq($x = a/b sin(theta)$, "x equals a over b times sine of theta"),
+  block_eq(
+    $-pi/2 lt.eq theta lt.eq pi/2$,
+    "negative pi over 2 is less than or equal to theta is less than or equal to pi over 2.",
+  ),
+  [],
+  // row break
+  block_eq($sqrt(a^2+b^2x^2)$, "square root of a squared plus b squared x squared"),
+  block_eq($tan^2(theta)+1=sec^2(theta)$, "tangent squared theta plus 1 equals secant squared theta."),
+  block_eq($x = a/b tan(theta)$, "x equals a over b tangent of theta"),
+  block_eq(
+    $-pi/2 lt theta lt pi/2$,
+    "negative pi over 2 is less than theta is less than pi over 2.",
+  ),
+  [],
+))
+
+Note: Most of the examples you will see in this class will have #inline_eq($b=1$, "b equals 1"), but the above formulas are given for completion.
+
+Let's do some examples.
+#example[
+  Evaluate #block_eq(
+    $ integral (x^3)/(sqrt(4+x^2)) dif x $,
+    "integral of x cubed over square root of 4 plus x squared d x",
+  )
+]
+
+#my-solution-block[
+  We see a weird root in the integral, so we know to try a trig sub. In this case, the form is #inline_eq($sqrt(4+x^2) arrow.squiggly sqrt(a^2+b^2x^2)$, "square root of 4 plus x squared is like the square root of a squared plus b squared x squared") where #inline_eq($a=2 " and " b=1$, "a equals 2 and b equals 1"). Then, in this form the substitution we use is #block_eq(
+    $x & =a/b tan (theta) \
+    x & = 2 tan(theta) \
+    dif x & = 2 sec^2(theta) dif theta$,
+    " x equals a over b tangent of theta, or 2 tangent of theta. Then d x equals 2 secant squared theta d theta",
+  )
+  This substitution gives us
+  #block_eq(
+    $
+      integral (x^3)/(sqrt(4+x^2)) dif x & = integral ((2 tan(theta))^3)/(sqrt(4+(2tan(theta))^2)) 2 sec^2(theta) dif theta \
+                                         & = 16 integral (tan^3(theta))/sqrt(4(1 + tan^2(theta))) sec^2(theta) dif theta \
+                                         & = 16/2 integral (tan^3(theta))/sqrt(sec^2(theta)) sec^2(theta) dif theta \
+                                         & = 8 integral tan^3(theta) sec(theta) dif theta ," for "-pi/2<theta<pi/2 \
+    $,
+    "integral of x cubed over square root of 4 plus x squared d x equals the cube of 2 times tangent theta all over the square root of 4 plus 2 tan theta squared this whole fraction is then multiplied by 2 secant squared theta d theta. This becomes sixteen times integral of tan cubed theta over square root of 4 times 1 plus tangent squared theta all times secant squared theta d theta. This becomes sixteen over 2 integral of tangent cubed theta over square root of secand squared theta times secant squared theta d theta. This becomes 8 times the integral of tangent cubed theta times secant theta for theta between negative pi over 2 and pi over 2.",
+  )
+  Now we have converted the integral into a trigonometric integral that we can solve using methods from Section 7.2.
+  //todo reference 7.2?
+  Now, we keep one factor of #inline_eq($tan(theta)sec(theta)$, "tangent theta times secant theta") and rewrite everything else in terms of #inline_eq($sec(theta)$, "secant theta").
+  #block_eq(
+    $
+      integral (x^3)/(sqrt(4+x^2)) dif x & = 8 integral tan^2(theta) tan(theta) sec(theta) dif theta \
+                                         & = 8 integral (sec^2(theta)-1) tan(theta) sec(theta) dif theta \
+    $,
+    "integral of x cubed over square root of 4 plus x squared d x equals 8 integral of tangent squared theta times tangent theta secant theta d theta. This becomes 8 integral secant squared theta minus 1 times tangent theta secant theta d theta.",
+  )
+  Now we have converted the trig integral into one we can solve with a #acc("u")-sub where #inline_eq($u=sec(theta)$, "u equals secant theta") so #inline_eq($dif u = sec(theta)tan(theta)dif theta$, "d u equals secant theta tangent theta d theta."). Thus,
+  #block_eq(
+    $
+      integral (x^3)/(sqrt(4+x^2)) dif x & = 8 integral (sec^2(theta)-1) tan(theta) sec(theta) dif theta \
+                                         & = 8 integral u^2-1 dif u \
+                                         & = 8[(u^3)/3-u] \
+                                         & = 8 [(sec^3(theta))/3-sec(theta)]
+    $,
+    "integral of x cubed over square root of 4 plus x squared d x equals 8 integral secant squared theta minus 1 times tangent theta secant theta d theta. This becomes 8 times the integral of u squared minus 1 d u. This becomes 8 times the quantity u cubed over 3 minus u. This becomes 8 times the quantity secant cubed of theta over three minus secant of theta.",
+  )
+  Lastly, the question was in #acc("x"), not #acc("theta"). So we need something to replace #inline_eq($sec(theta)$, "secant theta") with. Looking back at our substitution, we have #block_eq($x=2tan(theta) arrow.double tan(theta)=x/2 = "opp"/"adj"$, "x equals 2 tangent theta implies tangent theta equals x over 2, which is opposite over adjacent") lets us build the triangle below.
+  // todo triangle
+
+  So we can see that #block_eq($sec(theta)="hyp"/"adj" = sqrt(4+x^2)/2$, "secant theta equals hypotenuse over adjacent which is square root of 4 plus x squared all over 2."). Finally the antiderivative is
+  #block_eq(
+    $integral (x^3)/(sqrt(4+x^2)) dif x & = 8 [(sec^3(theta))/3-sec(theta)] \
+    & = 8 [1/3(sqrt(4+x^2)/2)^3-sqrt(4+x^2)/2] + C$,
+    "integral of x cubed over square root of 4 plus x squared d x equals 8 times the quantity secant cubed of theta over three minus secant of theta. This becomes 8 times the quantity square root of 4 plus x squared over 2 cubed over three minus square root of 4 plus x squared over 2.",
+  )
+]
 
 
-Find the area of a circle with radius #acc("r") using techniques of integration.
 
 
 #emph-block[
   7.3a Section Summary:
+  - We figured out which trigonometric substitutions would help us simplify problems without extra negatives.
+  - We used trig substitutions to simplify indefinite integrals.
+  - We used right trianlges to rewrite answers in terms of the original variable.
 ]
 
