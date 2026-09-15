@@ -5,6 +5,7 @@
 #import "@preview/theorion:0.6.0": *
 #import "@preview/frame-it:1.2.0": *
 #import "auto-alt.typ": *
+#import "@preview/auto-div:0.1.0": *
 
 // don't import here, this is your menu lol
 // #import cosmos.simple: *
