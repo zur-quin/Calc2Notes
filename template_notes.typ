@@ -4,6 +4,7 @@
 // theorem and example and definition blocks
 #import "@preview/theorion:0.6.0": *
 #import "@preview/frame-it:1.2.0": *
+#import "auto-alt.typ": *
 
 // don't import here, this is your menu lol
 // #import cosmos.simple: *
@@ -196,8 +197,6 @@
   )
 }
 
-
-
 // put under imports
 #let template = doc => {
   context { set page(header: "Math 1226 Completed Notes") if target() == "paged" }
@@ -207,6 +206,12 @@
   context {
     if target() == "html" { html.link(href: sys.inputs.at("root", default: "") + "styles.css", rel: "stylesheet") }
   }
+
+  // Automatically generate alt text for equations which are missing alt text
+  show: apply-auto-eq-alt
+
+  // Show alt text for equations on page
+  show: show-eq-alt
   doc
 }
 
