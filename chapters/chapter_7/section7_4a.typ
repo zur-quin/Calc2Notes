@@ -126,14 +126,103 @@ More precisiely, the steps you can use are as follows.
   $
 ]
 #my-solution-block[
-  We first check the quadratic term is actually irreducible: since $b^2-4 a c = 4-4(1)(15) < 0$, this is irreducible.
+  We first check the quadratic term is actually irreducible: since $b^2-4 a c = 4-4(1)(15) < 0$, this is irreducible and we do not need to further factor it.
+
   Then, we have
   $
     (P(x))/( (x-1)^3 (2x-3) (x^2 + 2x + 15)^2 ) =\ A/(x-1) + B/(x-1)^2 + C/(x-1)^3 + D/(2x-3) + (E x + F)/(x^2 + 2x + 15) + (G x + H)/((x^2 + 2x + 15)^2)
   $
 ]
 
+#example[
+  Do the partial fraction decomposition on the following rational function.
+  $
+    (x^2+2x-1)/(x(2x-1)(x+2))
+  $
+]
+#my-solution-block[
+  Each factor in the denominator is linear and has highest power 1. So, the partial fractions are in the form
+  $
+    (x^2+2x-1)/(x(2x-1)(x+2)) = A/x + B/(2x-1) + C/(x+2)
+  $
+  and we need to determine $A,B,C$. Then,
+  $
+                 && (x(2x-1)(x+2)) (x^2+2x-1)/(x(2x-1)(x+2)) & =( A/x + B/(2x-1) + C/(x+2) ) (x(2x-1)(x+2)) \
+    arrow.double &&                               (x^2+2x-1) & = A(2x-1)(x+2) + B x(x+2) + C x (2x-1)
+  $
+  Now we can carefully plug in values to help us find $A,B,C$. First, if $x=1/2$ notice
+  $
+    ((1/2)^2+2(1/2)-1) & = A(2(1/2)-1)((1/2)+2) + B (1/2)((1/2)+2) + C (1/2) (2(1/2)-1) \
+                   1/4 & = B(1/2)(5/2) \
+                     B & = 1/4(2)(2/5) \
+                     B & = 1/5
+  $
+  If $x=0$ notice
+  $
+    ((0)^2+2(0)-1) & = A(2(0)-1)((0)+2) + B (0)((0)+2) + C (0) (2(0)-1) \
+                -1 & = A(1)(2) \
+                 A & = -1/2
+  $
+  and if $x=-2$ we have
+  $
+    ((-2)^2+2(-2)-1) & = A(2(-2)-1)((-2)+2) + B (-2)((-2)+2) + C (-2) (2(-2)-1) \
+                  -1 & = C(-2)(-5) \
+                   C & = -1/10
+  $
+  Then the partial fraction decomposition is
+  $
+    (x^2+2x-1)/(x(2x-1)(x+2)) = (-1/2)/x + (1/5)/(2x-1) + (-1/10)/(x+2).
+  $
+]
 
+=== Integrals Needing Partial Fraction Decomposition
+
+#example[
+  Find the antiderivative
+  $
+    integral (2 x^3 -x^2 + 4x)/(x^4 + 4x^2) dif x
+  $
+]
+
+#my-solution-block[
+  First we factor and simplify everything we can
+  $
+    integral (2 x^3 -x^2 + 4x)/(x^4 + 4x^2) dif x & = integral (x(2 x^2 -x + 4))/(x^2(x^2 + 4)) dif x \
+                                                  & = integral (2 x^2 -x + 4)/(x(x^2 + 4)) dif x \
+  $
+  Then we find the partial fraction decomposition of the integrand. Since the $x^2+4$ factor has discriminant $0^2-4(1)(4)=-16<0$ it is irreducible. Then, the form of the partial fraction decomposition is
+  $
+    (2 x^2 -x + 4)/(x(x^2 + 4)) & = A/x + (B x + C)/(x^2+4)
+  $
+  Multiplying by the denominator gives us
+  $
+    (2 x^2 -x + 4) & =(x(x^2 + 4)) A/x + (x(x^2 + 4)) (B x + C)/(x^2+4) \
+    (2 x^2 -x + 4) & = (x^2 + 4) A + x(B x + C) \
+  $
+  // When $x=0$ we can tell
+  // $
+  //   (2 (0)^2 -(0) + 4) & = ((0)^2 + 4) A + (0)(B (0) + C) \
+  //                    4 & = 4 A \
+  //                    A & = 1
+  // $
+  We need a slightly new strategy for $B,C$ since the roots of $x^2+4$ are complex, we will use this strategy for finding $A$ also, but it isn't necessary. Multiplying things out
+  $
+    (2 x^2 -x + 4) & = (x^2 + 4) A + x(B x + C) \
+     2 x^2 - x + 4 & = x^2 + 4 + B x^2 + C x \
+     2 x^2 - x + 4 & = (1+B) x^2 + C x + 4
+  $
+  Now lining up like powers on both sides we see that
+  $
+    underline(2 x^2) - x + 4 & = underline((1+B) x^2) + C x + 4 \
+              arrow.double 2 & = 1+B
+  $
+  So $B=1$, and
+  $
+    2 x^2 underline(- x) + 4 & = (1+B) x^2 + underline(C x) + 4 \
+             arrow.double -1 & = C
+  $
+
+]
 
 #emph-block[
   7.4a Section Summary:
