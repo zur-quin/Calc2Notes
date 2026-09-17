@@ -212,7 +212,7 @@
   show: apply-auto-eq-alt
 
   // Show alt text for equations on page
-  show: show-eq-alt
+  // show: show-eq-alt
   doc
 }
 

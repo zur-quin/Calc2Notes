@@ -208,23 +208,63 @@ More precisiely, the steps you can use are as follows.
   We need a slightly new strategy for $B,C$ since the roots of $x^2+4$ are complex, we will use this strategy for finding $A$ also, but it isn't necessary. Multiplying things out
   $
     (2 x^2 -x + 4) & = (x^2 + 4) A + x(B x + C) \
-     2 x^2 - x + 4 & = x^2 + 4 + B x^2 + C x \
-     2 x^2 - x + 4 & = (1+B) x^2 + C x + 4
+     2 x^2 - x + 4 & = A x^2 + 4A + B x^2 + C x \
+     2 x^2 - x + 4 & = (A+B) x^2 + C x + 4 A
   $
   Now lining up like powers on both sides we see that
   $
-    underline(2 x^2) - x + 4 & = underline((1+B) x^2) + C x + 4 \
-              arrow.double 2 & = 1+B
-  $
-  So $B=1$, and
-  $
-    2 x^2 underline(- x) + 4 & = (1+B) x^2 + underline(C x) + 4 \
+    2 x^2 underline(- x) + 4 & = (A+B) x^2 + underline(C x) + 4A \
              arrow.double -1 & = C
   $
-
+  Then we see
+  $
+    2 x^2 - x + underline(4) & = (1+B) x^2 + C x + underline(4 A) \
+              arrow.double 1 & = A
+  $
+  and lastly,
+  $
+    underline(2 x^2) - x + 4 & = underline((A+B) x^2) + C x + 4 A \
+              arrow.double 2 & = A+B \
+              arrow.double 2 & = 1 + B \
+              arrow.double 1 & = B.
+  $
+  So then the integral becomes
+  $
+    integral (2 x^2 -x + 4)/(x(x^2 + 4)) & = integral A/x dif x + integral (B x + C)/(x^2+4) dif x \
+                                         & = integral 1/x dif x + integral (1 x - 1)/(x^2+4) dif x \
+                                         & = integral 1/x dif x + integral (x)/(x^2+4) dif x - integral 1/(x^2+4) dif x \
+  $
+  We can solve these integrals with either known antiderivatives or $u$-substitution.
+  $
+    integral 1/x dif x & = ln|x| + C
+  $
+  And with $u=x/2$ and some factoring we have
+  $
+    integral 1/(x^2+4) dif x & = integral 1/((4)((x/2)^2+1)) dif x \
+                             & = 1/4 integral 1/(u^2 + 1) 2 dif u \
+                             & = 1/2 integral 1/(u^2 + 1) dif u \
+                             & = 1/2 integral 1/(u^2 + 1) dif u \
+                             & = 1/2 arctan(u) + C \
+                             & = 1/2 arctan(x/2) + C \
+  $
+  and with $u=x^2 + 4$, $dif u = 2 x dif x$ we have
+  $
+    integral (x)/(x^2+4) dif x & = 1/2 integral 1/u dif u \
+                               & = 1/2 ln|u| +C \
+                               & = 1/2 ln|x^2+4| + C
+  $
+  Thus,
+  $
+    integral (2 x^2 -x + 4)/(x(x^2 + 4)) & = integral 1/x dif x + integral (x)/(x^2+4) dif x - integral 1/(x^2+4) dif x \
+                                         & = ln|x| + 1/2 ln|x^2+4| -1/2 arctan(x/2)+C.
+  $
 ]
+
+We'll get plenty more practice (and with more complicated problems) in 7.4b.
 
 #emph-block[
   7.4a Section Summary:
+  - We mostly had an algebra lesson, motivated by a need to take integrals.
+  - We can rewrite rational functions with partial fraction decomposition. Then we started using this as a trick for evaluating integrals.
 ]
 
