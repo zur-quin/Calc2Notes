@@ -38,3 +38,4 @@
 #include "chapters/chapter_7/section7_3a.typ"
 #include "chapters/chapter_7/section7_3b.typ"
 #include "chapters/chapter_7/section7_4a.typ"
+#include "chapters/chapter_7/section7_4b.typ"

@@ -10,12 +10,13 @@
 #context {
   //if individual pdfs
   if target() == "paged" and sys.inputs.at("individualchs", default: "false") == "true" {
-    [ #set document(title: "Section 7.4a")
+    [ #set document(title: "Section 7.3b")
       = Integration Techniques
-
     ]
   }
 }
+
+#counter(heading).update(7)
 #counter(heading).step(level: 2)
 #counter(heading).step(level: 2)
 #counter(heading).step(level: 2)
