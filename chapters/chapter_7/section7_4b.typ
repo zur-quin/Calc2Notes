@@ -78,13 +78,105 @@
     integral (3e^(2x) - 5 e^(3x))/((3e^x-1)(e^x-1)^2) dif x & = integral (3e^(x) - 5 e^(2x))/((3e^x-1)(e^x-1)^2) e^x dif x \
                                                             & = integral (3u - 5 u^2)/((3u-1)(u-1)^2) dif u \
   $
-  Now, this integral needs a partial fraction decomposition
+  Now, this integral needs a partial fraction decomposition. The denominator is already factored into all linear terms so the form of the partial fractions is
+  $
+    (3u - 5 u^2)/((3u-1)(u-1)^2) & = A/(3u-1) + B/(u-1) + C/(u-1)^2
+  $
+  Multiplying everything by the common denominator
+  $
+    (3u - 5 u^2)/((3u-1)(u-1)^2) ((3u-1)(u-1)^2) & =( A/(3u-1) + B/(u-1) + C/(u-1)^2 )((3u-1)(u-1)^2) \
+                                      3u - 5 u^2 & = A(u-1)^2 + B(u-1)(3u-1) + C(3u-1) \
+  $
+  We can find $A,C$ easily by plugging in values $u=1,u=1/3$ but will have to deal with $B$ another way. Then, for $u=1$
+  $
+    3(1) - 5 (1)^2 & = A((1)-1)^2 + B((1)-1)(3(1)-1) + C(3(1)-1) \
+                -2 & = 2C \
+  $
+  so $C=-1$. Then
+  $
+    3(1/3) - 5 (1/3)^2 & = A((1/3)-1)^2 + B((1/3)-1)(3(1/3)-1) + C(3(1/3)-1) \
+                   4/9 & = 4/9 A \
+  $
+  so $A=1$. Then plugging in $A,C$ we have
+  $
+    3u - 5 u^2 & = (u-1)^2 + B(u-1)(3u-1) - (3u-1) \
+  $
+  Since we only need to find one of the coefficients still, we can plug in any value for $u$ we haven't used here and solve for $B$. Let's do $u=-1$. Then,
+  $
+    3(-1) - 5 (-1)^2 & = ((-1)-1)^2 + B((-1)-1)(3(-1)-1) - (3(-1)-1) \
+                  -8 & = 4 + B(-2)(-4)-(-4) \
+                  -8 & = 4 + 8B + 4 \
+                 -16 & = 8B
+  $
+  so $B=-2$.
+  Then, the integrand becomes
+  $
+    integral (3e^(2x) - 5 e^(3x))/((3e^x-1)(e^x-1)^2) dif x & = integral A/(3u-1) + B/(u-1) + C/(u-1)^2 dif u \
+    & = integral 1/(3u-1) -2 1/(u-1) - 1/(u-1)^2 dif u \
+    & = integral 1/(3u-1) dif u -2 integral 1/(u-1) dif u - integral 1/(u-1)^2 dif u
+  $
+  We can solve each of these new integrals with a small substitution.
+  First, let $w=3u-1$ then $dif w = 3 dif u$ and so
+  $
+    integral 1/(3u-1) dif u & = 1/3 integral 1/w dif w \
+                            & = 1/3 ln|w| \
+                            & = 1/3 ln|3u-1| \
+                            & = 1/3 ln|3e^x - 1|,
+  $
+  where we might as well get back to $x$ while we are here. Then with $y=u-1$ so $dif y = dif u$ the second integral becomes
+  $
+    -2 integral 1/(u-1) dif u & = -2 integral 1/y dif y \
+                              & = -2 ln|y| \
+                              & = -2 ln|u-1| \
+                              & = -2 ln|e^x-1|.
+  $
+  Lastly, with $z=u-1$ so $dif z = dif u$ the last integral becomes
+  $
+    -integral 1/(u-1)^2 & = -integral z^(-2) dif z \
+                        & = - 1/(-1) z^(-1) \
+                        & = 1/z \
+                        & = 1/(u-1) \
+                        & = 1/(e^x -1)
+  $
+  Altogether our final answer is
+  $
+    integral (3e^(2x) - 5 e^(3x))/((3e^x-1)(e^x-1)^2) dif x & = 1/3 ln|3e^x - 1| -2 ln|e^x-1|+1/(e^x -1) + C.
+  $
+]
+
+There are no extra considerations needed for the bounds of these integrals. If you end up needing a substitution, change the bounds accordingly and so on.
+#exercise[
+  Evaluate $ integral_3^6 (2x^3-x^2+4x)/(x^4+4x^2) $
+  (You do not need to evaluate any complicated functions at the end.)
 ]
 
 #example[
   Compute the following antiderivative
   $
     integral (x^4+2x^2 + 1)/(x-1) dif x
+  $
+]
+
+#my-solution-block[
+  First, $deg "numerator" gt.eq deg "denominator"$ so we have to do polynomial long division first.
+  #let result = poly-div((1, 0, 2, 0, 1), (1, -1))
+  // todo get long div and auto-alt to work together
+  // #math.equation(
+  //   $
+  //     result.working
+  //   $,
+  //   alt: "long division for the problem",
+  //   block: true,
+  // )
+
+  So,
+  $
+    result.dividend/(result.divisor) = (result.quotient) + (result.remainder)/(result.divisor)
+  $
+  Then
+  $
+    integral result.dividend/(result.divisor)dif x & = integral (result.quotient)dif x + integral (result.remainder)/(result.divisor) dif x \
+    & = x^4/4 + x^3/3 + 3/2 x^2 + 3x + 4 ln|x-1| + C
   $
 ]
 
