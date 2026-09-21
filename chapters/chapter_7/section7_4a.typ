@@ -114,13 +114,10 @@ More precisely, the steps you can use are as follows.
 #my-solution-block[
   #let result = poly-div((1, 3, 0, 5, 6), (1, 2))
   // todo get long div and auto-alt to work together
-  // #math.equation(
-  //   $
-  //     result.working
-  //   $,
-  //   alt: "long division for the problem",
-  //   block: true,
-  // )
+
+  $
+    #poly-div-working((1, 3, 0, 5, 6), (1, 2))
+  $
   So,
   #auto-alt(
     $
