@@ -187,9 +187,13 @@ There are no extra considerations needed for the bounds of these integrals. If y
   First, #auto-alt($deg "numerator" gt.eq deg "denominator"$) so we have to do polynomial long division first.
   #let result = poly-div((1, 0, 2, 0, 1), (1, -1))
   // todo get long div and auto-alt to work together
-  $
-    result.working
-  $
+  #math.equation(
+    $
+      result.working
+    $,
+    alt: "long division for the problem",
+    block: true,
+  )
 
   So,
   #auto-alt(
