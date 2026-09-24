@@ -180,16 +180,16 @@
 
 // Can use auto-alt($<...>$) to create an equation with automatically-generated alt text
 #let auto-alt(eq, ignore_alt: true) = {
-  if eq.alt != none and not ignore_alt {
+  if eq.has("alt") and eq.alt != none and not ignore_alt {
     eq
   } else {
     let alt = get-alt(eq)
 
     math.equation(
       block: eq.block,
-      number-align: eq.number-align,
-      numbering: eq.numbering,
-      supplement: eq.supplement,
+      number-align: eq.fields().at("number-align", default: end + horizon),
+      numbering: eq.fields().at("numbering", default: none),
+      supplement: eq.fields().at("supplement", default: auto),
       eq.body,
       alt: alt,
     )

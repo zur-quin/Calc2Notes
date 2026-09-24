@@ -209,7 +209,7 @@
   }
 
   // Automatically generate alt text for equations which are missing alt text
-  show: apply-auto-eq-alt
+  // show: apply-auto-eq-alt
 
   // Show alt text for equations on page
   // show: show-eq-alt
