@@ -23,6 +23,8 @@
 #outline()
 
 // Now the chapters themselves as some Typst content
+
+// test 1
 #include "chapters/chapter_5/section5_2.typ"
 #include "chapters/chapter_5/section5_5.typ"
 #include "chapters/chapter_6/section6_1.typ"
@@ -35,8 +37,21 @@
 #include "chapters/chapter_7/section7_1a.typ"
 #include "chapters/chapter_7/section7_1b.typ"
 #include "chapters/chapter_7/section7_2.typ"
+
+// test 2
 #include "chapters/chapter_7/section7_3a.typ"
 #include "chapters/chapter_7/section7_3b.typ"
 #include "chapters/chapter_7/section7_4a.typ"
 #include "chapters/chapter_7/section7_4b.typ"
 #include "chapters/chapter_7/section7_5.typ"
+
+// todo list
+#include "chapters/chapter_7/section7_7.typ"
+#include "chapters/chapter_8/section8_3.typ"
+#include "chapters/chapter_4/section4_4a.typ"
+#include "chapters/chapter_4/section4_4b.typ"
+#include "chapters/chapter_7/section7_8a.typ"
+#include "chapters/chapter_7/section7_8b.typ"
+#include "chapters/chapter_8/section8_5.typ"
+
+// test 3
