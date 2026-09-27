@@ -36,6 +36,7 @@ In @AlexCalder Alexander Calder brings this concept to life through his art. He 
   image(
     "figures/Alexander-Calder-Black-and-Yellow-Dots-in-the-Air-1960-1-510243535.jpg",
     alt: "an image of Alexander Calder's mobile titled Black and Yellow Dots in the Air",
+    width: 50%,
   ),
   caption: "Black and Yellow Dots in the Air by Alexander Calder",
 )<AlexCalder>
@@ -239,6 +240,6 @@ For a lamina made up of a region #mathcalR under the curve #auto-alt($f(x)$) on 
 #emph-block[
   8.3 Section Summary:
   - We looked at the moments and center of mass of point masses in 1 and 2 dimensions.
-  - We extended this idea to the centroid of a continous mass called a lamina defined by the region under a curve.
+  - We extended this idea to the centroid of a continuous mass called a lamina defined by the region under a curve.
 ]
 
