@@ -1,0 +1,40 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\include{../../plot_settings.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{tikzpicture}[
+	]
+	\begin{axis}[
+			threeDaxis,
+			view={37}{45}, % first number is how much to rotate around z axis for the view, second is how far above/below you are in angle around x (negative is looking up, positive is looking down)
+			xticklabel style = {font=\tiny, yshift=0.7ex},
+			% xtick={0.01,0.523598775598,1.0471975512,1.57079632679,2.09439510239,2.61799387799,3.47640166667,4},
+			% need the s here to give a list of labels to use
+			% xticklabels={$a=x_0$, $x_1$, $x_2$, $x_3$, $\ldots$, $\ldots$, $x_{n-1}$, $x_n$=b},
+			ytick=\empty,
+			xtick=\empty,
+			xmin = -3,
+			xmax = 10,
+			ymin = -2,
+			ymax =  10,
+			zmin = 0,
+			zmax = 1,
+		]
+		\draw [dashed] (3,0,0) -- (3,7,0) -- (0,7,0);
+		\draw [->] (3,7,0) -- (3,7,-.2) node [pos=-0.1,above] {$P_1$};
+		\shade[ball color=blue] (3,7,0) circle [radius=0.6ex];
+
+		\draw [dashed] (7.5,0,0) -- (7.5,3,0) -- (0,3,0);
+		\draw [->] (7.5,3,0) -- (7.5,3,-.2) node [pos=-0.1,above] {$P_2$};
+		\shade[ball color=blue] (7.5,3,0) circle [radius=0.6ex];
+
+		\draw [dashed] (-2,0,0) -- (-2,5,0) -- (0,5,0);
+		\draw [->] (-2,5,0) -- (-2,5,-.2) node [pos=-0.1,above] {$P_3$};
+		\shade[ball color=blue] (-2,5,0) circle [radius=0.6ex];
+	\end{axis}
+\end{tikzpicture}
+\end{document}

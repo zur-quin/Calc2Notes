@@ -225,3 +225,5 @@
 #let ftlb = zi.declare("ft-lb", alt: "foot pounds")
 #let lb-ft3 = zi.declare("lbs/ft^3", alt: "pounds per cubic foot")
 #let imperialwater = lb-ft3(62.4)
+
+#let mathcalR = inline_eq($cal(R)$, "script R")
