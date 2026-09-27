@@ -1,5 +1,3 @@
-// chapter_5.typ
-
 #import "./../../template_notes.typ": *
 #show: template
 
@@ -10,29 +8,28 @@
 #context {
   //if individual pdfs
   if target() == "paged" and sys.inputs.at("individualchs", default: "false") == "true" {
-    [ #set document(title: "Section 7.7")
-      = Integration Techniques
+    [ #set document(title: "Section 7.8a")
     ]
   }
 }
-
-#counter(heading).update(7)
+= Integration Techniques
 #counter(heading).step(level: 2)
 #counter(heading).step(level: 2)
 #counter(heading).step(level: 2)
 #counter(heading).step(level: 2)
 #counter(heading).step(level: 2)
 #counter(heading).step(level: 2)
-== Approximate Integration
+#counter(heading).step(level: 2)
+== Improper Integrals
 
 
 // any functions and templating you want for just this chapter can go here
 
 #emph-block[
-  7.7 Learning Objectives
+  7.8a Learning Objectives
 ]
 
 #emph-block[
-  7.7 Section Summary:
+  7.8a Section Summary:
 ]
 

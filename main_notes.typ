@@ -20,7 +20,7 @@
 // but don't define functions or variables there!
 // chapters will not see it
 
-#outline()
+#outline(depth: 2)
 
 // Now the chapters themselves as some Typst content
 
@@ -44,9 +44,9 @@
 #include "chapters/chapter_7/section7_4a.typ"
 #include "chapters/chapter_7/section7_4b.typ"
 #include "chapters/chapter_7/section7_5.typ"
+#include "chapters/chapter_7/section7_7.typ"
 
 // todo list
-#include "chapters/chapter_7/section7_7.typ"
 #include "chapters/chapter_8/section8_3.typ"
 #include "chapters/chapter_4/section4_4a.typ"
 #include "chapters/chapter_4/section4_4b.typ"

@@ -10,29 +10,29 @@
 #context {
   //if individual pdfs
   if target() == "paged" and sys.inputs.at("individualchs", default: "false") == "true" {
-    [ #set document(title: "Section 7.7")
+    [ #set document(title: "Section 7.8")
       = Integration Techniques
+      #counter(heading).update(7)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      == Improper Integrals
+
     ]
   }
 }
 
-#counter(heading).update(7)
-#counter(heading).step(level: 2)
-#counter(heading).step(level: 2)
-#counter(heading).step(level: 2)
-#counter(heading).step(level: 2)
-#counter(heading).step(level: 2)
-#counter(heading).step(level: 2)
-== Approximate Integration
-
-
 // any functions and templating you want for just this chapter can go here
 
 #emph-block[
-  7.7 Learning Objectives
+  7.8b Learning Objectives
 ]
 
 #emph-block[
-  7.7 Section Summary:
+  7.8b Section Summary:
 ]
 

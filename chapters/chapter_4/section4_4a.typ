@@ -1,38 +1,31 @@
-// chapter_5.typ
-
 #import "./../../template_notes.typ": *
 #show: template
 
 
 // set up heading numbering
 #set heading(numbering: "1.")
-#counter(heading).update(6)
+#counter(heading).update(3)
 #context {
   //if individual pdfs
   if target() == "paged" and sys.inputs.at("individualchs", default: "false") == "true" {
-    [ #set document(title: "Section 7.7")
-      = Integration Techniques
+    [ #set document(title: "Section 4.4a")
     ]
   }
 }
-
-#counter(heading).update(7)
+= Limits
 #counter(heading).step(level: 2)
 #counter(heading).step(level: 2)
 #counter(heading).step(level: 2)
-#counter(heading).step(level: 2)
-#counter(heading).step(level: 2)
-#counter(heading).step(level: 2)
-== Approximate Integration
+== L'Hospital's Rule
 
 
 // any functions and templating you want for just this chapter can go here
 
 #emph-block[
-  7.7 Learning Objectives
+  4.4a Learning Objectives
 ]
 
 #emph-block[
-  7.7 Section Summary:
+  4.4a Section Summary:
 ]
 
