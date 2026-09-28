@@ -45,9 +45,9 @@
 #include "chapters/chapter_7/section7_4b.typ"
 #include "chapters/chapter_7/section7_5.typ"
 #include "chapters/chapter_7/section7_7.typ"
+#include "chapters/chapter_8/section8_3.typ"
 
 // todo list
-#include "chapters/chapter_8/section8_3.typ"
 #include "chapters/chapter_4/section4_4a.typ"
 #include "chapters/chapter_4/section4_4b.typ"
 #include "chapters/chapter_7/section7_8a.typ"
