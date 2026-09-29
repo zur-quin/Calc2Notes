@@ -63,9 +63,9 @@ Lastly, if we have a limit that looks like #auto-alt($infinity/infinity$) it cou
 ]
 
 The following are NOT indeterminate forms.
-- #auto-alt($-infinity-infinity$)    this goes to #auto-alt($-infinity$)
-- #auto-alt($infinity dot infinity$)    this goes to #auto-alt($infinity$)
-- #auto-alt($0 dot 0$)     this is still equal to 0, just like when you learned multiplication the first time
+- #auto-alt($-infinity-infinity$):    this goes to #auto-alt($-infinity$)
+- #auto-alt($infinity dot infinity$):    this goes to #auto-alt($infinity$)
+- #auto-alt($0 dot 0$):     this is still equal to 0, just like when you learned multiplication the first time
 
 #theorem[L'Hospital's Rule][
   Suppose that #auto-alt($f$) and #auto-alt($g$) are differentiable on an open interval #acc("I") containing #acc("a"), and that #auto-alt($g'(x) eq.not 0$) on #acc("I") if #auto-alt($x eq.not a$). If either
@@ -97,9 +97,92 @@ The following are NOT indeterminate forms.
   See sections 2.3 (Limit Laws) and 3.2 (Quotient Rule) if you feel you may need to review these distinctions.
 ]
 
+=== Limit Examples
+For each of the following examples, evalute the limit if it exists. If it does not exist, be as specific as possible. If using l'Hospital's rule, make sure to show which indeterminate form the limit is in.
+#example[
+  #auto-alt($ lim_(x arrow infinity) (ln|x|)/x^2 $)
+]
+#my-solution-block[
+  We have already started to discuss this limit, and so we know it has indeterminate form #auto-alt($infinity/infinity$). Another way to write this sentence is
+  #auto-alt(
+    $
+      lim_(x arrow infinity) (ln|x|)/x^2 " has indeterminate form " infinity/infinity.
+    $,
+  )
+  Then,
+  #auto-alt(
+    $
+      lim_(x arrow infinity) (ln|x|)/x^2 & =^"LH" lim_(x arrow infinity) (1/x)/(x) \
+                                         & =^#hide("LH") lim_(x arrow infinity) 1/(x^2) \
+                                         & =^#hide("LH") 0
+    $,
+  )
+]
+#warning-block[
+  #auto-alt($infinity/infinity$) is not a number. If you write #auto-alt($lim_(x arrow infinity) (ln|x|)/x^2=infinity/infinity$), you are writing nonsense, and you will lose points over it.
+]
+
+#example[
+  #auto-alt($ lim_(x arrow pi^-) sin(x)/(1-cos(x)) $)
+]
+#my-solution-block[
+  Our first limit evaluation technique is always just to check direct substitution...
+  #auto-alt($ lim_(x arrow pi^-) sin(x)/(1-cos(x)) = sin(pi)/(1-cos(pi)) = 0/2 = 0 $)
+  L'Hospital's rule was not needed.
+]
+#remark-block[
+  What if we did do l'Hospital's rule in the above problem anyway? Would it still work?
+  #auto-alt(
+    $
+      lim_(x arrow pi^-) sin(x)/(1-cos(x)) & =^"LH" lim_(x arrow pi^-) cos(x)/(sin(x)) \
+                                           & =^#hide("LH") (-1)/0^+ \
+                                           & =^#hide("LH") -infinity eq.not 0 \
+    $,
+  )
+  If we used l'Hospital's rule when not in indeterminate form, it gives us the wrong answer! This is because this function was not in indeterminate form.
+]
+
+#example[
+  #auto-alt($ lim_(x arrow 0^+) (x+sin(x))/(x) $)
+]
+#my-solution-block[
+  #auto-alt($lim_(x arrow 0^+) (x+sin(x))/(x)$) has indeterminate form of #auto-alt($0/0$), so we can use l'Hospital's rule. Then,
+  #auto-alt(
+    $
+      lim_(x arrow 0^+) (x+sin(x))/(x) & =^"LH" lim_(x arrow 0^+) (1+cos(x))/1 \
+                                       & =^#hide("LH") (1+1)/1 = 2
+    $,
+  )
+]
+
+#example[
+  #auto-alt($ lim_(x arrow 0^+) sin(x) ln(x) $)
+]
+#my-solution-block[
+  #auto-alt($lim_(x arrow 0^+) sin(x) ln(x)$) has indeterminate form of #auto-alt($0 dot infinity$), so it is unclear what this limit is, however l'Hospital's rule only applies to #auto-alt($0/0 " or " infinity/infinity$) cases. So, we must first rewrite this one!
+
+  #auto-alt(
+    $
+      lim_(x arrow 0^+) sin(x) ln(x) & =^#hide("LH") lim_(x arrow 0^+) ln(x)/csc(x) " which has indeterminate form "infinity/infinity \
+      & =^"LH" lim_(x arrow 0^+) (1/x)/(-csc(x) cot(x)) \
+      & =^#hide("LH") lim_(x arrow 0^+) ( -sin(x)tan(x))/(x) "  which has indeterminate form " 0/0\
+      & =^"LH" lim_(x arrow 0^+) -sin(x)sec^2(x) -cos(x)tan(x) \
+      & =^#hide("LH") -sin(0)sec^2(0) -cos(0)tan(0) \
+      & =^#hide("LH") (0)(1) - (1) (0) = 0 \
+    $,
+  )
+  Notice that we used l'Hospital's rule twice, and we labeled when we did so each step, and which indeterminate form we had too. It is really hard to follow without these notes, so they are essentially required.
+]
+#tip-block[
+  Sometimes we need to rewrite a function using #auto-alt($ f(x) = 1/(1/f(x)) $) to help us get from an indeterminate form we can't use l'Hospital's rule to one we can (#auto-alt($0/0 " or " infinity/infinity$))
+]
 
 
 #emph-block[
   4.4a Section Summary:
+  - We listed some indeterminate forms for limits (IFL).
+  - We discussed when we can use l'Hospital's rule to evaluate limits.
+  - We evaluated limits, some with l'Hospital's rule but not all.
+  - We rewrote limits using algebra to get to an indeterminate form that we can use l'Hospital's rule on.
 ]
 
