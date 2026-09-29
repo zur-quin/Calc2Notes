@@ -28,7 +28,7 @@
 ]
 
 #note-block[
-  We are going on a tiny detour here back to chapter 4 and limit evaluation techniques so that we can build up some tools we will need in future sections. Specifically, we want to be able to evaluate integrals with infinity in the bounds or a vertical asymptote in the integrand (see section 7.8). Both of these techniques require us to evaluate limits. SO, we will spend 2 days going over L'Hospital's rule for taking integrals as #acc("x") goes to infinity.
+  We are going on a tiny detour here back to chapter 4 and limit evaluation techniques so that we can build up some tools we will need in future sections. Specifically, we want to be able to evaluate integrals with infinity in the bounds or a vertical asymptote in the integrand (see section 7.8). Both of these techniques require us to evaluate limits. SO, we will spend 2 days going over L'Hospital's rule to help us with these limits.
 ]
 
 === Motivation
