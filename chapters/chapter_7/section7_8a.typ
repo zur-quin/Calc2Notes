@@ -159,5 +159,7 @@ Then as we let #auto-alt($t arrow infinity$), the true area under the curve is m
 
 #emph-block[
   7.8a Section Summary:
+  - We evaluated some integrals that had infinite bounds.
+  - We discussed when integrals converge or diverge.
 ]
 
