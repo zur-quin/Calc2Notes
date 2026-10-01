@@ -1,0 +1,28 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\include{../../plot_settings.tex}
+
+\usetikzlibrary{decorations.text, decorations.pathmorphing, topaths} 
+
+
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+			twoDaxis,
+			xmin = 0,
+			xmax = 4,
+			ymin = 0,
+			ymax = 2.6,
+			xtick = {1,2.6},
+			xticklabels = {1,$t$},
+			ytick=\empty,
+			xmin = 0,
+		]
+		\addplot[black, <->, domain=0.4:4,name path = A] {1/x} node [pos=0.1,right] {$y=\frac{1}{x}$};
+		\addplot[draw=none,domain=0:4,name path = floor] {0};
+		\draw[dashed,thick] (1,1) -- (1,0);
+		\draw[dashed,thick] (2.6,0) -- (2.6,1/2.6);
+		\addplot[pattern = {Lines[angle=45,distance=8pt,line width=.4pt]}] fill between [of=A and floor, soft clip={domain=1:2.6}];
+	\end{axis}
+\end{tikzpicture}
+\end{document}
