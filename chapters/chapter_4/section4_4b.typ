@@ -18,6 +18,20 @@
       #counter(heading).step(level: 3)
       === Limit Examples (Continued)
     ]
+  } else if (
+    sys.inputs.at("html-frames", default: "false") == "true"
+      and sys.inputs.at("individualchs", default: "false") == "true"
+  ) {
+    [ // if single html still print the stuff
+      = Limits
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      == L'Hospital's Rule
+      #counter(heading).step(level: 3)
+      #counter(heading).step(level: 3)
+      === Limit Examples (Continued)
+    ]
   }
 }
 

@@ -21,7 +21,35 @@
       #counter(heading).step(level: 2)
       #counter(heading).step(level: 2)
       == Improper Integrals
-
+    ]
+  } else if (
+    sys.inputs.at("html-frames", default: "false") == "true"
+      and sys.inputs.at("individualchs", default: "false") == "true"
+  ) {
+    [ // if single html still print the stuff
+      = Integration Techniques
+      #counter(heading).update(7)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      == Improper Integrals
+    ]
+  } else {
+    // main html
+    [
+      #counter(heading).update(7)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
+      #counter(heading).step(level: 2)
     ]
   }
 }
