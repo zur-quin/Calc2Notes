@@ -81,15 +81,14 @@
                                              & = lim_(t arrow (pi/2)^-) integral_0^t (sin(theta))/(cos(theta)) dif theta
     $,
   )
-  Let #auto-alt($u=cos(theta)$), #auto-alt($dif u = - sin(theta) dif theta$), then
+  Let #auto-alt($u=cos(theta)$), #auto-alt($dif u = - sin(theta) dif theta$), #auto-alt($u(0) = 1$), #auto-alt($u(t) = cos(t)$) then
   #auto-alt(
     $
-      integral_0^(pi/2) tan(theta) dif theta & = lim_(t arrow (pi/2)^-) integral_0^t (sin(theta))/(cos(theta)) dif theta \
-                                             & = lim_(t arrow (pi/2)^-) (-1) integral_0^t 1/(u) dif u \
-                                             & = lim_(t arrow (pi/2)^-) (-1) ln|u| |_0^(t) \
-                                             & = lim_(t arrow (pi/2)^-) (-1) ln|cos(theta)| |_0^(t) \
-                                             & = lim_(t arrow (pi/2)^-) ln|sec(t)| \
-                                             & = infinity
+      integral_0^(pi/2) tan(theta) dif theta & = lim_(t arrow (pi/2)^-) integral_1^(cos(t)) (sin(theta))/(cos(theta)) dif theta \
+      & = lim_(t arrow (pi/2)^-) (-1) integral_1^(cos(t)) 1/(u) dif u \
+      & = lim_(t arrow (pi/2)^-) (-1) ln|u| |_1^(cos(t)) \
+      & = lim_(t arrow (pi/2)^-) ln|sec(t)| \
+      & = infinity
     $,
   )
   because this limit diverges, the integral diverges.
