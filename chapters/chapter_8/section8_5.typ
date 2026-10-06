@@ -43,7 +43,7 @@
   The result of rolling a six sided die, or the number of times you need to flip a coin before getting "heads" are two examples of discrete random variables. The first has a finite set of outcomes: ${1,2,3,4,5,6}$, the second has a countable set of outcomes: ${1,2,3,4,5,6,7,8,...}$ (depending on how unlucky you are).
 ]
 
-=== Continuous Random Variables
+=== Continuous Random Variables and Probability Density
 We'll spend our time in probability land here:
 #definition[Continuous Random Variable][
   $X$ is a *continuous random variable* if it is a number that represents an outcome that can take any real value on some interval.
@@ -100,17 +100,70 @@ We'll spend our time in probability land here:
   Could $f(x)$ be a PDF for some continuous random variable?
 ]
 #my-solution-block[
-  We need to check 2 things. Is $f(x) gt.eq 0$, and is $integral_(-infinity)^infinity f(x) dif x = 1$?
+  We need to check 2 things: Is $f(x) gt.eq 0$, and is $integral_(-infinity)^infinity f(x) dif x = 1$?
 
   First, for $0 lt.eq x lt.eq 10$, we have $1/6 x gt.eq 0$ and $10-x gt.eq 0$ and the product of 2 non-negative numbers in non-negative. Outside this interval $f(x)=0 gt.eq 0$ so yes, $f(x)gt.eq 0$ everywhere.
 
   Second, we check the integral
   $
     integral_(-infinity)^infinity f(x) dif x & = integral_(-infinity)^0 0 dif x + integral_0^10 1/6 x(10-x) dif x + integral_(10)^infinity 0 dif x \
-    & = 0 + integral_0^10 1/6 x(10-x) dif x + 0
+    & = 0 + integral_0^(10) 1/6 x(10-x) dif x + 0 \
+    & = 1/6 integral_0^(10) 10x-x^2 dif x \
+    & = 1/6 [5x^2-x^3/3] |_0^(10)\
+    & = 1/6 (500-1000/3) \
+    & = 500/18 eq.not 1.
+  $
+  So, $f(x)$ could not be a PDF for some continuous random variable.
+]
+
+#exercise[
+  Show that $f(x)$ is a PDF for some random variable $X$.
+  $
+    f(x) = cases(
+      delim: "{", pi/2 sin(pi x) #h_html(2em)& 0 lt.eq x lt.eq 1,
+      0 & "otherwise"
+    )
   $
 ]
 
+#example[
+  Find $P(X gt.eq 1/2)$, if the PDF for $X$ is
+  $
+    f(x) = cases(
+      delim: "{", pi/2 sin(pi x) #h_html(2em)& 0 lt.eq x lt.eq 1,
+      0 & "otherwise"
+    )
+  $
+]
+
+#my-solution-block[
+  We can assume this is a PDF (because we showed it in previous exercise, but also the wording of the problem). Then all we do is find
+  $
+    P(X gt.eq 1/2) & = integral_(1/2)^infinity f(x) dif x \
+                   & = integral_(1/2)^1 pi/2 sin(pi x) dif x + integral_(1)^infinity 0 dif x \
+                   & = pi/2 integral_(1/2)^1 sin(pi x) dif x \
+                   & = pi/2 1/pi integral_(pi/2)^pi sin(u) dif u \
+                   & = 1/2 (-cos(u))|_(pi/2)^pi \
+                   & = 1/2 (cos(pi/2)-cos(pi)) \
+                   & = 1/2 (0-(-1)) \
+                   & = 1/2
+  $
+  Where $u=pi x$, $dif u = pi dif x$, $u(1/2)=pi/2$, $u(1)=pi$.
+]
+#note-block(
+  "Note, probability is always between 0 and 1. This is a good thing to double check at the end, is the probability between 0 and 1?",
+)
+
+=== Mean Value of a Probability Density Function
+#definition[Mean of random variable][
+  The average, or *mean*, or *expected value* of a continuous random variable $X$ with probability density function $f(x)$ is
+  $
+    mu = integral_(-infinity)^(infinity) f(x) x dif x
+  $
+]
+
+
+=== Median Value of a Probability Density Function
 
 
 
