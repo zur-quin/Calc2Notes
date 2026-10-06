@@ -139,6 +139,13 @@
   icon-name: "key",
 )
 
+// Create a tip block with green styling and light bulb icon
+// Useful for helpful suggestions and tips
+#let fun-fact-block = note-block.with(
+  fill: rgb("#b2073d"),
+  title: "Fun Fact",
+  icon-name: "flame",
+)
 
 // next package:
 #import "@preview/diverential:0.3.0": *
