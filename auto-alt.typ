@@ -184,7 +184,7 @@
     eq
   } else {
     let alt = get-alt(eq)
-
+    assert(alt.len() > 0, message: "empty alt text")
     math.equation(
       block: eq.block,
       number-align: eq.fields().at("number-align", default: end + horizon),
