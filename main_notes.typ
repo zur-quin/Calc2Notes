@@ -50,8 +50,26 @@
 #include "chapters/chapter_4/section4_4b.typ"
 #include "chapters/chapter_7/section7_8a.typ"
 #include "chapters/chapter_7/section7_8b.typ"
-
-// todo list
 #include "chapters/chapter_8/section8_5.typ"
 
 // test 3
+// todo list
+#include "chapters/chapter_11/section11_1a.typ"
+#include "chapters/chapter_11/section11_1b.typ"
+#include "chapters/chapter_11/section11_2a.typ"
+#include "chapters/chapter_11/section11_2b.typ"
+#include "chapters/chapter_11/section11_3.typ"
+#include "chapters/chapter_11/section11_4a.typ"
+#include "chapters/chapter_11/section11_4b.typ"
+#include "chapters/chapter_11/section11_5a.typ"
+#include "chapters/chapter_11/section11_5b.typ"
+#include "chapters/chapter_11/section11_6a.typ"
+#include "chapters/chapter_11/section11_6b.typ"
+#include "chapters/chapter_11/section11_7.typ"
+#include "chapters/chapter_11/section11_8.typ"
+#include "chapters/chapter_11/section11_9a.typ"
+#include "chapters/chapter_11/section11_9b.typ"
+#include "chapters/chapter_11/section11_10a.typ"
+#include "chapters/chapter_11/section11_10b.typ"
+#include "chapters/chapter_11/section11_11a.typ"
+#include "chapters/chapter_11/section11_11b.typ"

@@ -205,6 +205,55 @@
   )
 }
 
+#let sequence = (letter: auto, index: auto, start: auto, end: auto, bl: auto, short: auto) => {
+  if letter == auto {
+    letter = auto-alt($a$)
+  }
+  if index == auto {
+    index = auto-alt($n$)
+  }
+  if start == auto {
+    start = auto-alt($1$)
+  }
+  if end == auto {
+    end = auto-alt($infinity$)
+  }
+  if bl == auto {
+    bl = false
+  }
+  if short == auto {
+    short = false
+  }
+  if short == false {
+    math.equation(
+      $
+        (letter_index)_(index=start)^end
+      $,
+      alt: "the sequence of "
+        + letter.at("alt")
+        + " sub "
+        + index.at("alt")
+        + " from "
+        + index.at("alt")
+        + " equals "
+        + start.at("alt")
+        + " to "
+        + index.at("alt")
+        + " equals "
+        + end.at("alt"),
+      block: bl,
+    )
+  } else if short == true {
+    math.equation(
+      $
+        (letter_index)
+      $,
+      alt: "the sequence of " + letter.at("alt") + " sub " + index.at("alt"),
+      block: bl,
+    )
+  }
+}
+
 // put under imports
 #let template = doc => {
   context { set page(header: "Math 1226 Completed Notes") if target() == "paged" }

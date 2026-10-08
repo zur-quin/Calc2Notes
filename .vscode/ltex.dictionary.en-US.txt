@@ -4,3 +4,4 @@ Webassign
 WebAssign
 antidifferentiating
 antideriving
+Maclaurin
