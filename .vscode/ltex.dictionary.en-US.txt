@@ -5,3 +5,4 @@ WebAssign
 antidifferentiating
 antideriving
 Maclaurin
+combinatorics

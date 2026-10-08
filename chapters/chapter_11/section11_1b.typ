@@ -42,6 +42,10 @@
 
 ]
 
+#theorem[Squeeze Theorem for Sequences][
+  If $a_n lt.eq b_n lt.eq c_n$ for all $n gt.eq N$ where $N$ is a positive integer, and $ lim_(n arrow infinity) a_n = L = lim_(n arrow infinity) c_n, $ then we must have $ lim_(n arrow infinity) b_n = L $
+]
+
 
 
 #emph-block[

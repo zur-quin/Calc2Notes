@@ -122,7 +122,7 @@ This is the sixth term in the list, so it is $a_6=8$.
 ]
 
 #definition[
-  The sequence #sequence(short: true) *converges* to the number $L$ if $lim_(n arrow infinity) = L$.
+  The sequence #sequence(short: true) *converges* to the number $L$ if $lim_(n arrow infinity) a_n = L$.
 
   If no such number $L$ exists, we say that #sequence(short: true) *diverges*.
 
@@ -134,7 +134,7 @@ If we go back to thinking about a sequence as a function that maps integers to r
 //todo: plots
 
 #theorem[
-  If $display(lim_(x arrow infinity)=L)$ and $f(n)=a_n$ when $n$ is an integer, then
+  If $display(lim_(x arrow infinity)a_n=L)$ and $f(n)=a_n$ when $n$ is an integer, then
   $
     lim_(n arrow infinity) a_n = L.
   $
@@ -151,10 +151,92 @@ If we go back to thinking about a sequence as a function that maps integers to r
                                                & =^"LH" lim_(x arrow infinity) (2)/(4) \
                                                & = 1/2
   $
-  Because the function where $f(n)=a_n$ converges to $1/2$, the sequence $display(#sequence() = ((n^2+3n+1)/(2n^2+1))_(n=1)^infinity)$ converges $1/2$ as well.
+  Because the function where $f(n)=a_n$ converges to $1/2$, the sequence $display(#sequence() = ((n^2+3n+1)/(2n^2+1))_(n=1)^infinity)$ converges to $1/2$ as well.
+]
+
+#theorem[Limit Laws][
+  Let #sequence(short: true) and #sequence(letter: auto-alt($b$), short: true) be convergent sequences and let $c$ be a constant. Then the following are true.
+
+  #set list(spacing: 2em)
+  - $display(lim_(n arrow infinity) a_n plus.minus b_n = lim_(n arrow infinity) a_n plus.minus lim_(n arrow infinity) b_n)$
+  - $display(lim_(n arrow infinity) c a_n = c lim_(n arrow infinity) a_n)$
+  - $display(lim_(n arrow infinity) a_n b_n = (lim_(n arrow infinity) a_n)( lim_(n arrow infinity) b_n))$
+  - $display(lim_(n arrow infinity) a_n/b_n = (display(lim_(n arrow infinity)) a_n)/( display(lim_(n arrow infinity)) b_n))$ assuming $display(lim_(n arrow infinity) b_n eq.not 0)$
+  - $display(lim_(n arrow infinity) (a_n)^p = (lim_(n arrow infinity) a_n)^p)$ for $a_n > 0, p>0$
+  #set list(spacing: auto)
+  #hide("a")
+]
+
+#example[
+  Decide whether the sequence is convergent or divergent. If the sequence is convergent, then find its limit.
+  $
+    ((-1)^n)_(n=1)^infinity
+  $
+]
+#my-solution-block[
+  $
+    ((-1)^n)_(n=1)^infinity = (-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,....)
+  $
+  This sequence *diverges* since the terms infinitely alternate between two different values, never getting closer to either.
+]
+
+#example[
+  Decide whether the sequence is convergent or divergent. If the sequence is convergent, then find its limit.
+  $
+    ((ln(n))/n)_(n=1)^infinity
+  $
+]
+#my-solution-block[
+  Looking at the function $f(x) = (ln(x))/x$ the limit is
+  $
+    lim_(x arrow infinity) (ln(x))/x =^"LH" lim_(x arrow infinity) (1/x)/1 = 0
+  $
+  So the sequence $#sequence()=((ln(n))/n)_(n=1)^infinity$ is convergent, and it converges to 0.
+]
+
+#recall-block[
+  For some integer $n$ the factorial of that integer, $n!$, is the product with it and every positive integer less than it. $n! = n dot (n-1) dot (n-2) dot ... dot 2 dot 1$
+
+  examples:
+  - $5! = 5 dot 4 dot 3 dot 2 dot 1 = 120$
+  - $4! = 4 dot 3 dot 2 dot 1 = 24$
+  - $3! = 3 dot 2 dot 1 = 6$
+  - $2! = 2 dot 1 = 2$
+  - $1! = 1$
+  - We also define $0! =1$ (this comes from combinatorics)
+]
+#example[
+  Decide whether the sequence is convergent or divergent. If the sequence is convergent, then find its limit.
+  $
+    ((3n-1)!/(3n+1)!)_(n=1)^infinity
+  $
+]
+#my-solution-block[
+  $
+    lim_(n arrow infinity) (3n-1)!/(3n+1)! & = lim_(n arrow infinity) (#hide($(3n+1)(3n)$) (3n-1) (3n-2) (3n-3) ... 3 dot 2 dot 1)/((3n+1)(3n)(3n-1) (3n-2) (3n-3) ... 3 dot 2 dot 1) \
+    & = lim_(n arrow infinity) 1/((3n+1)(3n)) \
+    & = 0
+  $
+  The sequence $((3n-1)!/(3n+1)!)_(n=1)^infinity$ converges, and it converges to 0.
+]
+
+#example[
+  Decide whether the sequence is convergent or divergent. If the sequence is convergent, then find its limit.
+  $
+    ((3^n)/(n^2))_(n=1)^infinity
+  $
+]
+#my-solution-block[
+  $
+    lim_(n arrow infinity) (3^n)/(n^2) & =^"LH" lim_(n arrow infinity) (ln(3) dot 3^n)/(2n) \
+                                       & =^"LH" lim_(n arrow infinity) ((ln(3))^2 dot 3^n)/(2) \
+                                       & = infinity
+  $
+  The sequence $((3^n)/(n^2))_(n=1)^infinity$ diverges to infinity.
 ]
 
 #emph-block[
   11.1a Section Summary:
+  - We went over some of the basics of sequences and how to tell if they converge or diverge. We will continue this in the next day of notes.
 ]
 

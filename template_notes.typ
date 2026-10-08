@@ -147,6 +147,12 @@
   icon-name: "flame",
 )
 
+#let recall-block = note-block.with(
+  fill: rgb("#0712b2"),
+  title: "Recall",
+  icon-name: "paper-airplane",
+)
+
 // next package:
 #import "@preview/diverential:0.3.0": *
 
