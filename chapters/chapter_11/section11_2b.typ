@@ -47,6 +47,47 @@
 
 
 
+#theorem[Divergence Theorem (Test for Divergence)][
+  If the series $display(sum_(n=1)^infinity)$ is convergent, then $display(lim_(n arrow infinity) a_n = 0)$.
+
+  Therefore,
+  - If $display(lim_(n arrow infinity)) a_n eq.not 0$, then $display(sum_(n=1)^infinity a_n)$ is divergent.
+  - If $display(lim_(n arrow infinity) a_n = 0)$, then the series may converge or diverge. The test is inconclusive.
+]
+
+#example[
+  Use the divergence test to determine the divergence of the following series if applicable.
+  $
+    sum_(k=1)^infinity (k^2)/(k^2-2k+5)
+  $
+]
+#my-solution-block[
+  Looking at the limit of the terms we have
+  $
+    lim_(k arrow infinity) (k^2)/(k^2-2k+5) =^"LH" lim_(k arrow infinity) (2k)/(2k-2) =^"LH" lim_(k arrow infinity) 2/2 = 1 eq.not 0
+  $
+  Thus, by the Divergence Theorem, the series diverges.
+]
+
+#example[
+  Use the divergence test to determine the divergence of the following series if applicable.
+  $
+    sum_(n=1)^infinity ln((n^2+1)/(2n^2+1))
+  $
+]
+#my-solution-block[
+  Looking at the limit of the terms we have
+  $
+    lim_(n arrow infinity) ln((n^2+1)/(2n^2+1)) & = ln(lim_(n arrow infinity) (n^2+1)/(2n^2+1)) \
+                                                & =^"LH" ln(lim_(n arrow infinity) (2n)/(4n)) \
+                                                & = ln(1/2) eq.not 0 \
+  $
+  Thus, by the Divergence Theorem, the series diverges.
+]
+
+
+
+
 #emph-block[
   11.1b Section Summary:
 

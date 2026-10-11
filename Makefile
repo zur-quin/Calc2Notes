@@ -12,7 +12,7 @@ htmls: chapters/chapter_7/section7_3a.html chapters/chapter_7/section7_3b.html c
 htmls: chapters/chapter_7/section7_4b.html chapters/chapter_7/section7_5.html chapters/chapter_7/section7_7.html
 htmls: chapters/chapter_8/section8_3.html chapters/chapter_4/section4_4a.html chapters/chapter_4/section4_4b.html
 htmls: chapters/chapter_7/section7_8a.html chapters/chapter_7/section7_8b.html chapters/chapter_8/section8_5.html 
-htmls: chapters/chapter_11/section11_1a.html chapters/chapter_11/section11_1b.html 
+htmls: chapters/chapter_11/section11_1a.html chapters/chapter_11/section11_1b.html chapters/chapter_11/section11_2a.html 
 
 %.html: %.typ
 	typst compile $*.typ --format html --features html --root ../.. --input root=../../ --input html-frames=true --input individualchs=true
@@ -25,7 +25,7 @@ pdfs: chapters/chapter_7/section7_3a.pdf  chapters/chapter_7/section7_3b.pdf cha
 pdfs: chapters/chapter_7/section7_4b.pdf chapters/chapter_7/section7_5.pdf chapters/chapter_7/section7_7.pdf
 pdfs: chapters/chapter_8/section8_3.pdf chapters/chapter_4/section4_4a.pdf chapters/chapter_4/section4_4b.pdf
 pdfs: chapters/chapter_7/section7_8a.pdf chapters/chapter_7/section7_8b.pdf chapters/chapter_8/section8_5.pdf
-pdfs: chapters/chapter_11/section11_1a.pdf chapters/chapter_11/section11_1b.pdf 
+pdfs: chapters/chapter_11/section11_1a.pdf chapters/chapter_11/section11_1b.pdf chapters/chapter_11/section11_2a.pdf 
 
 %.pdf: %.typ
 	typst compile $*.typ --pdf-standard ua-1 --root ../.. --input individualchs=true
