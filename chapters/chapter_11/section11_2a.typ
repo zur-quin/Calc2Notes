@@ -128,5 +128,8 @@ Suppose we have a sequence, #sequence(), and we want to add up all the terms. Ho
 
 #emph-block[
   11.2a Section Summary:
+  - We defined a series using the sequences of partial sums.
+  - We used the sequence of partial sums of series to discuss the convergence or divergence of some series.
+  - We looked at *telescoping series* and showed *the harmonic series* diverges.
 ]
 
