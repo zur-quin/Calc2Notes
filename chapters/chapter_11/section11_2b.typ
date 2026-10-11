@@ -42,7 +42,9 @@
 
 #emph-block[
   11.2b Learning Objectives
-
+  - Understand what a series means in relation to sequences
+  - Identify types of series (geometric and harmonic)
+  - Determine when a series converges or diverges
 ]
 
 
