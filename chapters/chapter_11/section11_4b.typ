@@ -16,7 +16,7 @@
       #counter(heading).step(level: 2)
       #counter(heading).step(level: 2)
       #counter(heading).step(level: 2)
-      == Sequences
+      == test
     ]
   } else if (
     sys.inputs.at("html-frames", default: "false") == "true"
@@ -28,7 +28,7 @@
       #counter(heading).step(level: 2)
       #counter(heading).step(level: 2)
       #counter(heading).step(level: 2)
-      == Sequences
+      == test
     ]
   } else {
     // main html
@@ -47,14 +47,14 @@
 // any functions and templating you want for just this chapter can go here
 
 #emph-block[
-  11.1b Learning Objectives
+  11.4b Learning Objectives
 
 ]
 
 
 
 #emph-block[
-  11.1b Section Summary:
+  11.4b Section Summary:
 
 ]
 

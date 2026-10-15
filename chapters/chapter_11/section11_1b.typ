@@ -32,8 +32,6 @@
     ]
   }
 }
-// #counter(heading).step(level: 3)
-// #counter(heading).step(level: 3)
 
 // any functions and templating you want for just this chapter can go here
 
