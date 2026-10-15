@@ -114,6 +114,7 @@ We have already determined for which values of $p$ the integral $integral_1^infi
   We are starting to build up a few test we can use for series convergence, and it will begin to be a challenge to identify which to use. For $sum_(n=1)^infinity a_n$ so far we can use
   - the divergence test (if #sequence() doesnt converge to 0 then the series diverges)
   - Think about the partial sums (usful for telescoping series and things that easily simplify when added together)
+  - Geometric Series test (is it a geomatric series with $r<1$?)
   - $p$-series test (for $a_n=1/n^p$ type things)
   - integral test (for things that are easy/possible to integrate using our integration techniques)
 
