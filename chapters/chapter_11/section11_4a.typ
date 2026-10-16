@@ -48,6 +48,8 @@
   - Know when and how to use direct comparison and limit comparison tests.
 ]
 
+=== Direct Comparison Test
+
 #example[
   Determine whether the series $display(sum_(n=1)^infinity 1/(n-1))$ converges or diverges.
 ]
