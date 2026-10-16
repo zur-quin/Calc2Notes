@@ -138,7 +138,23 @@ todo: plots
   Then, by the direct comparison test, $display(sum_(n=1)^infinity (cos^2(n))/(1+n^5))$ also converges.
 ]
 
+#warning-block[
+  Can we apply the Direct Comparison Test to the series $display(sum_(n=2)^infinity 1/(n^2-1))$?
+
+  This series is similar to $display(sum_(n=2)^infinity 1/n^2)$, which converges by the $p$-series test, so we would expect the original series to converge. However, since
+  $
+                   n^2-1 & < n^2 " for " n gt.eq 2 \
+    "we have " 1/(n^2-1) & > 1/n^2
+  $
+  and so our convergent series we want to compare to is below the original! So, the direct comparison test does not work.
+
+  We will build up a tool to use on these types of series in the next part of 11.4.
+]
+
+
 #emph-block[
   11.4a Section Summary:
+  - We identified when to use direct comparison test and how to find a series to compare to.
+  - We applied direct comparison test.
 ]
 
