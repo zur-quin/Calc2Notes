@@ -203,6 +203,6 @@ and since the limit is 0, the limit comparison test is inconclusive.
 
 #emph-block[
   11.4b Section Summary:
-
+  - We can now use limit comparison test and can tell when limit comparison test is inconclusive.
 ]
 
