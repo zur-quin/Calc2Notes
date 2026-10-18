@@ -1,0 +1,46 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\include{../../plot_settings.tex}
+
+\usetikzlibrary{decorations.text, decorations.pathmorphing, topaths} 
+
+
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+			twoDaxis,
+			xmin = 0,
+			xmax = 6.4,
+			ymin = 0,
+			ymax = 2.2,
+			xtick = {1,2,3,4,5,6},
+			% xticklabels = {$a$},
+			% ytick=\empty,
+			xlabel = {$x$},
+			area plot/.style={
+					fill opacity=0.3,
+					draw=blue,
+					% dashed,
+					fill=blue,
+					mark=none,
+				} % sets up the orange slice fill in stuff
+		]
+		\tikzmath {
+			% set the number of rectangles (it's off by 1 but I don't care)
+			\N = 5;
+		}
+		%set up the loop
+		\pgfplotsinvokeforeach{1,...,\N} {
+			\tikzmath{
+				% calculate the current x value for each iteration (otherwise it acts weird) (the 4 is hard coded the width of theinterval and "#1" is like "i" in a C loop, it is "this iteration number")
+				\currentx{#1} = #1;
+				% cacluctate the current y value for each iteration (we use it multiple times so only calculate it once here)
+				\currenty{#1} = 1/\currentx{#1}^0.5;
+			}
+			% plot the slice for this iteration by plotting the 4 coordinates of the square's vertices and use closedcycle to connect them, using the area plot style we set up earlier to color them orange and all that
+			\addplot[blue, domain=\currentx{#1}:{\currentx{#1}+1},name path = A, thick] {\currenty{#1}} node [midway, pin={[pin distance=0.4cm, pin edge={<-, thick, solid, out=80, in=210},black]above right:$\frac{1}{\sqrt{\currentx{#1}}}$}] {};
+			\addplot[area plot] (\currentx{#1},\currenty{#1}) -- (\currentx{#1}+1,\currenty{#1}) -- (\currentx{#1}+1,0) -- (\currentx{#1},0) -- cycle;
+		}
+	\end{axis}
+\end{tikzpicture}
+\end{document}
