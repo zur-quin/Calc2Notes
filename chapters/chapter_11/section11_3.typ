@@ -68,13 +68,19 @@ With the harmonic series we could do some clever bounding and algebra, but those
 
 Observe we can "graph" the sequence like a step function. We can construct a bunch of rectangles of width 1 and height #auto-alt($a_n=1/sqrt(n)$)
 
-// todo: picture
+#figure(image(
+  "figures/step.svg",
+  alt: "a bunch of blue rectangles of descending heights. From x equals 1 to 2 the height is 1 over square root of 1. From x = 2 to 3 the height is 1 over square root of 2, and so on.",
+))
 
 and the area of all the rectangles is the series #auto-alt($ sum_(n=1)^infinity 1/sqrt(n). $)
 
 A lower bound for the area under this curve is the integral of the function that passes through the left end points of our rectangles: #auto-alt($y=1/sqrt(x)$)! (not factorial, just excitement)
 
-// todo: picture with curve now!
+#figure(image(
+  "figures/IntegralTest.svg",
+  alt: "the step function from before now with the curve 1 over square root of x graphed for comparison. Note the top left corners of the rectangles line up with the curve at x equals 1,2,3,4,5, and so on.",
+))
 
 We can use the convergence or divergence of improper integrals that directly correspond to the series.
 
@@ -88,10 +94,22 @@ Thus, #auto-alt($sum_(n=1)^infinity 1/sqrt(n)$) diverges.
   Determine the convergence of the series #auto-alt($ sum_(n=1)^infinity 1/n^2 $) by comparing to a known integral.
 ]
 #my-solution-block[
-  //todo: start sum at 2? and picture
-  Notice #auto-alt($sum_(n=1)^infinity 1/n^2 < integral_1^infinity 1/x^2 dif x$). Since #auto-alt($integral 1/x^2 dif x$) is of the form #auto-alt($integral_1^infinity 1/x^p dif x$) and #auto-alt($p > 1$), this integral converges, so the series #auto-alt($ sum_(n=1)^infinity 1/n^2 $) converges.
-  //todo: 1+?
+  Let's start with a picture, in this case, we suspect that this series converges, so we want to find a curve above some rectangles to help us visualize things. We can write
+  #auto-alt(
+    $
+      sum_(n=1)^oo 1/n^2 = 1 + sum_(n=2)^oo 1/n^2
+    $,
+  )
+  then, the series can be represented by the rectangles to the right of the red line in this picture:
+  #figure(image(
+    "figures/IntegralTest_converge.svg",
+    alt: "rectangles under the curve 1 over x squared. The top right of the rectangles is aligned with the curve, and a red vertical line is at x = 1.",
+  ))
+
+  Notice #auto-alt($sum_(n=2)^infinity 1/n^2 < integral_1^infinity 1/x^2 dif x$). Since #auto-alt($integral_1^oo 1/x^2 dif x$) is of the form #auto-alt($integral_1^infinity 1/x^p dif x$) and #auto-alt($p > 1$), this integral converges, so the series #auto-alt($ sum_(n=2)^infinity 1/n^2 $) converges. Then, since we only need to add 1 (which is finite) we know #auto-alt($ sum_(n=1)^oo 1/n^2 $) converges as well.
 ]
+
+Breaking off the 1 at the start, we can do a similar trick with any convergent series, so we don't have to do this in the future. We can generalize these results with the following test for convergence.
 
 #theorem[The Integral Test][
   Let #sequence() be a sequence of positive terms. Suppose that #auto-alt($a_n=f(n)$), where #auto-alt($f$) is a continuous, positive, and decreasing function of #auto-alt($n$) for all #auto-alt($n gt.eq N$) (where #auto-alt($N$) is a positive integer).
