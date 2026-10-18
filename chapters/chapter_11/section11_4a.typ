@@ -51,14 +51,14 @@
 === Direct Comparison Test
 
 #example[
-  Determine whether the series #auto-alt($display(sum_(n=1)^infinity 1/(n-1))$) converges or diverges.
+  Determine whether the series #auto-alt($display(sum_(n=2)^infinity 1/(n-1))$) converges or diverges.
 ]
 
 This series is extremely similar to #auto-alt($display(sum_(n=2)^infinity 1/n)$), which we know diverges. In fact, thinking about graph transformations, #auto-alt($1/(x-1)$) is just #auto-alt($1/x$) shifted one space to the right.
 
-Because #auto-alt($display(sum_(n=2)^infinity 1/n)$) diverges, we expect that #auto-alt($display(sum_(n=1)^infinity 1/(n-1))$) also diverges, since the only difference is the #auto-alt($-1$) in the denominator... let's look at a picture
+Because #auto-alt($display(sum_(n=2)^infinity 1/n)$) diverges, we expect that #auto-alt($display(sum_(n=2)^infinity 1/(n-1))$) also diverges, since the only difference is the #auto-alt($-1$) in the denominator... let's look at a picture
 
-todo: plots
+#figure(image("figures/ComparisonTest.svg", alt: "asdf"))
 
 We can observe that #auto-alt($1/x < 1/(x-1)$) for all #auto-alt($x>0$), so for all #auto-alt($n gt.eq 1$) we have
 #auto-alt(
@@ -87,7 +87,6 @@ so #auto-alt($sum_(n=2)^infinity 1/(n-1)$) diverges since #auto-alt($sum_(n=2)^i
   In the above theorem, it only matters that _eventually_ we have #auto-alt($a_n lt.eq b_n$) (or #auto-alt($a_n gt.eq b_n$)). The first few terms before #auto-alt($N$) can only contribute a finite amount to the series, and don't end up mattering in the long run of the sum.
 ]
 
-todo: plots
 
 #example[
   Does the series #auto-alt($display(sum_(n=1)^infinity (2^n)/(n+6^n))$) converge or diverge?

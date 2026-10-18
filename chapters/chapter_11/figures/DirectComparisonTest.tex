@@ -1,0 +1,25 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\include{../../plot_settings.tex}
+
+\usetikzlibrary{decorations.text, decorations.pathmorphing, topaths} 
+
+
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+			twoDaxis,
+			xmin = 0,
+			xmax = 7,
+			ymin = 0,
+			ymax = 1.5,
+			xtick=\empty,
+			% xticklabels = {$a$},
+			ytick=\empty,
+			xlabel = {$x$},
+		]
+		\addplot[black, <->, domain=0.7:6, thick] {1/x} node [pos=0.5, pin={[pin distance=0.4cm, pin edge={<-, thick, solid, out=80, in=180}]above right:must also converge}] {};
+		\addplot[black, <->, domain=1.7:6, thick] {1/(x-1)} node [pos=0.2, pin={[pin distance=1.3cm, pin edge={<-,thick, out=80, in=180}]above right:known to converge}] {};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

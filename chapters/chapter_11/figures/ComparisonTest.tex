@@ -1,0 +1,31 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\include{../../plot_settings.tex}
+
+\usetikzlibrary{decorations.text, decorations.pathmorphing, topaths} 
+
+
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+			twoDaxis,
+			xmin = 0,
+			xmax = 5.5,
+			ymin = 0,
+			ymax = 1.5,
+			xtick = {1,2,3,4,5},
+			% xticklabels = {$a$},
+			ytick=\empty,
+			xlabel = {$x$},
+		]
+		\addplot[black, <->, domain=0.7:5,name path = A, thick] {1/x} node [pos=0.1, pin={[pin distance=0.3cm, pin edge={<-, thick, solid, out=80, in=180}]above right:$\frac{1}{x}$}] {};
+		\addplot[black, <->, domain=1.7:5.5,name path = B, thick] {1/(x-1)} node [pos=0.1, pin={[pin distance=0.3cm, pin edge={<-,thick, out=80, in=180}]above right:$\frac{1}{x-1}$}] {};
+		\addplot[draw=none, name path = floor, domain=0:6] {0};
+		\addplot[pattern = {Lines[angle=135,distance=10pt,line width=.5pt]}] fill between [of=A and floor, soft clip={domain=1:5}];
+		\addplot[pattern = {Lines[angle=45,distance=8pt,line width=.5pt]}] fill between [of=B and floor, soft clip={domain=2:5.5}];
+
+		\addplot[opacity = 0.4,blue] fill between [of=A and floor, soft clip={domain=1:5}];
+		\addplot[opacity = 0.4,red] fill between [of=B and floor, soft clip={domain=2:5.5}];
+	\end{axis}
+\end{tikzpicture}
+\end{document}
