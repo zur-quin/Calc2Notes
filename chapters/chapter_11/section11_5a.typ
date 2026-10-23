@@ -54,6 +54,7 @@
 
 The convergence tests we have looked at so far only apply to series with _positive terms_. In this section, we will focus on _alternating series_.
 
+=== Alternating Series
 #definition[
   A series #auto-alt($display(sum_(n=1)^oo a_n)$) is an alternating series if the series terms have the form
   #auto-alt(
