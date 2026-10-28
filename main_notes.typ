@@ -62,9 +62,9 @@
 #include "chapters/chapter_11/section11_4b.typ"
 #include "chapters/chapter_11/section11_5a.typ"
 #include "chapters/chapter_11/section11_5b.typ"
+#include "chapters/chapter_11/section11_6a.typ"
 
 // todo list
-#include "chapters/chapter_11/section11_6a.typ"
 #include "chapters/chapter_11/section11_6b.typ"
 #include "chapters/chapter_11/section11_7.typ"
 #include "chapters/chapter_11/section11_8.typ"

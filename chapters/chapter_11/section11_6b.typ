@@ -46,20 +46,32 @@
     ]
   }
 }
-// #counter(heading).step(level: 3)
+#counter(heading).step(level: 3)
 // #counter(heading).step(level: 3)
 
 // any functions and templating you want for just this chapter can go here
 
 #emph-block[
-  11.1b Learning Objectives
-
+  11.6 Learning Objectives
+  - Know when and how to use the Ratio Test
+  - Know when and how to use the Root Test
+  - Understand why the ratio test is inconclusive when the ratio is 1
+  - Understand why the root test is inconclusive when the root is 1
 ]
+
+#example[
+  Try to use ratio test to determine the convergence of the series
+  $
+    sum_(n=1)^infinity ((2n+1)/(3n+1))^n
+  $
+]
+
+=== Root Test
 
 
 
 #emph-block[
-  11.1b Section Summary:
+  11.6b Section Summary:
 
 ]
 
