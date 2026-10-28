@@ -48,7 +48,7 @@
 // any functions and templating you want for just this chapter can go here
 
 #emph-block[
-  11.4 Learning Objectives
+  11.5 Learning Objectives
   - Determine when it is appropriate to use a comparison test
   - Determine an appropriate series to compare a given series to
   - Know when and how to use direct comparison and limit comparison tests.
@@ -202,7 +202,7 @@ and since the limit is 0, the limit comparison test is inconclusive.
 
 
 #emph-block[
-  11.4b Section Summary:
+  11.5b Section Summary:
   - We can now use limit comparison test and can tell when limit comparison test is inconclusive.
 ]
 

@@ -7,7 +7,7 @@
 #context {
   //if individual pdfs
   if target() == "paged" and sys.inputs.at("individualchs", default: "false") == "true" {
-    [ #set document(title: "Section 11.4")
+    [ #set document(title: "Section 11.5")
       #counter(heading).update(10)
       = Sequences and Series
       #counter(heading).step(level: 2)
@@ -245,7 +245,7 @@ Recall that the (regular) harmonic series #auto-alt($display(sum_(n=1)^oo 1/n)$)
 ]
 
 #emph-block[
-  11.4a Section Summary:
+  11.5a Section Summary:
   - We looked at identifying alternating series and applying the alternating series test.
 ]
 
