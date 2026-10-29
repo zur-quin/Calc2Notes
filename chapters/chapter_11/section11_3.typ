@@ -12,7 +12,6 @@
       = Sequences and Series
       #counter(heading).step(level: 2)
       #counter(heading).step(level: 2)
-      == Integral Test for Series
     ]
   } else if (
     sys.inputs.at("html-frames", default: "false") == "true"
@@ -23,7 +22,6 @@
       #counter(heading).update(11)
       #counter(heading).step(level: 2)
       #counter(heading).step(level: 2)
-      == Integral Test for Series
     ]
   } else {
     // main html
@@ -34,6 +32,7 @@
     ]
   }
 }
+== Integral Test for Series
 
 // any functions and templating you want for just this chapter can go here
 

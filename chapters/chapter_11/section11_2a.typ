@@ -11,7 +11,6 @@
     [ #set document(title: "Section 11.2a")
       = Sequences and Series
       #counter(heading).step(level: 2)
-      == Series
     ]
   } else if (
     sys.inputs.at("html-frames", default: "false") == "true"
@@ -20,17 +19,16 @@
     [ // if single html still print the stuff
       = Sequences and Series
       #counter(heading).step(level: 2)
-      == Series
     ]
   } else {
     // main html
     [
       #counter(heading).update(11)
       #counter(heading).step(level: 2)
-      #counter(heading).step(level: 2)
     ]
   }
 }
+== Series
 // any functions and templating you want for just this chapter can go here
 
 #emph-block[
