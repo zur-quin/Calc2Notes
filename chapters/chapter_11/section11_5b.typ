@@ -68,9 +68,6 @@ Previously, we saw examples of series that were divergent when all of the terms 
 #theorem[
   If a series is absolutely convergent, then it is convergent.
 ]
-#exercise[
-  Prove this theorem. Hint: Use squeeze theorem.
-]
 
 #example[
   Determine whether the following series are absolutely convergent, conditionally convergent, or divergent.

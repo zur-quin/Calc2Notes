@@ -50,7 +50,7 @@
 
 
 #theorem[Divergence Theorem (Test for Divergence)][
-  If the series #auto-alt($display(sum_(n=1)^infinity)$) is convergent, then #auto-alt($display(lim_(n arrow infinity) a_n = 0)$).
+  If the series #auto-alt($display(sum_(n=1)^infinity a_n)$) is convergent, then #auto-alt($display(lim_(n arrow infinity) a_n = 0)$).
 
   Therefore,
   - If #auto-alt($display(lim_(n arrow infinity)) a_n eq.not 0$), then #auto-alt($display(sum_(n=1)^infinity a_n)$) is divergent.
