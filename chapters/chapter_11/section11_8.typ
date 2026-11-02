@@ -38,6 +38,7 @@
   } else {
     // main html
     [
+      #counter(heading).update(11)
       #counter(heading).step(level: 2)
       #counter(heading).step(level: 2)
       #counter(heading).step(level: 2)
