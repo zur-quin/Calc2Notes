@@ -157,7 +157,6 @@ Then we get into the rest of the tests for series convergence.
   [Usually you choose #auto-alt($sum b_n$) to be a geometric or #auto-alt($p$) series.],
 )
 
-
 #theorem[The Limit Comparison Test][
   Suppose that #auto-alt($display(sum_(n=1)^infinity a_n)$) and #auto-alt($display(sum_(n=1)^infinity b_n)$) are series with positive terms. If
   #auto-alt(
@@ -177,7 +176,6 @@ Then we get into the rest of the tests for series convergence.
   [Same as DCT, choose #auto-alt($sum b_n$) carefully, probably geometric or #auto-alt($p$) series.],
 )
 
-
 #theorem[The Ratio Test][
   For a series #auto-alt($display(sum_(n=1)^oo a_n)$)
   #set enum(numbering: "(i)", spacing: 2em)
@@ -195,8 +193,6 @@ Then we get into the rest of the tests for series convergence.
   [Works well when we have factorials and exponents.],
 )
 
-
-
 #theorem[The Root Test][
   #set enum(numbering: "(i)", spacing: 2em)
   + If #auto-alt($display(lim_(n arrow infinity) root(n, abs(a_n))=L<1)$), then the series #auto-alt($display(sum_(n=1)^infinity a_n)$) is *absolutely convergent* (and therefore convergent).
@@ -213,14 +209,11 @@ Then we get into the rest of the tests for series convergence.
   [Works well when #auto-alt($a_n=("something with "n)^n$)],
 )
 
-
 #exercise[
   Take the time to make flash cards and/or a flowchart for the different series convergence tests above.
 ]
-
 
 #emph-block[
   11.7 Section Summary:
   - We summarized all the different *series* convergence tests and when you might use them.
 ]
-

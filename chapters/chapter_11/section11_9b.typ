@@ -42,6 +42,7 @@
   } else {
     // main html
     [
+      #counter(heading).update(11)
       #counter(heading).step(level: 2)
       #counter(heading).step(level: 2)
       #counter(heading).step(level: 2)
@@ -60,8 +61,10 @@
 // any functions and templating you want for just this chapter can go here
 
 #emph-block[
-  11.9b Learning Objectives
-
+  11.9 Learning Objectives
+  - Use the idea of geometric series to write functions as power series
+  - Find the derivative and integral of power series
+  - Use derivatives and integrals to find power series of more complex functions
 ]
 
 
