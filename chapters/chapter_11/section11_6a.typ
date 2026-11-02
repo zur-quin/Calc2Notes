@@ -93,7 +93,7 @@ For the two comparison tests, we checked for convergence by looking at the rates
 Note: The "By Ratio Test" at the start isn't necessary since we say it again in the conclusion, it just feels weird jumping straight into the ratio without motivation.
 
 #example[
-  Use the ration test to determine whether #auto-alt($display(sum_(n=1)^infinity ((n^2+1)3^n)/n!)$) converges or diverges.
+  Use the ratio test to determine whether #auto-alt($display(sum_(n=1)^infinity ((n^2+1)3^n)/n!)$) converges or diverges.
 ]
 #note-block[
   We see exponentials and exponents and factorials all over the place! No other tests are equipped to deal with all of these at once #auto-alt($arrow.double$) *Try Ratio Test!*
@@ -119,11 +119,11 @@ Note: The "By Ratio Test" at the start isn't necessary since we say it again in 
 ]
 
 #example[
-  Try applying Ratio Test to determine the convergence of #auto-alt($display(sum_(n=1)^infinity 1/n)$) and #auto-alt($display(sum_(n=1)^infinity 1/n^2)$). What do you observe? Compare the results from Ration test to what we know about these series as #auto-alt($p$)-series.
+  Try applying Ratio Test to determine the convergence of #auto-alt($display(sum_(n=1)^infinity 1/n)$) and #auto-alt($display(sum_(n=1)^infinity 1/n^2)$). What do you observe? Compare the results from Ratio test to what we know about these series as #auto-alt($p$)-series.
 ]
 
 #example[
-  Use the ration test to determine whether #auto-alt($display(sum_(n=1)^infinity n!/n^n)$) is absolutely convergent, conditionally convergent, or divergent.
+  Use the ratio test to determine whether #auto-alt($display(sum_(n=1)^infinity n!/n^n)$) is absolutely convergent, conditionally convergent, or divergent.
 ]
 #note-block[
   We once again see exponentials and exponents and factorials all over the place! No other tests are equipped to deal with all of these at once #auto-alt($arrow.double$) *Try Ratio Test!*

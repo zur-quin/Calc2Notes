@@ -134,7 +134,7 @@ The idea behind this convergence test is that if #auto-alt($root(n, abs(a_n))$) 
   Just like the Ratio Test, the Root Test is a powerful convergence test, but it is not always effective.
 ]
 #example[
-  Determine whether #auto-alt($display(sum_(n=1)^infinity (n^2+4n)/(n^2-2n+6))$) converges or diverges.
+  Determine whether #auto-alt($display(sum_(n=1)^infinity ((n^2+4n)/(n^2-2n+6))^(3n))$) converges or diverges.
 ]
 #my-solution-block[
   Trying root test: (observe #auto-alt($(n^2+4n)/(n^2-2n+6) > 0$) when #auto-alt($n >=2$))
