@@ -16,6 +16,7 @@ htmls: chapters/chapter_11/section11_1a.html chapters/chapter_11/section11_1b.ht
 htmls: chapters/chapter_11/section11_2b.html chapters/chapter_11/section11_3.html chapters/chapter_11/section11_4a.html
 htmls: chapters/chapter_11/section11_4b.html chapters/chapter_11/section11_5a.html chapters/chapter_11/section11_5b.html
 htmls: chapters/chapter_11/section11_6a.html chapters/chapter_11/section11_6b.html chapters/chapter_11/section11_7.html
+htmls: chapters/chapter_11/section11_8.html
 
 %.html: %.typ
 	typst compile $*.typ --format html --features html --root ../.. --input root=../../ --input html-frames=true --input individualchs=true
@@ -32,6 +33,7 @@ pdfs: chapters/chapter_11/section11_1a.pdf chapters/chapter_11/section11_1b.pdf 
 pdfs: chapters/chapter_11/section11_2b.pdf chapters/chapter_11/section11_3.pdf chapters/chapter_11/section11_4a.pdf 
 pdfs: chapters/chapter_11/section11_4b.pdf chapters/chapter_11/section11_5a.pdf chapters/chapter_11/section11_5b.pdf
 pdfs: chapters/chapter_11/section11_6a.pdf  chapters/chapter_11/section11_6b.pdf chapters/chapter_11/section11_7.pdf
+pdfs: chapters/chapter_11/section11_8.pdf
 
 %.pdf: %.typ
 	typst compile $*.typ --pdf-standard ua-1 --root ../.. --input individualchs=true

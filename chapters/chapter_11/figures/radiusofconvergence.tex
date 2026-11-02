@@ -1,0 +1,43 @@
+\documentclass[convert={svg,command=\unexpanded{{inkscape\space --pdf-poppler\space --export-type="svg"\space --pages=1\space -o\space \outfile\space \infile}}}]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\include{../../plot_settings.tex}
+
+\usetikzlibrary{decorations.text, decorations.pathmorphing, topaths} 
+
+
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+			twoDaxis,
+			axis y line = none,
+			ymin = -1,
+			ymax = 1,
+			xmin = -16,
+			xmax = 20,
+			xtick = {-2.5,2,6.5},
+			xticklabels = {$a-R$,$a$,$a+R$},
+			% xlabel = {$x$},
+			width = 15cm,
+			height = 7cm,
+			every axis x label/.style={
+					at={(ticklabel* cs:1.)},
+					anchor=north,
+				},
+		]
+		\addplot[->,thick] (2,.1) -- (6.5,.1) node[midway, above] {$R$};
+		\addplot[->,thick] (2,.1) -- (-2.5,.1) node[midway, above] {$R$};
+
+		\addplot[black] (2,0) -- (2,0.5) node[at end, above] {power series converges} node[pos=-0.15,below,pin={[pin distance=.3cm, pin edge={<-,black, out=270, in=90}]below :center}] {};
+		\addplot[dashed] (-2.5,0) -- (-2.5,0.5) node[pos=-0.25,below,pin={[pin distance=.5cm, pin edge={<-,black, out=225, in=45,solid}]below left:may converge or diverge}] {};
+		\addplot[dashed] (6.5,0) -- (6.5,0.5) node[pos=-0.25,below,pin={[pin distance=.5cm, pin edge={<-,black, out=-45, in=135,solid}]below right:may converge or diverge}] {};
+
+		\fill[fill opacity=0.3,	draw=none,	fill=blue,] (6.5,0) -- (6.5,0.5) -- (-2.5,0.5) -- (-2.5,0) -- cycle;
+		\fill[fill opacity=0.3,	draw=none,	fill=red,] (6.5,0) -- (6.5,0.5) -- node[midway, above, opacity=1] {power series diverges} (19.8,0.5) -- (19.8,0) -- cycle;
+		\fill[fill opacity=0.3,	draw=none,	fill=red,] (-15.8,0) -- (-15.8,0.5) -- node[midway, above, opacity=1] {power series diverges} (-2.5,0.5) -- (-2.5,0) -- cycle;
+
+		\fill[fill opacity=0.3,	draw=none, pattern = {Lines[angle=135,distance=10pt,line width=.5pt]}] (6.5,0) -- (6.5,0.5) -- (19.8,0.5) -- (19.8,0) -- cycle;
+		\fill[fill opacity=0.3,	draw=none, pattern = {Lines[angle=135,distance=10pt,line width=.5pt]}] (-15.8,0) -- (-15.8,0.5) -- (-2.5,0.5) -- (-2.5,0) -- cycle;
+
+	\end{axis}
+\end{tikzpicture}
+\end{document}
