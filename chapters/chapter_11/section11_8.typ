@@ -76,7 +76,7 @@ Observe that #auto-alt($r$) is changing in these scenarios, so we can represent 
 #definition[Power Series][
   A *power series* is a series of the form: #auto-alt($ sum_(n=0)^oo c_n x^n $) where #auto-alt($x$) is a variable, and #auto-alt($c_n$) are constants called the *coefficients* of the series.
 
-  We can also write power series as #auto-alt($display(sum_(n=0)^oo c_n(x-a)^n)$) where #auto-alt($a$) is a constant we call the center. \
+  We can also write power series as #auto-alt($display(sum_(n=0)^oo c_n (x-a)^n)$) where #auto-alt($a$) is a constant we call the center. \
 ]
 
 #note-block[
