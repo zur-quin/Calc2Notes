@@ -167,5 +167,6 @@ Note: The "By Ratio Test" at the start isn't necessary since we say it again in 
 
 #emph-block[
   11.6a Section Summary:
+  - We went over ratio test and when to use it.
 ]
 

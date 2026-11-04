@@ -171,6 +171,7 @@ What are some clues that we should or should not use these tests?
 
 #emph-block[
   11.6b Section Summary:
-  - We went over the root test and when to use it. We discussed when we might want to use the ratio test also.
+  - We went over the root test and when to use it.
+  - We discussed when we might want to use the ratio test also.
 ]
 
