@@ -63,6 +63,21 @@
   -
 ]
 
+=== Maclaurin Series of Common Functions
+You should be able to recognize (or re-derive) the following functions and their series.
+#table(
+  columns: (1fr, 1fr, 1fr),
+  align: center + horizon,
+  table.header([*Function*], [*Series*], [*Interval of Convergence*]),
+  $ e^x $, $ sum_(n=0)^oo x^n/n! $, $(-oo,oo)$,
+  $ b^x $, $ sum_(n=0)^oo (b (ln(b))^n )/n! x^n $, $(-oo,oo)$,
+  $ cos(x) $, $ sum_(*n=0)^oo ((-1)^n x^(2n))/((2n)!) $, $(-oo,oo)$,
+)
+
+#exercise[
+  Derive the above Maclaurin series expansions and intervals of convergence for the above series.
+]
+
 #emph-block[
   11.10a Section Summary:
 ]
