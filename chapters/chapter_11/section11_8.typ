@@ -88,7 +88,7 @@ Observe that #auto-alt($r$) is changing in these scenarios, so we can represent 
 
 - Examples of power series
   - #auto-alt($display(sum_(n=1)^oo (x^n )/n = x + x^2/2 + x^3/3 + x^4/4+...)$) is a power series where the first coefficient #auto-alt($c_0=0$), the center #auto-alt($a=0$), and #auto-alt($c_n=1/n$) for #auto-alt($n >=1$).
-  - #auto-alt($display(sum_(n=0)^oo 3(x-1)^n = 3 + 3(x-1) + 3(x-1)^2 + ...)$) is a power series where #auto-alt($c_n=3$) for all #auto-alt($n>=0$) and center #auto-alt($a=1$). (The sum started at 0 this time, like we expected, so we did not have to write the first coeff was 0 like the last example)
+  - #auto-alt($display(sum_(n=0)^oo 3(x-1)^n = 3 + 3(x-1) + 3(x-1)^2 + ...)$) is a power series where #auto-alt($c_n=3$) for all #auto-alt($n>=0$) and center #auto-alt($a=1$). (The sum started at 0 this time, like we expected, so we did not have to write the first coefficient was 0 like the last example)
   - #auto-alt($display(sum_(n=0)^oo (n+1)!x^n = 1 + 2x + 6 x^2 + 24 x^3 + ...)$) is a power series where #auto-alt($c_n=(n+1)!$) and center #auto-alt($a=0$).
 
 - What affects the convergence or divergence of this series?
