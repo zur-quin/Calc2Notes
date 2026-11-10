@@ -80,7 +80,7 @@ You should be able to recognize (or re-derive) the following functions and their
   auto-alt($ arctan(x) $),
   auto-alt($ sum_(n=0)^oo (-1)^n (x^(2n+1))/(2n+1) $),
   auto-alt($x - x^3/3 + x^5/5 - x^7/7 + ...$),
-  auto-alt($ (-1,1) $),
+  auto-alt($ (-1,1] $),
 
   auto-alt($ ln(1+x) $),
   auto-alt($ sum_(n=0)^oo (-1)^n (x^(n+1))/(n+1) $),

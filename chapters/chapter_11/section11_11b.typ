@@ -67,6 +67,12 @@
   -
 ]
 
+#exercise[
+  Open and experiment with the following Desmos pages to see what taking more terms in a Taylor Polynomial to approximate a function does.
+  https://www.desmos.com/calculator/8f41372722
+  https://www.desmos.com/calculator/67cc7057d1
+]
+
 #emph-block[
   11.11b Section Summary:
 ]
