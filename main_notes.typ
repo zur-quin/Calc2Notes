@@ -70,7 +70,7 @@
 #include "chapters/chapter_11/section11_9b.typ"
 #include "chapters/chapter_11/section11_10a.typ"
 #include "chapters/chapter_11/section11_10b.typ"
+#include "chapters/chapter_11/section11_11a.typ"
 
 // todo list
-#include "chapters/chapter_11/section11_11a.typ"
 #include "chapters/chapter_11/section11_11b.typ"
