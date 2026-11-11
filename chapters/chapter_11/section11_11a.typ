@@ -157,6 +157,23 @@ This is just using the alternating series estimation theorem, but can we be more
 ]
 #my-solution-block[
   We need to show that $lim_(n arrow oo) R_n (x) = 0$, where $R_n (x) lt.eq M/(n+1)! abs(x-a)^(n+1)$.
+  The function is $f(x) = sin(x)$, $a=0$, and
+  $
+       f(0) & =sin(0)=0 \
+      f'(0) & = cos(0) = 1 \
+     f''(0) & = -sin(0) = 0 \
+    f'''(0) & = -cos(0) = -1 \
+        ...
+  $
+  So $-1 lt.eq f^((n)) (0) lt.eq 1=M$
+  We know $f$ is equal to its Taylor seris on the interval $|x-a|<R$ if $R_n (x) arrow 0$. Then, by squeeze theorem (for limits)
+  $
+    0 lt.eq R_n (x) lt.eq M/(n+1)! |x-a|^(n+1)
+  $
+  and $lim_(n arrow oo) 0 = 0$ and for $|x-a|<d$,
+  $
+    lim_(n arrow oo) M/(n+1)! |x-a|^(n+1) = lim_(n arrow oo)
+  $
 ]
 
 #emph-block[
